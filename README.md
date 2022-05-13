@@ -1,4 +1,5 @@
-# grupo_9_Green_World
-Proyecto integrador Grupo 9 - Green World
-
-## Descripción 
+## Grupo: 9
+## Proyecto Integrador: Green World
+## Descripción: 
+xxxxxxxxxxxxxxxx
+## Link figma
