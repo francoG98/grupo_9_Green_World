@@ -4,7 +4,8 @@
   - Franco Groupierre
   - Jaime Ortiz
   - Nicolas Piñol
-## Nombre del Proyecto Integrador: Green World
+## Nombre del Proyecto Integrador: 
+  - Green World
 ## Descripción: 
 xxxxxxxxxxxxxxxx
 ## Link figma
