@@ -1,9 +1,9 @@
 ## Grupo N°: 9
 ## Integrantes: 
-- Nicolas Piñol
-- Eric Zatel
-- Franco
-- Jaime Ortiz
+  - Eric Zatel
+  - Franco Groupierre
+  - Jaime Ortiz
+  - Nicolas Piñol
 ## Nombre del Proyecto Integrador: Green World
 ## Descripción: 
 xxxxxxxxxxxxxxxx
