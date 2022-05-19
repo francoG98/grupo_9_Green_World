@@ -18,5 +18,5 @@ El growshop tiene como target población mayor de 18 que cultiva Cannabis o la u
 ## Link figma:
 https://www.figma.com/file/E54KzmUQAcZKnOlNCmIVXk/Wireframes?node-id=0%3A1
 ## Referencias:
-https://www.upgrowshop.com/ nos gusto como tenian organizado las categorias, y las dividimos asi.
-https://growshop.com.ar/carrito/ tomamos de referencia el carrito de esta pagina, ya que algunas otras era una solapa que se superponia a la pagina que este, ya sea home o cualquier otra.C
+- https://www.upgrowshop.com/ nos gusto como tenian organizado las categorias, y las dividimos asi.
+- https://growshop.com.ar/carrito/ tomamos de referencia el carrito de esta pagina, ya que algunas otras era una solapa que se superponia a la pagina que este, ya sea home o cualquier otra.C
