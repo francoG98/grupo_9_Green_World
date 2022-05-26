@@ -10,11 +10,11 @@ Green World
   2. [Referentes](/documentos/referentes.md)
   3. [Equipo](/documentos/equipo)
   4. [Diseño](/documentos/diseño)
-      - [Wireframe](/documentos/dise%C3%B1o/wireframe.md)
-      - [Tipografias](/documentos/dise%C3%B1o/tipografias.md)
-      - [Colores](/documentos/dise%C3%B1o/colores.md)
-      - [Marca](/documentos/dise%C3%B1o/marca.md)
-      - [Boceto](/documentos/dise%C3%B1o/boceto.md)
+      - [Wireframe](/documentos/diseño/wireframe.md)
+      - [Tipografias](/documentos/diseño/tipografias.md)
+      - [Colores](/documentos/diseño/colores.md)
+      - [Marca](/documentos/diseño/marca.md)
+      - [Boceto](/documentos/diseño/boceto.md)
 
 
 
