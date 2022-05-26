@@ -2,10 +2,13 @@
   - Green World
 ## Tematica:
 El objetivo de este proyecto es desarrollar un growshop virtual, donde se venda productos y accesorios para el cultivo de Cannabis y otras plantas. 
+
 Categorias iniciales de productos:
+
   - Accesorios: Son las herramientas y otros elementos para el cultivo, por ejemplo., macetas, carpas, palas, timers, ventilacion, etc
   - Aditivos: Agrupo insumos para el cultivo, como fertilizantes, insecticidas y fungicidas.
   - Medicinal: Aceites y cremas.
   - Parafernalia: Agrupa los elementos necesarios para el uso recreativo del Cannabis; papel, bandejas, picadores, pipas, bongs, etc. 
   - Sustratos: Tierra para cultivo.  
-El growshop tiene como target población mayor de 18 que cultiva Cannabis para uso medicinal o lo utiliza de forma recreativa.
+  
+La población objetiva del growshop, es población mayor de 18 que cultiva Cannabis para uso medicinal o lo utiliza de forma recreativa.
