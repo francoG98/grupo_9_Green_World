@@ -1,8 +1,8 @@
-## grupo N°9
+# grupo N°9
 
-## Titulo del Proyecto: 
+# Titulo del Proyecto: 
 
-Green World
+## Green World
 
 ## Indice
 [documentos](documentos)
