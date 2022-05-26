@@ -1,4 +1,5 @@
 Descripción de posibles colores que se van a usar
+___
 
 Aún se estan definiendo los colores que se van a usar, sin embargo pensamos a continuación vamos a describir algunos de los colores que pueden funcionar y se ajustan al objetivo de nuestro proyecto:
 
