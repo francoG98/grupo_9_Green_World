@@ -11,4 +11,4 @@ Categorias iniciales de productos:
   - Parafernalia: Agrupa los elementos necesarios para el uso recreativo del Cannabis; papel, bandejas, picadores, pipas, bongs, etc. 
   - Sustratos: Tierra para cultivo.  
   
-La población objetiva del growshop, es población mayor de 18 que cultiva Cannabis para uso medicinal o lo utiliza de forma recreativa.
+La población objetivo del growshop, es población mayor de 18 que cultiva Cannabis para uso medicinal o lo utiliza de forma recreativa.
