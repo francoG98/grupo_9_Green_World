@@ -1,0 +1,1 @@
+Soy Jaime Ortiz tengo 34 años, Colombiano. Soy Zootecnista con una Maestria en Recursos Naturales. La programación simepre me ha gustado y Digital House ha sido un excelente espacio para est. Me gusta montar bicicleta, caminar con las moscotas y viajar.
