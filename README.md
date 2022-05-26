@@ -1,6 +1,21 @@
 ## Grupo N°: 9
+## Titulo del proyecto:
+  - Green World
+## Subindice
+  1. Tematica
+  2. Referentes
+  3. Equipo
+  4. Diseño
+      - Wireframe
+      - Tipografias
+      - Colores
+      - Marca
+      - Boceto
+
+
+
 ## Integrantes: 
-  - Eric Zatel, de 23 años, residiendo en CABA, Buenos Aires Argentina
+  - Eric Zatel, de 23 años, residiend -o en CABA, Buenos Aires Argentina
   - Franco Groupierre, de 23 años, residiendo en CABA, Buenos Aires Argentina
   - Jaime Ortiz, de 34 años, residente en Bogotá, Colombia 
   - Nicolas Piñol, de 24 años, residiendo en El Palomar, Buenos Aires Argentina.
