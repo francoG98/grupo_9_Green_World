@@ -3,9 +3,9 @@
   - Green World
 ## Subindice
   1. [Tematica](/documentos/tematica.md)
-  2. [Referentes]()
-  3. [Equipo]()
-  4. [Diseño]()
+  2. [Referentes](/documento/referente.md)
+  3. [Equipo](/documento/equipo)
+  4. Diseño
       - Wireframe
       - Tipografias
       - Colores
