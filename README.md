@@ -10,9 +10,9 @@
   2. [Referentes](/doc/referentes.md)
   3. [Equipo](/doc/equipo)
   4. [Diseño](/doc/diseño)
-      - [Wireframe](/doc/Diseño/wireframe.md)
+      - [Wireframe](/doc/diseño/wireframe.md)
       - [Tipografias](/doc/diseño/tipografias.md)
-      - [Colores](/doc/Diseño/colores.md)
+      - [Colores](/doc/diseño/colores.md)
       - [Marca](/doc/diseño/marca.md)
       - [Boceto](/doc/diseño/boceto.md)
 
