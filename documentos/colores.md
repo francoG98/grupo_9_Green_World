@@ -1,0 +1,1 @@
+todavia no lo tenemos definido con codigo de color, pero intuimos que vamos a utilizar, blanco, negro, verde, gris y violeta. pero al no estar seguros de la tonalidad no lo terminamos de completar.
