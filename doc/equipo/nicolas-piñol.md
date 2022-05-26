@@ -1,1 +1,0 @@
-Soy Nicolas Piñol tengo 24 años, oriundo de El Palomar, Argentina.  Actualmente estoy a mitad de camino para ser Ingeniero Quimico, y tambien estoy aprendiendo las bases del desarrollo web. Ademas de la quimica y la programacion, mis otras pasiones son jugar videojuegos y el cultivo de plantas, por eso es que propuse este proyecto, ya que es un mercado que conozco bastante bien.
