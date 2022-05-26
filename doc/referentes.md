@@ -1,7 +1,7 @@
 ## Referencias:
 - https://www.upgrowshop.com/ nos gusto como tenian organizado las categorias, y las dividimos asi.
 
-- https://growshop.com.ar/carrito/ tomamos de referencia el carrito de esta pagina, ya que algunas otras era una solapa que se superponia a la pagina que este, ya sea home o cualquier otra.
+- https://growshop.com.ar/carrito/ tomamos de referencia el carrito de esta pagina, ya que algunas otras era una solapa que se superponia a la pagina que esté, ya sea home o cualquier otra.
 
 - https://growshopganesh.com/ y https://elalquimistagrow.com/ tomamos la idea de la navegacion desde el home a las categorias, si bien no va a ser identica, el nuestro consta de una imagen, con una explicacion breve de lo que es la categoria, y un boton para acceder a la misma, idem elalquimista, lo vimos despues y era mas similar al nuestro, salvando que en nuestro home no va a haber botones que vayan a las categorias, salvando el que este con la foto y texto.
 

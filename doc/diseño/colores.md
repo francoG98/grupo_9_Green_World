@@ -12,18 +12,18 @@ Debido a su relación con la oscuridad, el negro simboliza el misterio y lo desc
 Blanco:
 
 ```
-Es un golor que contrasta muy bien con el negro, ademas que simboliza limpieza, paz y virtud.
+Es un color que contrasta muy bien con el negro, ademas que simboliza limpieza, paz y virtud.
 ```
 
 Verde:
 
 ```
-Al ser una tienda que ofrece productos derivados del Cannabis es infaltable el verde, este es un color que evoca la juventud, esperanza, buenna vida. Es color directamente relacionado con lo ecológico, relación y bienestar. 
+Al ser una tienda que ofrece productos derivados del Cannabis es infaltable el verde, este es un color que evoca la juventud, esperanza, buena vida. Es color directamente relacionado con lo ecológico, relajación y bienestar. 
 ```
 
 Morado:
 
 ```
-Significado de sofistiscación y elegancia. Esta asociado con la espiritualidad. 
+Significado de sofisticación y elegancia. Esta asociado con la espiritualidad. 
 ```
 
