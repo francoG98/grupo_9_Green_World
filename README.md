@@ -1,20 +1,20 @@
-# grupo N°9
+## grupo N°9
 
-# Titulo del Proyecto: 
+## Titulo del Proyecto: 
 
-## Green World
+Green World
 
 ## Indice
-[documentos](documentos)
-  1. [Tematica](/documentos/tematica.md)
-  2. [Referentes](/documentos/referentes.md)
-  3. [Equipo](/documentos/equipo)
-  4. [Diseño](/documentos/diseño)
-      - [Wireframe](/documentos/Diseño/wireframe.md)
-      - [Tipografias](/documentos/diseño/tipografias.md)
-      - [Colores](/documentos/Diseño/colores.md)
-      - [Marca](/documentos/diseño/marca.md)
-      - [Boceto](/documentos/diseño/boceto.md)
+[documentos](doc)
+  1. [Tematica](/doc/tematica.md)
+  2. [Referentes](/doc/referentes.md)
+  3. [Equipo](/doc/equipo)
+  4. [Diseño](/doc/diseño)
+      - [Wireframe](/doc/diseño/wireframe.md)
+      - [Tipografias](/doc/diseño/tipografias.md)
+      - [Colores](/doc/diseño/colores.md)
+      - [Marca](/doc/diseño/marca.md)
+      - [Boceto](/doc/diseño/boceto.md)
 
 
 

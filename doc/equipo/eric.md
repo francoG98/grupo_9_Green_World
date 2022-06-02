@@ -1,1 +1,1 @@
-Eric Zatel, de 23 años, residiendo en CABA, Buenos Aires Argentina
+Mi nombre es Eric Zatel, de 23 años, residiendo en CABA, Argentina. Siempre me gustó estar entre la naturaleza y me interesa todo lo relacionado con ella. Este proyecto me resulta muy atractivo ya que mezcla ese interés personal con mi interés profesional de convertirme en programador. Además de eso, me gusta mucho la música, el cine y la literatura (o cualquier forma artistica de expresión).
