@@ -20,7 +20,10 @@ Verde:
 ```
 Al ser una tienda que ofrece productos derivados del Cannabis es infaltable el verde, este es un color que evoca la juventud, esperanza, buena vida. Es color directamente relacionado con lo ecológico, relajación y bienestar. 
 
+![image](https://user-images.githubusercontent.com/79160277/174191209-037306ff-b41e-4e6e-8b62-e011cd5df70b.png)
+
 https://color-hex.org/color/3e8914
+
 
 ```
 
