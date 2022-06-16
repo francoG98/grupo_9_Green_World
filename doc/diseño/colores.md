@@ -15,7 +15,7 @@ Blanco:
 Es un color que contrasta muy bien con el negro, ademas que simboliza limpieza, paz y virtud.
 ```
 
-<span style="color: #3e8914"> Verde: </span>
+<font color="#3e8914"> Verde: </font>
 
 ```
 Al ser una tienda que ofrece productos derivados del Cannabis es infaltable el verde, este es un color que evoca la juventud, esperanza, buena vida. Es color directamente relacionado con lo ecológico, relajación y bienestar. 
