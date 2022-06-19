@@ -16,11 +16,13 @@ Es un color que contrasta muy bien con el negro, ademas que simboliza limpieza, 
 ```
 
 Verde:
+#57CC99
+#f03c15
 
 ```
 Al ser una tienda que ofrece productos derivados del Cannabis es infaltable el verde, este es un color que evoca la juventud, esperanza, buena vida. Es color directamente relacionado con lo ecológico, relajación y bienestar. 
 
-![image](https://user-images.githubusercontent.com/79160277/174191209-037306ff-b41e-4e6e-8b62-e011cd5df70b.png) `#f03c15`
+![image](https://user-images.githubusercontent.com/79160277/174191209-037306ff-b41e-4e6e-8b62-e011cd5df70b.png) `#f03c15` #57CC99
 
 https://color-hex.org/color/3e8914
 
