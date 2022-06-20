@@ -1,0 +1,53 @@
+footer{
+    background-color:#f9f9f9
+
+}
+.footer-top-bar{
+    display:flex;
+    flex-wrap:wrap
+}
+.footer-top-bar section{
+    width:100%;
+    text-align: center;
+    padding:10px
+}
+
+.footer-top-bar section i{
+    color:#57CC99;
+    font-size: 2em;
+    line-height:10px;
+    margin: auto;
+    }
+.footer-top-bar section h3{
+font-weight:700
+}
+.footer-top-bar section p{
+    font-family:"Abel"
+}
+.footer-bottom-bar{
+    background-color:black;
+    
+}
+.footer-bottom-bar a{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding:6px
+}
+.footer-bottom-bar a img{
+    max-width:125px
+}
+
+@media(min-width:768px){
+    .footer-top-bar{
+        display:flex;
+        justify-content: center;
+        gap: 10px;
+        padding-bottom: 30px
+    }
+    .footer-top-bar section{
+        width: 30%
+    }
+
+
+}

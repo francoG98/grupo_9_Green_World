@@ -1,0 +1,145 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Anek Gujarati";
+    }
+
+/*MAAAAAAIIIIINNNNN*/
+
+main{
+    background-color:#f9f9f9;
+    margin:0px;
+    
+}
+.banner{
+    width:100%;
+    margin-bottom:0;
+    padding-bottom:0
+    
+    
+}
+
+nav.main-nav-contenedor{
+    margin: auto;
+    text-decoration: none;
+    padding-top:0;
+    height: 485vw;
+    
+    
+}
+nav.main-nav-contenedor a{
+    text-decoration: none;
+    margin-top:0;
+    padding-top:0
+}
+nav.main-nav-contenedor a article{
+    
+    width: 95vw;
+    height: 95vw;
+    margin:  0 auto;
+    text-decoration: none;
+    position: relative;
+    padding-top:0;
+    margin-top:0;
+    border-top: 0.5px solid #f9f9f9;
+    border-bottom: 0.5px solid #f9f9f9;
+}
+
+img.foto-categorias{
+    width:100%;
+    filter: grayscale(100%);
+
+}
+.nombre-categoria{
+    
+    color:#ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    z-index: 10;
+    position: absolute;
+    top: calc(50% - 10px)
+}
+#uno{
+   
+    left: calc(50% - 54px);
+}
+#dos{left: calc(50% - 40.5px)}
+#tres{left: calc(50% - 47px)}
+#cuatro{
+    
+    left: calc(50% - 66px)}
+#cinco{left: calc(50% - 51.5px)}
+
+article p {
+    text-decoration: none;
+    display: none
+}
+
+@media(min-width:768px){
+
+
+}
+
+@media(min-width:1024px){
+       
+
+    nav.main-nav-contenedor{
+        display:flex;
+        justify-content: center;
+        gap: 2px;
+        margin: 10px;
+        height: 35vw
+    }
+    nav.main-nav-contenedor a{
+        height: 25vw;
+        flex-basis: 19%;
+        transition: flex-basis 500ms
+    }
+    nav.main-nav-contenedor a:hover{
+        flex-basis:24%
+    }
+    nav.main-nav-contenedor a article{
+    
+        width: auto;
+        height: auto;
+        margin:  0 auto;
+        text-decoration: none;
+        position: relative;
+        padding-top:0;
+        margin-top:0;
+        border-top: none;
+        border-bottom: none;
+        box-shadow: none;
+        transition: box-shadow 500ms
+    }
+    nav.main-nav-contenedor a article:hover{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    nav.main-nav-contenedor a article img{
+        height: auto;
+        transition: filter 500ms
+    }
+    nav.main-nav-contenedor a:hover article img{
+        filter: grayscale(0%)
+    }
+    .nombre-categoria{
+        top: 8vw
+    }
+    
+    article p {
+        text-decoration: none;
+        display: none;
+        font-family: "Abel";
+        font-size: 18px;
+        text-align: center;
+        padding: 0 5px;
+        color:black;
+        background-image: url();
+        transition: display 200ms
+    }
+    nav.main-nav-contenedor a article:hover p{
+        display: block
+    }
+      
+}
