@@ -31,7 +31,8 @@ nav.main-nav-contenedor{
 nav.main-nav-contenedor a{
     text-decoration: none;
     margin-top:0;
-    padding-top:0
+    padding-top:0;
+    border-radius: 10px
 }
 nav.main-nav-contenedor a article{
     
@@ -44,6 +45,7 @@ nav.main-nav-contenedor a article{
     margin-top:0;
     border-top: 0.5px solid #f9f9f9;
     border-bottom: 0.5px solid #f9f9f9;
+    border-radius: 10px
 }
 
 img.foto-categorias{
@@ -89,10 +91,10 @@ article p {
         justify-content: center;
         gap: 2px;
         margin: 10px;
-        height: 35vw
+        height: auto
     }
     nav.main-nav-contenedor a{
-        height: 25vw;
+        height: auto;
         flex-basis: 19%;
         transition: flex-basis 500ms
     }
@@ -133,7 +135,7 @@ article p {
         font-family: "Abel";
         font-size: 18px;
         text-align: center;
-        padding: 0 5px;
+        padding:  10px;
         color:black;
         background-image: url();
         transition: display 200ms
