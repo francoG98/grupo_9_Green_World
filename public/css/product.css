@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Anek Gujarati";
+}
+
+main{
+    background-color:#f9f9f9;
+}
+
+.producto-total{
+    margin: 15px;
+}
+
+.precio{
+    font-size: 20px;
+    color: #57CC99;
+}
+
+.descripcion-precio{
+    font-style: italic;
+    margin: 5px 0 10px 0;
+}
+
+#quantity{
+    width: 3rem;
+    font-size: 14px;
+}
+
+.boton{
+    background-color: #57CC99;
+    border-width: 0;
+    margin-left: 10px;
+}
+
+.hipervinculo{
+    text-decoration: none;
+    color: #f9f9f9;
+    background-color: #57CC99;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.informacion-producto{
+    border: groove;
+    margin: 15px 10px 10px 10px;
+}
+
+@media(min-width:1024px){
+    .producto-total{
+        display: flex;
+    }
+    .imagen{
+        margin:10px;
+    }
+    .descripcion-producto{
+        margin: 10px;
+    }
+}
