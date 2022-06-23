@@ -43,7 +43,7 @@ font-weight:700
         display:flex;
         justify-content: center;
         gap: 10px;
-        padding-bottom: 30px
+        padding: 30px 5px
     }
     .footer-top-bar section{
         width: 30%

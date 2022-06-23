@@ -79,18 +79,46 @@ article p {
 }
 
 @media(min-width:768px){
-
-
+    nav.main-nav-contenedor{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+        margin:0;
+        padding:10px;
+        height: auto
+    }
+    nav.main-nav-contenedor a{
+        height: auto;
+        flex-basis: 48%;
+        
+    }
+    nav.main-nav-contenedor a article{
+    
+        width: auto;
+        height: auto;
+    }
+    article p {
+        text-decoration: none;
+        display: block;
+        font-family: "Abel";
+        font-size: 18px;
+        text-align: center;
+        padding:  0 10px 10px 10px;
+        color:#57CC99;
+    }
 }
 
 @media(min-width:1024px){
        
 
     nav.main-nav-contenedor{
+        flex-wrap: nowrap;
         display:flex;
         justify-content: center;
         gap: 2px;
         margin: 10px;
+        padding: 0;
         height: auto
     }
     nav.main-nav-contenedor a{
