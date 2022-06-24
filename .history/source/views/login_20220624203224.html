@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Anek+Gujarati:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="/css/main-register.css">
+<link rel="stylesheet" href="/css/main-login.css">
 <link rel="stylesheet" href="/css/header.css">
 <link rel="stylesheet" href="/css/footer.css">
 
@@ -52,32 +52,14 @@
         </nav>
     </header>   
     <main>
-          <form method="post" action="">
+           <form method="post" action="">
             <p>
-                <input type="text" name="nombre-apellido" placeholder="Nombre y Apellido" required>
-            </p>
-            <p>
-                <input type="text" name="usuario" placeholder="Nombre de Usuario" required>
+                <input type="text" name="usuario" placeholder="Usuario" required>
             </p>
             <p>
-                <input type="mail" name="mail" placeholder="Correo Electrónico" required>
+                <input type='password' name='password' placeholder='Contraseña' required>
             </p>
-            <p class="cultivo">
-                <label for="cultivo"> Cultivas ?</label>
-                    <select name="cultivo" id="cultivo" required>
-                        <option value="Indoor">Indoor</option>
-                        <option value="outdoor">Outdoor</option>
-                        <option value="ambas">ambas</option>
-                        <option value="ninguna">No cultivo</option>
-                    </select>
-            </p>
-            <p>
-                <input type="password" name="password" placeholder="Contraseña" required>
-            </p>
-            <p>
-                <input type="password" name="repetir-password" placeholder="Repetir Contraseña" required>
-            </p>
-            <a href="./home.html"><button type="submit" name="registrar"> Envíar </button></a>
+           </form>
     </main>
     <footer>
         <div class="footer-top-bar">
