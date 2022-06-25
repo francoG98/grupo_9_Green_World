@@ -54,3 +54,7 @@ input[type="checkbox"]{
     justify-content: center;
     
 }
+input[type="checkbox"]:checked{
+    background-color: #5c3d99;
+    color: #57CC99;
+}

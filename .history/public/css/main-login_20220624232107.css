@@ -49,8 +49,8 @@ input{
 }
 input[type="checkbox"]{
     color: #5c3d99;
-    Width: 1%;
+    width: 0.5%;
+    height: 0.5%;
     align-items: center;
-    justify-content: center;
-    
+
 }

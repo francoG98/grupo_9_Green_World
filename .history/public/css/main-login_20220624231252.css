@@ -45,12 +45,4 @@ input{
 .recuperar-contraseña:hover{
     background-color: #5c3d99;
     color: #57CC99;
-    border-radius: 3px;
-}
-input[type="checkbox"]{
-    color: #5c3d99;
-    Width: 1%;
-    align-items: center;
-    justify-content: center;
-    
 }
