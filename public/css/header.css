@@ -5,21 +5,23 @@
     font-family: "Anek Gujarati";
     }
 header{
-    height:72px
+    width:100vw;
+    height:72px;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
 }    
-.header-top-bar{
+/*.header-top-bar{
     display: flex;
     flex-wrap: wrap;
-    /*
-    background-color: #af95e2;*/
     background-color: #f9f9f9;
     align-items: center;
     justify-content: space-between;
     height: 40px;
-    width:100vw;
-   
-}
-.header-top-bar figure{
+    width:100vw;*/
+.logo-nav{
     width: 220px;
     height: 32px;;
     margin: 4px;
@@ -31,25 +33,25 @@ header{
    
 
 }
-header h2{
+
+header section{
     width: 100%;
-    text-align: center;
-    font-weight: normal;;
     background-color:black;
+    height:32px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+header section h2{
+    font-weight: normal;;
     color: #f9f9f9;;
     font-size: 18px;
-    height:32px;;
-    padding-top:6px
     
     
 }
 
-nav.header-top-nav-bar{
-    width: 100%;
-    order:3;
-}
 
-div.chart-burger{
+nav.chart-burger{
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -57,7 +59,7 @@ div.chart-burger{
     margin: 4px 10px;
     
 }
-div.chart-burger a{
+nav.chart-burger a{
     text-align:center;
     color:#f9f9f9;;
     /*
@@ -73,6 +75,12 @@ div.chart-burger a{
 }
 
 
+nav.header-top-nav-bar{
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    
+}
 nav.header-top-nav-bar ul{
     list-style: none;
     margin: 0 ;
@@ -85,14 +93,6 @@ nav.header-top-nav-bar ul li{
     width: 50%
 }
 
-
-.header-bottom-nav-bar ul{
-    list-style: none;
-    margin: 0 ;
-    padding: 0;
-    display: none
-
-}
 
 @media(min-width:768px){
     .header-top-nav-bar{
@@ -107,11 +107,12 @@ nav.header-top-nav-bar ul li{
 
     }
     header{
-        background-color: #f9f9f9;
-        height: auto
+        height: auto;
+        max-width: 1400px;
+        margin:auto
 
     }
-    .header-top-bar{
+    /*.header-top-bar{
         display: flex;
         flex-wrap: wrap;
         background-color: #f9f9f9;
@@ -121,8 +122,8 @@ nav.header-top-nav-bar ul li{
         width:100vw;
         max-width: 1400px;
         margin:auto
-    }
-    .header-top-bar figure{
+    }*/
+    .logo-nav{
         width: 300px;
         height: 50px
              
@@ -136,30 +137,20 @@ nav.header-top-nav-bar ul li{
         align-items: center; 
         display:flex;
         justify-content: flex-end;
-        width:auto
+        align-items: center;
+        gap: 20px;
+        width:auto;
+        margin:7px;
+        order:3
     }
     
-    div.chart-burger{
+    nav.chart-burger{
         display: none;
         order:5;
         width: 100%
     }
-    nav.header-top-nav-bar ul{
-        list-style: none;
-        padding: 0;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        text-decoration: none;
-        margin:7px;
-        order:3
-    }
-    nav.header-top-nav-bar ul li {
-        width: auto;
-    }
-    nav.header-top-nav-bar ul li a{
+   
+    nav.header-top-nav-bar a{
         text-decoration: none;
         font-size: 18px;
         color:#f9f9f9;
@@ -169,17 +160,20 @@ nav.header-top-nav-bar ul li{
         transition: opacity 200ms
     }
 
-    nav.header-top-nav-bar ul li a:hover{
+    nav.header-top-nav-bar a:hover{
         opacity: 0.7
     }
-    header h2{
-        width: 100%;
-        height: 50px;
-        padding-top: 10px;       
+    header section{
+        order: 4;
+        width:100vw;
+        height: 50px
+    }
+    header section h2{    
         font-weight: normal;
         background-color:black;
         color: #f9f9f9;
         font-size: 20px;
+        
         
     }
     #pala{
@@ -204,23 +198,25 @@ nav.header-top-nav-bar ul li{
         font-size: 40px
     }
     
-    
-    .header-bottom-nav-bar ul{
-       
-        display: flex;
-        justify-content: center;
+    .header-bottom-nav-bar{
+        order:5;
+        display:flex;
+        height:60px;
         align-items: center;
-        gap: 50px;
-        height: 60px
+        justify-content: center;
+        gap:50px;
+        width: 100%
     }
-    .header-bottom-nav-bar ul a{
+
+
+    .header-bottom-nav-bar a{
         text-decoration: none;
         font-size: 24px;
         color: black;
         
         transition: font-size 200ms
     }
-    .header-bottom-nav-bar ul a:hover{
+    .header-bottom-nav-bar a:hover{
         font-size:30px;
         font-weight: 500;
         color: #57CC99
