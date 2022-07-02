@@ -14,10 +14,10 @@
                 <% categorias.forEach(element => { %>
                     <a href="/<%=element.name%>" >
                         <article>
-                        <img class="foto-categorias" src="<%= element.image %> " alt="Imagen de categoria" >
-                        <h3 class="nombre-categoria"><%= element.myusname %></h3>
-                        <p><%= element.description %> </p>
-                        </article> 
+                            <img class="foto-categorias" src="<%= element.image %> " alt="Imagen de categoria" >
+                            <h3 class="nombre-categoria" id="<%=element.id%>"><%= element.myusname %></h3>
+                            <p><%= element.description %> </p>
+                        </article>
                     </a>
                 <% }) %>
             <% } %>

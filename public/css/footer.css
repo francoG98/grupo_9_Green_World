@@ -1,31 +1,32 @@
 footer{
-    background-color:#f9f9f9
-
-}
-.footer-top-bar{
+    background-color:#f9f9f9;
     display:flex;
     flex-wrap:wrap
 }
-.footer-top-bar section{
+
+
+footer section{
     width:100%;
     text-align: center;
     padding:10px
 }
 
-.footer-top-bar section i{
+footer section i{
     color:#57CC99;
     font-size: 2em;
     line-height:10px;
     margin: auto;
     }
-.footer-top-bar section h3{
+
+footer section h3{
 font-weight:700
 }
-.footer-top-bar section p{
+footer section p{
     font-family:"Abel"
 }
 .footer-bottom-bar{
     background-color:black;
+    width:100%
     
 }
 .footer-bottom-bar a{
@@ -39,13 +40,13 @@ font-weight:700
 }
 
 @media(min-width:768px){
-    .footer-top-bar{
+    footer{
         display:flex;
         justify-content: center;
         gap: 10px;
         padding: 30px 5px
     }
-    .footer-top-bar section{
+    footer section{
         width: 30%
     }
 
