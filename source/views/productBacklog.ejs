@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./includes/head.ejs")  %>
+<body>
+    <%- include("./includes/header.ejs") %> 
+    <main>
+        <article class="producto-total">
+            <div class="imagen">
+                <img src="/assets/detalle-producto.jpg" alt="Grinder" width="100%">
+            </div>
+            <div class="descripcion-producto">
+                <h1>GRINDER  (dorado, plateado, multicolor)</h1>
+                <p class="precio">$ 650,73</p>
+                <p class="descripcion-precio">(los impuestos no estan incluídos en el precio)</p>
+                <label for="quantity">Cantidad: </label>
+                <input type="number" id="quantity" name="quantity" min="1" max="10">
+                <button class="boton" type="submit"><a class="hipervinculo" href="/chart"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</a></button>
+                <p class="informacion-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui sed in magni quisquam, eum eveniet nisi. Nulla earum, minima debitis, nesciunt, consequuntur totam praesentium fuga repellat aliquid sint voluptatem ducimus quibusdam. Blanditiis exercitationem ullam, iste aperiam saepe error impedit quidem sequi similique itaque earum doloribus laborum nisi quod ad provident cum aliquam ratione quos, atque tenetur doloremque nam! Delectus, sapiente aut commodi maiores cupiditate quas cum architecto, odit quae, ipsa repellat unde id. Aliquid quod assumenda, impedit vero distinctio dolor cum perspiciatis esse optio, consectetur voluptates atque obcaecati nemo velit repudiandae nisi numquam. Sit distinctio alias sed nesciunt et voluptas?</p>
+            </div>
+        </article>
+    </main>
+    <%- include("./includes/footer.ejs") %> 
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./includes/head.ejs")  %>
+<body>
+    <%- include("./includes/header.ejs") %> 
+    <main>
+        <section class="carrito-top">
+            <ul class="mobile">
+                <li><a href="" class="delete-product"><i class="fa-solid fa-xmark"></i></a></li>
+                <li>
+                    <h4>Producto:</h4>
+                    <p class="product-name">Grinder</p>
+                </li>
+                <li>
+                    <h4>Precio:</h4>
+                    <p class="product-price">$650,73</p>
+                </li>
+                <li>
+                    <label for="quantity"><h4>Cantidad:</h4></label>
+                <input type="number" id="quantity" name="quantity" min="1" max="10">
+                </li>
+                <li>
+                    <h4>Subtotal:</h4>
+                    <p class="subtotal">=cantidad*precio</p>
+                </li>
+            </ul>
+            <section class="desktop">
+                <div>
+                    <h4 class="producto">Producto:</h4>
+                    <h4 class="precio">Precio:</h4>
+                    <h4 >Cantidad:</h4>
+                    <h4 class="subtotal">Subtotal:</h4>
+                </div>
+                <article>
+                    <a href="" class="delete-product"><i class="fa-solid fa-xmark"></i></a>
+                    <img class="product-image" src="/assets/detalle-producto.jpg" alt="imagen del Producto">
+                    <p class="producto">Grinder</p>
+                    <p class="precio">$650,73</p>
+                    <input class="cantidad" type="number" id="quantity" name="quantity" min="1" max="10">
+                    <p class="subtotal">=cantidad*precio</p>
+                </article>
+            </section>
+
+
+            <a href="" class="actualizar-carrito"><h3>Actualizar Carrito</h3></a>
+        </section>
+        <section class="carrito-bot">
+            <h2>Total del Carrito</h2>
+            <ul>
+                <li>
+                    <h4>Subtotal:</h4>
+                    <p>=suma(subtotalProductos)</p>
+                </li>
+                <li>
+                    <h4>Envio:</h4>
+                    <p>correo, domicilio, retira</p>
+                </li>
+                <li>
+                    <h4>Total:</h4>
+                    <p>=Subtotal+Envio</p>
+                </li>
+            </ul>
+            <a href="" class="confirmar-compra"><h2>Finalizar Compra</h2></a>
+        </section>
+
+    </main>
+    <%- include("./includes/footer.ejs") %> 
+</body>
+</html>   

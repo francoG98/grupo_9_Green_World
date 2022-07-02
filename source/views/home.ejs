@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <%- include("./includes/head.ejs")  %>
+
+<body>
+    <%- include("./includes/header.ejs") %> 
+      
+    <main>
+        <img class ="banner" src="/assets/bannerGreenWorld.jpg" alt="banner">  
+        <nav class="main-nav-contenedor">
+            <% if (categorias && categorias.length > 0) { %>
+                <% categorias.forEach(element => { %>
+                    <a href="/<%=element.name%>" >
+                        <article>
+                        <img class="foto-categorias" src="<%= element.image %> " alt="Imagen de categoria" >
+                        <h3 class="nombre-categoria"><%= element.myusname %></h3>
+                        <p><%= element.description %> </p>
+                        </article> 
+                    </a>
+                <% }) %>
+            <% } %>
+        </nav >                     
+    </main>
+    <%- include("./includes/footer.ejs") %> 
+    
+    
+</body>
+</html>
