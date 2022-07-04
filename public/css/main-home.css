@@ -5,8 +5,6 @@
     font-family: "Anek Gujarati";
     }
 
-/*MAAAAAAIIIIINNNNN*/
-
 main{
     background-color:#f9f9f9;
     margin:0px;
@@ -62,15 +60,12 @@ img.foto-categorias{
     position: absolute;
     top: calc(50% - 10px)
 }
-#uno{
-   
-    left: calc(50% - 54px);
-}
+
+/*No se me ocurrio otra forma de hacerlo perdon*/
+#uno{left: calc(50% - 54px);}
 #dos{left: calc(50% - 40.5px)}
 #tres{left: calc(50% - 47px)}
-#cuatro{
-    
-    left: calc(50% - 66px)}
+#cuatro{left: calc(50% - 66px)}
 #cinco{left: calc(50% - 51.5px)}
 
 article p {

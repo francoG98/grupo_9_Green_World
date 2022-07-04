@@ -13,27 +13,15 @@ header{
     justify-content: space-between;
     background-color: #f9f9f9;
 }    
-/*.header-top-bar{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #f9f9f9;
-    align-items: center;
-    justify-content: space-between;
-    height: 40px;
-    width:100vw;*/
 .logo-nav{
     width: 220px;
     height: 32px;;
-    margin: 4px;
-    
+    margin: 4px  
 }
 .header-logo{
     width: 100%;
     height:32px;
-   
-
 }
-
 header section{
     width: 100%;
     background-color:black;
@@ -45,25 +33,18 @@ header section{
 header section h2{
     font-weight: normal;;
     color: #f9f9f9;;
-    font-size: 18px;
-    
-    
+    font-size: 18px;  
 }
-
-
 nav.chart-burger{
     display: flex;
     justify-content: flex-end;
     align-items: center;
     gap: 5px;
-    margin: 4px 10px;
-    
+    margin: 4px 10px; 
 }
 nav.chart-burger a{
     text-align:center;
     color:#f9f9f9;;
-    /*
-    background-color: #3e0b5e;*/
     background-color: #57CC99;
     box-sizing: border-box;
     height:32px;
@@ -71,15 +52,40 @@ nav.chart-burger a{
     width: 32px;
     padding-top:4.4px;
     border-radius: 3px
-  
 }
-
-
+#burger-menu{
+    position: fixed;
+    background-color:#57CC99;
+    top: 4px;
+    right:10px;
+    padding: 20px 50px;
+    height: auto;
+    width: auto;
+    visibility: hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    z-index: 20;
+    gap: 15px;
+    opacity: 0;
+    border-radius:3px;
+    border: 1px solid #5c3d99;
+    transition: all 500ms ease-in-out
+}
+#burger-menu:target{
+    visibility: visible;
+    opacity: 1
+}
+#burger-menu a{
+    border-bottom: 1px solid #5c3d99;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff
+}
 nav.header-top-nav-bar{
     display: none;
     justify-content: space-between;
-    width: 100%;
-    
+    width: 100%; 
 }
 nav.header-top-nav-bar ul{
     list-style: none;
@@ -92,46 +98,31 @@ nav.header-top-nav-bar ul{
 nav.header-top-nav-bar ul li{
     width: 50%
 }
-
-
+.header-bottom-nav-bar{
+    visibility: hidden;
+}
 @media(min-width:768px){
     .header-top-nav-bar{
         display: none;
         order: 2;
         width: 100vw
     }
-    
 }
 @media(min-width:1024px){
     body{background-color: #f9f9f9;
-
     }
     header{
         height: auto;
         max-width: 1400px;
         margin:auto
-
     }
-    /*.header-top-bar{
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #f9f9f9;
-        align-items: center;
-        justify-content: space-between;
-        height: 80px;
-        width:100vw;
-        max-width: 1400px;
-        margin:auto
-    }*/
     .logo-nav{
         width: 300px;
-        height: 50px
-             
+        height: 50px       
     }   
     .header-logo{
         height:100%;       
-    }
-    
+    }    
     nav.header-top-nav-bar{
         height:40px;
         align-items: center; 
@@ -142,14 +133,12 @@ nav.header-top-nav-bar ul li{
         width:auto;
         margin:7px;
         order:3
-    }
-    
+    }    
     nav.chart-burger{
         display: none;
         order:5;
         width: 100%
-    }
-   
+    }  
     nav.header-top-nav-bar a{
         text-decoration: none;
         font-size: 18px;
@@ -159,7 +148,6 @@ nav.header-top-nav-bar ul li{
         border-radius:3px;
         transition: opacity 200ms
     }
-
     nav.header-top-nav-bar a:hover{
         opacity: 0.7
     }
@@ -172,9 +160,7 @@ nav.header-top-nav-bar ul li{
         font-weight: normal;
         background-color:black;
         color: #f9f9f9;
-        font-size: 20px;
-        
-        
+        font-size: 20px;        
     }
     #pala{
         transition: color 500ms, font-size 500ms
@@ -197,7 +183,6 @@ nav.header-top-nav-bar ul li{
         color:#90c0e0;
         font-size: 40px
     }
-    
     .header-bottom-nav-bar{
         order:5;
         display:flex;
@@ -205,15 +190,13 @@ nav.header-top-nav-bar ul li{
         align-items: center;
         justify-content: center;
         gap:50px;
-        width: 100%
+        width: 100%;
+        visibility:visible
     }
-
-
     .header-bottom-nav-bar a{
         text-decoration: none;
         font-size: 24px;
         color: black;
-        
         transition: font-size 200ms
     }
     .header-bottom-nav-bar a:hover{
