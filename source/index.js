@@ -21,6 +21,7 @@ app.use(public)
 app.use(require("./routes/home.routes"))
 app.use( require("./routes/user.routes"))
 app.use(require("./routes/chart.routes"))
+app.use("/products",require("./routes/products.routes"))
 
 
 
@@ -30,4 +31,4 @@ app.use(require("./routes/chart.routes"))
 
 app.get("/product", (req, res) =>res.sendFile(path.join(__dirname,"views/productBacklog.html")))
 
-app.get("/store", (req, res) =>res.sendFile(path.join(__dirname,"views/store.html")))
+

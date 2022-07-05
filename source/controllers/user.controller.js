@@ -1,6 +1,6 @@
 module.exports = {
     login: (req,res) =>{
-        return res.render("login",{
+        return res.render("users/login",{
             title: "Inicia Sesión",
             styles: [
                 "main-login",
@@ -10,7 +10,7 @@ module.exports = {
         })
     },
     register: (req,res) =>{
-        return res.render("register",{
+        return res.render("users/register",{
             title: "Registrate",
             styles: [
                 "main-register",

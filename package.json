@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon source/index.js -e json,js,mjs,ejs",
-    "start": "node source/index.js"
+    "start": "nodemon source/index.js -e json,js,mjs,ejs"
   },
   "keywords": [],
   "author": "",

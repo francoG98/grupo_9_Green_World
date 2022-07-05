@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../includes/head.ejs")  %>
+<body>
+    <%- include("../includes/header-admin.ejs")  %>
+    <main>
+        <form method="post" action="" enctype="multipart/form-data"></form>
+        <label for="name">Nombre del Producto</label>
+        <input type="text" name="name" id="name">
+        <label for="description">Descripción del Producto</label>
+        <input type="text" name="description" id="description">
+        <label for="image">Imagen del Producto</label>
+        <input type="file" name="product-image" id="image">
+        <label for="category">Categoría del Producto</label>
+        <select name="category" id="category">
+            <option value="accesorios">ACCESORIOS</option>
+            <option value="aditivos">ADITIVOS</option>
+            <option value="medicinal">MEDICINAL</option>
+            <option value="parafernalia">PARAFERNALIA</option>
+            <option value="sustratos">SUSTRATOS</option>
+        </select>
+        <label for="color">Color del Producto</label>
+        <input type="text" name="color" id="color">
+        <label for="price">Precio del Producto</label>
+        <input type="number" name="price" id="price">
+        <button type="submit">Crear Producto</button>
+    </main>
+    
+</body>
+</html>
