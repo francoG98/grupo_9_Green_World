@@ -8,8 +8,9 @@
     <%- include("./includes/header.ejs") %> 
       
     <main>
-        <!-- aqui debe ir el img dentro de un figure-->
-        <img class ="banner" src="/assets/bannerGreenWorld.jpg" alt="banner">  
+        <figure class ="banner">
+            <img src="/assets/bannerGreenWorld.jpg" alt="banner"> 
+        </figure> 
         <nav class="main-nav-contenedor">
             <% if (categorias && categorias.length > 0) { %>
                 <% categorias.forEach(element => { %>
