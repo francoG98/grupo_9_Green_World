@@ -5,15 +5,9 @@
     <%- include("../includes/header.ejs") %> 
     <main>
           <form method="post" action="">
-            <p>
-                <input type="text" name="nombre-apellido" placeholder="Nombre y Apellido" required>
-            </p>
-            <p>
-                <input type="text" name="usuario" placeholder="Nombre de Usuario" required>
-            </p>
-            <p>
-                <input type="mail" name="mail" placeholder="Correo Electrónico" required>
-            </p>
+            <input type="text" name="nombre-apellido" placeholder="Nombre y Apellido" required>
+            <input type="text" name="usuario" placeholder="Nombre de Usuario" required>
+            <input type="mail" name="mail" placeholder="Correo Electrónico" required>
             <p class="cultivo">
                 <label for="cultivo"> Cultivas ?</label>
                     <select name="cultivo" id="cultivo" required>
@@ -23,13 +17,11 @@
                         <option value="ninguna">No cultivo</option>
                     </select>
             </p>
-            <p>
-                <input type="password" name="password" placeholder="Contraseña" required>
-            </p>
-            <p>
-                <input type="password" name="repetir-password" placeholder="Repetir Contraseña" required>
-            </p>
-            <a href="./home.html"><button type="submit" name="registrar"> Envíar </button></a>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            <input type="password" name="repetir-password" placeholder="Repetir Contraseña" required>
+            <nav>
+                <a href="./home.html"><button type="submit" name="registrar"> Envíar </button></a>
+            </nav>
     </main>
     <%- include("../includes/footer.ejs") %> 
 </body>

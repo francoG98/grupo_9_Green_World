@@ -4,19 +4,15 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-           <form method="post" action="">
-            <p>
-                <input type="text" name="usuario" placeholder="Usuario" required>
-            </p>
-            <p>
-                <input type='password' name='password' placeholder='Contraseña' required>
-            </p>
-            <p>
-                <input type='checkbox' name='mantener-sesion'> Mantener sesión iniciada </input><span class="checkmark"></span>
-            </p>
-            <p><a href="" class="recuperar-contraseña"> Olvide mi Contraseña </a></p>
-            <a href="./home.html"><button type="submit" name="registrar"> Envíar </button></a>
-           </form>
+        <form method="post" action="">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type='password' name='password' placeholder='Contraseña' required>
+            <input type='checkbox' name='mantener-sesion'> Mantener sesión iniciada </input><span class="checkmark"></span>
+            <nav>
+                <a href="" class="recuperar-contraseña"> Olvide mi Contraseña </a>
+                <a href="./home.html"><button type="submit" name="registrar"> Envíar </button></a>
+            </nav>
+        </form>
     </main>
     <%- include("../includes/footer.ejs") %> 
     
