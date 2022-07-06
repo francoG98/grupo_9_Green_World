@@ -36,7 +36,9 @@
                     <img class="product-image" src="/assets/detalle-producto.jpg" alt="imagen del Producto">
                     <p class="producto">Grinder</p>
                     <p class="precio">$650,73</p>
-                    <input class="cantidad" type="number" id="quantity" name="quantity" min="1" max="10">
+                    <form method="post" action="">
+                        <input class="cantidad" type="number" id="quantity" name="quantity" min="1" max="10">
+                    </form>
                     <p class="subtotal">=cantidad*precio</p>
                 </article>
             </section>
@@ -64,7 +66,6 @@
                 <a href="" class="confirmar-compra"><h2>Finalizar Compra</h2></a>
             </nav>
         </section>
-
     </main>
     <%- include("./includes/footer.ejs") %> 
 </body>
