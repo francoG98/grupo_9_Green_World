@@ -6,13 +6,13 @@
     <main>
         <form method="post" action="" enctype="multipart/form-data">
             <label for="name">Nombre del Producto</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
             <label for="description">Descripción del Producto</label>
-            <textarea name="description" id="description">Contenido</textarea>
+            <textarea name="description" id="description" required></textarea>
             <label for="image">Imagen del Producto</label>
-            <input type="file" name="product-image" id="image">
+            <input type="file" name="product-image" id="image" required>
             <label for="category">Categoría del Producto</label>
-            <select name="category" id="category">
+            <select name="category" id="category" required>
                 <option value="accesorios">ACCESORIOS</option>
                 <option value="aditivos">ADITIVOS</option>
                 <option value="medicinal">MEDICINAL</option>
@@ -20,9 +20,9 @@
                 <option value="sustratos">SUSTRATOS</option>
             </select>
             <label for="color">Color del Producto</label>
-            <input type="text" name="color" id="color">
+            <input type="text" name="color" id="color" required>
             <label for="price">Precio del Producto</label>
-            <input type="number" name="price" id="price">
+            <input type="number" name="price" id="price" required>
             <button type="submit">Crear Producto</button>
         </form>
     </main>
