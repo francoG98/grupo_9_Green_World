@@ -4,24 +4,20 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-          <form method="post" action="">
+          <form method="post" action="/">
             <input type="text" name="nombre-apellido" placeholder="Nombre y Apellido" required>
             <input type="text" name="usuario" placeholder="Nombre de Usuario" required>
             <input type="mail" name="mail" placeholder="Correo Electrónico" required>
-            <p class="cultivo">
-                <label for="cultivo"> Cultivas ?</label>
-                    <select name="cultivo" id="cultivo" required>
-                        <option value="Indoor">Indoor</option>
-                        <option value="outdoor">Outdoor</option>
-                        <option value="ambas">ambas</option>
-                        <option value="ninguna">No cultivo</option>
-                    </select>
-            </p>
+            <label for="cultivo"> Cultivas ?</label>
+                <select name="cultivo" id="cultivo" required>
+                    <option value="Indoor">Indoor</option>
+                    <option value="outdoor">Outdoor</option>
+                    <option value="ambas">Ambas</option>
+                    <option value="ninguna">No cultivo</option>
+                </select>
             <input type="password" name="password" placeholder="Contraseña" required>
             <input type="password" name="repetir-password" placeholder="Repetir Contraseña" required>
-            <nav>
-                <a href="./home.html"><button type="submit" name="registrar"> Envíar </button></a>
-            </nav>
+            <button type="submit" name="registrar"> Envíar </button>
             </form>
     </main>
     <%- include("../includes/footer.ejs") %> 

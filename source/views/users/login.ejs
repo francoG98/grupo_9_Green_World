@@ -4,14 +4,14 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-        <form method="post" action="">
+        <form method="post" action="/">
             <input type="text" name="usuario" placeholder="Usuario" required>
             <input type='password' name='password' placeholder='Contraseña' required>
-            <input type='checkbox' name='mantener-sesion'> Mantener sesión iniciada </input><span class="checkmark"></span>
+            <input type='checkbox' name='mantener-sesion'> Mantener sesión iniciada </input>
             <nav>
                 <a href="" class="recuperar-contraseña"> Olvide mi Contraseña </a>
-                <a href="./home.html"><button type="submit" name="registrar"> Envíar </button></a>
             </nav>
+            <button type="submit" name="registrar"> Envíar </button>
         </form>
     </main>
     <%- include("../includes/footer.ejs") %> 
