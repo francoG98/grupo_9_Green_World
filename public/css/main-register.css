@@ -11,35 +11,37 @@ main{
 form{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 10px
 }
 button{
     text-decoration: none;
     font-size: 18px;
+    width:100px;
     color:#f9f9f9;
     background-color:#57CC99;
-    Width: 40%;
     padding:7px 6px 5px 6px;
     border: none;
     transition: opacity 200ms;
     justify-content: center;
     text-align: center;
-    margin-left: 30%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    margin-top: 20px;
     border-radius: 3px;
 }
 input{
-    margin-left: 30%;
+    
     margin-top: 1%;
     border: 3px solid #5c3d99;
-    width: 40%;
+    width: 80%;
+    max-width: 700px;
     text-align: center;
     font-size: 16px;
     border-radius: 3px;
 }
 select{
-    margin-left: 30%;
-    width: 40%;
+    
+    width: 80%;
+    max-width: 700px;
     border: 3px solid #5c3d99;
     text-align: center;
     font-size: 16px;

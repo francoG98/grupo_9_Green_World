@@ -8,30 +8,49 @@ main{
     padding: 100px 0px 100px 0px;
     background-color: lavender;
 }
+form{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px
+}
 button{
     text-decoration: none;
     font-size: 18px;
     color:#f9f9f9;
     background-color:#57CC99;
-    Width: 40%;
+    Width: 150px;
     padding:7px 6px 5px 6px;
     border: none;
     transition: opacity 200ms;
     justify-content: center;
     text-align: center;
-    margin-left: 30%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    border-radius: 3px;    
+    border-radius: 3px;
+    margin-top: 15px    
 }
 button:hover{
     opacity: 0.7
 }
+
+fieldset{
+    display: flex;
+    gap:10px;
+    width: 80%;
+    max-width: 600px;
+    align-content: center;
+    border: none;
+    padding:5px
+}
+input.checkbox{
+    width: 10px;
+    margin:0;
+    padding:0
+}
 input{
-    margin-left: 30%;
     margin-top: 1%;
     border: 3px solid #5c3d99;
-    width: 40%;
+    width: 80%;
+    max-width: 600px;
     text-align: center;
     font-size: 16px;
     border-radius: 3px;
@@ -40,8 +59,7 @@ input{
     text-decoration: none;
     font-size: 16px;
     color: #5c3d99;
-    margin-top: 1%;
-    margin-left: 30%;
+
     transition: all 500ms;
 }
 .recuperar-contraseña:hover{
@@ -49,10 +67,13 @@ input{
     color: #57CC99;
     border-radius: 3px;
 }
+
+/*
 input[type="checkbox"]{
     color: #5c3d99;
-    Width: 1%;
+    width: 80%;
+    max-width: 600px;
     align-items: center;
     justify-content: center;
     
-}
+}*/

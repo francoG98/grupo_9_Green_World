@@ -7,11 +7,14 @@
         <form method="post" action="/">
             <input type="text" name="usuario" placeholder="Usuario" required>
             <input type='password' name='password' placeholder='Contraseña' required>
-            <input type='checkbox' name='mantener-sesion'> Mantener sesión iniciada </input>
+            <fieldset>
+                <input class="checkbox" type='checkbox' name='mantener-sesion' id="mantener-sesion">
+                <label for="mantener-sesion">Mantener sesión iniciada</label>
+            </fieldset>
             <nav>
                 <a href="" class="recuperar-contraseña"> Olvide mi Contraseña </a>
             </nav>
-            <button type="submit" name="registrar"> Envíar </button>
+            <button type="submit" name="registrar"> Iniciar Sesión </button>
         </form>
     </main>
     <%- include("../includes/footer.ejs") %> 
