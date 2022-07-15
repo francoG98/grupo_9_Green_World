@@ -4,8 +4,8 @@ const {categories, create, oneProduct, list} = require("../controllers/product.c
 // requerir el controlador;
 
 router.get("/create", create)
-router.get("/categorias", categories)
-router.get("/productBacklog", oneProduct)
+router.get("/categorias/:category?", categories)
+router.get("/detail/:product?", oneProduct)
 router.get("/list", list)
 
 module.exports = router;

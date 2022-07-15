@@ -14,7 +14,7 @@
         <nav class="main-nav-contenedor">
             <% if (categorias && categorias.length > 0) { %>
                 <% categorias.forEach(element => { %>
-                    <a href="/<%=element.name%>" >
+                    <a href="/products/categorias" >
                         <article>
                             <img class="foto-categorias" src="<%= element.image %> " alt="Imagen de categoria" >
                             <h3 class="nombre-categoria" id="<%=element.id%>"><%= element.myusname %></h3>
