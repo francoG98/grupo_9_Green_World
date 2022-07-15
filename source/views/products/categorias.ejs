@@ -8,26 +8,22 @@
     <%- include("../includes/header.ejs") %> 
       
     <main>
-        <section>
-            <figure class ="banner">
-                <h1>CATEGORIA</h1>
-                <img src="/assets/banner-recortado.jpg" alt="banner" width="100%"> 
-            </figure> 
-            <section class="productos">
-                <% for( let index = 1; index < 10; index++ ) { %>
-                    <article>
-                        <nav class="producto">
-                            <a href="/products/detail/<%= index %> " ><img class="foto-producto" src="/assets/detalle-producto.jpg" alt="Imagen de producto" width="100%"></a>
-                            <a class="nombre-producto" href="/products/detail/<%= index %> " ><h3>Nombre Producto</h3></a>
-                        </nav>
+        <figure class ="banner">
+            <h1>CATEGORIA</h1>
+            <img src="/assets/banner-recortado.jpg" alt="banner" width="100%"> 
+        </figure> 
+        <section class="productos">
+            <% for( let index = 1; index < 10; index++ ) { %>
+                <article>                    
+                    <a href="/products/detail/<%= index %> " ><img class="foto-producto" src="/assets/detalle-producto.jpg" alt="Imagen de producto" width="100%"></a>                        
+                    <nav class="datos-chart">
+                        <a class="nombre-producto" href="/products/detail/<%= index %> " ><h3>Nombre Producto</h3></a>
                         <p>$ 650,73</p>
-                        <nav>
-                            <a href="" class="confirmar-compra"><h2>Agregar al Carrito</h2></a>
-                        </nav>
-                    </article>
-                <% } %>
-            </section >              
-        </section>
+                        <a href="" class="confirmar-compra"><h2>Agregar al Carrito</h2></a>
+                    </nav>
+                </article>
+            <% } %>
+        </section >              
     </main>
 
     <%- include("../includes/footer.ejs") %> 

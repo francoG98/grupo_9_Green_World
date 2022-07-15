@@ -6,36 +6,81 @@
 }
 
 main{
+    background-color: #f9f9f9;
+    padding-bottom:10px
+      
+}
+.banner{
+    width: 100vw;
+    height: 25vh;
+    overflow: hidden;
+    position:relative;
     display: flex;
-    flex-wrap: wrap;
+    justify-content:center;
+    align-items:center
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+.banner h1{
+    position: absolute;
+    z-index: 700;
+    text-transform: uppercase;
+    color: transparent;
+    text-shadow: 0 0 0 snow, 0.2rem 0.2rem 0.4rem #5c3d99
 }
 
 .productos{
+    width: 90vw;
+    margin: 10px auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    gap:10px
 }
 
-article{
-    margin: 1px;
+.productos article{
+    flex-basis: 100%;
     box-shadow: 0px 0px 1px rgb(100 100 100)
 }
 
-.producto:hover{
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+.foto-producto{
+    width:100%
 }
 
+.datos-chart{
+    padding: 10px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-content: center;
+    background-color:white;
+    
+
+}
+
+
+
 .nombre-producto{
+    flex-basis: 100%;
     text-decoration: none;
-    color: #5c3d99
+    color: #5c3d99;
+    
 }
 
 .nombre-producto h3{
-    text-align: end;
-    margin-right: 10px;
+    text-transform : uppercase;
+    text-align: center;
+}
+.datos-chart p{
+    flex-basis: 100%;
+    text-align: center;
 }
 
 .confirmar-compra{
-    margin-top: 20px;
     text-decoration:none;
     display:flex;
     width: 200px;
@@ -43,20 +88,40 @@ article{
     text-align: center;
     background-color: #57CC99;
     color: white;
-    margin: 20px auto 10px auto;
     border-radius: 3px;
-    height: 40px
+    height: 40px;
+    opacity: 1;
+    transition:all 300ms
 }
-
+.confirmar-compra:hover{
+    opacity: 0.7
+}
 .confirmar-compra h2{
     padding-top: 3px;
     font-weight: 400;
 }
 
-@media(min-width:480px){
+@media(min-width:768px){
+    .productos article{
+        flex-basis:49%
+    }
+
     
 }
 
 @media(min-width:1024px){
-    
+    .productos article{
+        flex-basis:24%;
+        margin-top: 10px;
+        box-shadow: none;
+        transition: all 300ms;
+    }
+    .productos article:hover{
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    }
+    .datos-chart p{
+        font-size: 18px;
+        font-weight: 400
+    }
 }
