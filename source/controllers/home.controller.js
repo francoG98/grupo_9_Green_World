@@ -9,9 +9,7 @@ module.exports = {
                 "footer"
             ],
             categorias: categorias()
-        },
-        
-        )
+        })
     }
 }
     

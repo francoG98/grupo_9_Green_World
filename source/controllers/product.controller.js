@@ -1,4 +1,4 @@
-const {categorias} = require('../models/products.model')
+const {categorias, index} = require('../models/products.model')
 module.exports = {
     create: (req,res)=>{
         return res.render("products/create",{
@@ -18,14 +18,35 @@ module.exports = {
   //  }
   
     categories: (req,res)=>{
-      return res.render("products/categorias",{
-        title: "Categorias",
-        styles: [
-          "main-categories",
-          "header",
-          "footer"
-    ]
-    })
+      let categoria = req.params.category;
+      let productos = index()
+      let pertenecen = productos.filter(element=>{
+        if (element.category == categoria)
+        return element
+      })
+      if(pertenecen == ""){
+        return res.render("home",{
+          title: "Green World",
+          styles: [
+              "main-home",
+              "header",
+              "footer"
+          ],
+          categorias: categorias()
+      })
+      } else {
+        return res.render("products/categorias",{
+          products: pertenecen,
+          title: categoria.toUpperCase(),
+          styles: [
+            "main-categories",
+            "header",
+            "footer"
+      ]
+      })
+
+      }
+      
     },
 
     oneProduct: (req,res)=>{
