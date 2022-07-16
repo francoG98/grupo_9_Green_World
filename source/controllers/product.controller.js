@@ -1,23 +1,6 @@
 const {categorias, index} = require('../models/products.model')
 module.exports = {
-    create: (req,res)=>{
-        return res.render("products/create",{
-          title: "Crear Producto",
-          styles: [
-            "main-create",
-            "header",
-            "footer"
-        ]
-        })
-      },
-    //categories: (req,res)=>{
-     //   let idCategoria = req.params.idCategoria;
-  //      categorias.forEach(element=>
-  //          {
-  //              if(element.name == idCategoria)
-    //        })
-  //  }
-  
+     
     categories: (req,res)=>{
       let categoria = req.params.category;
       let productos = index()
@@ -34,7 +17,7 @@ module.exports = {
               "footer"
           ],
           categorias: categorias()
-      })
+        })
       } else {
         return res.render("products/categorias",{
           products: pertenecen,
@@ -43,11 +26,25 @@ module.exports = {
             "main-categories",
             "header",
             "footer"
-      ]
-      })
-
+          ]
+        })
       }
       
+    },
+    list: (req,res)=>{
+      let products = index();
+      if(req.query && req.query.name){
+        products = products.filter(product=> product.name.toLowerCase().indexOf(req.query.name.toLowerCase())> -1)
+      }
+      return res.render("products/list",{
+        title: "Listado de Productos",
+        products: products,
+        styles: [
+          "main-list",
+          "header",
+          "footer"
+        ]
+      })
     },
 
     oneProduct: (req,res)=>{
@@ -57,19 +54,17 @@ module.exports = {
           "product",
           "header",
           "footer"
-    ]
-    })
+        ]
+      })
     },
-
-    list: (req,res)=>{
-      return res.render("products/list",{
-        title: "Listado de Productos",
+    create: (req,res)=>{
+      return res.render("products/create",{
+        title: "Crear Producto",
         styles: [
-          "main-list",
+          "main-create",
           "header",
           "footer"
-    ]
-    })
+        ]
+      })
     }
-  
 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../includes/head.ejs")  %>
+<body>
+    <%- include("../includes/header.ejs")  %>
+    <main>
+       <h2>Todos Los Productos ( <%= products.length %> )</h2>
+       <form action="/products/" method="get">
+        <input type="text" name="name" id="name" placeholder="Nombre del Producto">
+        <button type="submit">Search</button>
+    </form>
+    <section>
+        <% products.forEach(element => { %> 
+        <article>
+            <img src="/assets/products-images/<%= element.image %>" alt="Imagen de producto">
+            <h3><%= element.name %> </h3>
+            <nav>
+                <a href="/products/edit/<%=element.id%>">Editar Producto</a>
+                <a href="products/delete/<%=element.id%>">Eliminar Producto</a>
+            </nav>
+        </article>
+        <% }) %>
+    </section>
+
+    </main>
+    <%- include("../includes/footer.ejs")  %>
+</body>
+</html>
