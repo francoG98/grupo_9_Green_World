@@ -5,7 +5,8 @@ module.exports = {
           title: "Crear Producto",
           styles: [
             "main-create",
-            "header-admin",
+            "header",
+            "footer"
         ]
         })
       },
@@ -65,7 +66,7 @@ module.exports = {
         title: "Listado de Productos",
         styles: [
           "main-list",
-          "header-admin",
+          "header",
           "footer"
     ]
     })
