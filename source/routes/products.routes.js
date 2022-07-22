@@ -1,9 +1,11 @@
 const {Router}= require("express")
+const {extname, resolve}=require("path")
 const router = Router()
 const {categories, create, created, oneProduct, list} = require("../controllers/product.controller")
 const multer = require('multer');
-const storage = require('../modules/storage.js')
+const storage = require('../modules/storage')
 const upload = multer({storage: storage('products-images')});
+
 // requerir el controlador;
 
 router.get("/create", create)

@@ -2,8 +2,8 @@ const {resolve} = require ("path")
 const express = require ("express")
 const {port, callback} = require("./modules/port")
 const public = require ("./modules/public")
-const uploads = require("./modules/uploads")
 const app = express()
+
 //falta mehotd-override
 
 app.listen(port, callback)
@@ -13,7 +13,7 @@ app.set ("view engine", "ejs");
 
 
 app.use(public)
-app.use (uploads);
+
 app.use(express.urlencoded({extended:false}));
 app.use(express.json())
 //app.use(method('m'))

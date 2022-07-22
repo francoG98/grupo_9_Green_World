@@ -1,11 +1,47 @@
 [
-    {
-        "id": 1,
-        "name": "Grinder Tres Pisos",
-        "description": "Picador de metal con 3 espacios, uno para picado con base de agujeros y rejilla, otro para la recoleccion de resina y el restante para guardar los restos",
-        "image":"detalle-producto.jpg",
-        "category": "parafernalia",
-        "color": "Dorado",
-        "price": 650
-    }
+  {
+    "id": 1,
+    "name": "Grinder Tres Pisos",
+    "description": "Picador de metal con 3 espacios, uno para picado con base de agujeros y rejilla, otro para la recoleccion de resina y el restante para guardar los restos",
+    "image": "detalle-producto.jpg",
+    "category": "parafernalia",
+    "color": "Dorado",
+    "price": 650
+  },
+  {
+    "id": 2,
+    "name": "asd",
+    "description": "asd",
+    "image": "product-image-1658531692680-902293328.jfif",
+    "category": "medicinal",
+    "color": "asd",
+    "price": 345
+  },
+  {
+    "id": 3,
+    "name": "asd",
+    "description": "asd",
+    "image": "product-image-1658531707868-923566818.jfif",
+    "category": "medicinal",
+    "color": "asd",
+    "price": 345
+  },
+  {
+    "id": 4,
+    "name": "asd",
+    "description": "asd",
+    "image": "product-image-1658531756886-798558614.jpg",
+    "category": "medicinal",
+    "color": "asd",
+    "price": 345
+  },
+  {
+    "id": 5,
+    "name": "asd",
+    "description": "asd",
+    "image": "product-image-1658532018845-884778168.jpg",
+    "category": "parafernalia",
+    "color": "asd",
+    "price": 354
+  }
 ]

@@ -23,7 +23,7 @@ const model ={
             image: data.image,
             category: data.category,
             color: data.color,
-            price: data.price
+            price: parseInt(data.price)
         })
     },
     write: function(data) {
