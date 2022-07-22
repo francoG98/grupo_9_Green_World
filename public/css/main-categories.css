@@ -44,7 +44,7 @@ main{
 
 .productos article{
     flex-basis: 100%;
-    box-shadow: 0px 0px 1px rgb(100 100 100)
+    box-shadow: 0px 0px 1px #5c3d99(100 100 100)
 }
 
 .foto-producto{
@@ -61,8 +61,6 @@ main{
     
 
 }
-
-
 
 .nombre-producto{
     flex-basis: 100%;

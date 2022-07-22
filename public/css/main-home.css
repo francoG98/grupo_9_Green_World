@@ -179,7 +179,7 @@ article p {
         transition: box-shadow 500ms
     }
     nav.main-nav-contenedor a article:hover{
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        box-shadow: 0px 0px 10px #5c3d99;
     }
     nav.main-nav-contenedor a article img{
         height: auto;
