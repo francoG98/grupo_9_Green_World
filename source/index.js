@@ -1,20 +1,23 @@
-const {join} = require ("path")
+const {resolve} = require ("path")
 const express = require ("express")
-const app = express()
 const {port, callback} = require("./modules/port")
-const public = require ("./modules/public") 
+const public = require ("./modules/public")
+const uploads = require("./modules/uploads")
+const app = express()
 //falta mehotd-override
 
 app.listen(port, callback)
-app.set ("views", join(__dirname, "views"));
+app.set ("views", resolve(__dirname, "views"));
 app.set ("view engine", "ejs");
 
 
 
 app.use(public)
-//app.use(express.urlencoded({extended:false})); // req.body (POST) y req.query (GET)
-//app.use(express.json())
-//app.use(method("m")) 
+app.use (uploads);
+app.use(express.urlencoded({extended:false}));
+app.use(express.json())
+//app.use(method('m'))
+
 
 
 //LO DE ACA ABAJO SON LAS RUTAS

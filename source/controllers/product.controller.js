@@ -1,4 +1,4 @@
-const {categorias, index} = require('../models/products.model')
+const { index,create, write} = require('../models/products.model')
 module.exports = {
      
     categories: (req,res)=>{
@@ -55,5 +55,13 @@ module.exports = {
           "footer"
         ]
       })
-    }
+    },
+    created:(req,res)=>{
+      req.body.image = req.files[0].filename;
+      let newProduct=create(req.body)
+      let products = index();
+      products.push(newProduct);
+      write(products)
+      return res.redirect('/products/')
+  }
 }
