@@ -8,17 +8,6 @@ module.exports = {
         if (element.category == categoria)
         return element
       })
-      if(pertenecen == ""){
-        return res.render("home",{
-          title: "Green World",
-          styles: [
-              "main-home",
-              "header",
-              "footer"
-          ],
-          categorias: categorias()
-        })
-      } else {
         return res.render("products/categorias",{
           products: pertenecen,
           title: categoria.toUpperCase(),
@@ -28,7 +17,7 @@ module.exports = {
             "footer"
           ]
         })
-      }
+      
       
     },
     list: (req,res)=>{

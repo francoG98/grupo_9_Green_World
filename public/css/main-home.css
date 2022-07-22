@@ -12,10 +12,10 @@ main{
 
 
 .banner{
+    height:200px;
+    width:100vw;
     margin: 0 auto;
     overflow: hidden;
-    height:400px;
-    width:1200px;
     position: relative;
 }
 
@@ -142,6 +142,10 @@ article p {
         padding:  0 10px 10px 10px;
         color:#57CC99;
     }
+    .banner{
+        height:400px;
+        width:100vw;
+    }
 }
 
 @media(min-width:1024px){
@@ -209,6 +213,10 @@ article p {
     }
     nav.main-nav-contenedor a article:hover p{
         display: block
+    }
+    .banner{
+        height:400px;
+        max-width:1200px;
     }
       
 }
