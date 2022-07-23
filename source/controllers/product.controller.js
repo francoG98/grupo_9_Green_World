@@ -36,6 +36,9 @@ module.exports = {
 
     detail: (req,res)=>{
       let product = one(parseInt(req.params.idProduct))
+      if(!product){
+      return res.redirect('/products/')
+      }
       res.render("products/productBacklog",{
         title: "Detalle del Producto",
         product: product,
