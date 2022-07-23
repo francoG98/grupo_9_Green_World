@@ -81,5 +81,19 @@ module.exports = {
           "footer"
         ]
       })
+    },
+    edited:(req, res)=>{
+      let product = one(parseInt(req.params.id))
+      let products = index()
+      let productsEdited = products.map(p=>{
+        if(p.id == product.id){
+          p.name = req.body.name
+          p.description = req.body.description
+          p.price = parseInt(req.body.price)
+          p.color = req.body.color
+          p.image = req.files && req.files.length > 0 ? req.files[0].filename : p.image
+        }
+        return p
+      })
     }
 }
