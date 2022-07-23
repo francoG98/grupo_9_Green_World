@@ -11,6 +11,12 @@ const model ={
         let data = readFileSync(prods)
         return JSON.parse(data)
     },
+    one:function(id){
+        let file = resolve(__dirname,'../data','products.json');
+        let data = readFileSync(file, {encoding: "utf-8"});
+        let products = JSON.parse(data);
+        return products.find(product => product.id === id)
+      },
     create:function(data){
         let file = resolve(__dirname,'../data','products.json')
         let datosViejos = readFileSync(file, {encoding: "utf-8"})

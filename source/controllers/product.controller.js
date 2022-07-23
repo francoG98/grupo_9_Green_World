@@ -1,4 +1,4 @@
-const { index,create, write} = require('../models/products.model')
+const { index,create, write, one} = require('../models/products.model')
 module.exports = {
      
     categories: (req,res)=>{
@@ -16,9 +16,7 @@ module.exports = {
             "header",
             "footer"
           ]
-        })
-      
-      
+        })      
     },
     list: (req,res)=>{
       let products = index();
@@ -36,15 +34,30 @@ module.exports = {
       })
     },
 
-    oneProduct: (req,res)=>{
-      return res.render("products/productBacklog",{
+    detail: (req,res)=>{
+      let product = one(parseInt(req.params.idProduct))
+      res.render("products/productBacklog",{
         title: "Detalle del Producto",
-        styles: [
+        product: product,
+        styles:[
           "product",
           "header",
           "footer"
         ]
       })
+
+      //if(!product){
+      //return res.redirect('/products/')
+      //}
+      //return res.render('products/productBacklog', {
+      //    title: 'Detalle del Producto',
+      //    product:product,
+      //    styles: [
+      //      "product",
+      //      "header",
+      //      "footer"
+      //    ]
+      //})
     },
     create: (req,res)=>{
       return res.render("products/create",{

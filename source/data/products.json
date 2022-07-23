@@ -43,5 +43,14 @@
     "category": "parafernalia",
     "color": "asd",
     "price": 354
+  },
+  {
+    "id": 6,
+    "name": "asd",
+    "description": "asd",
+    "image": "product-image-1658534224992-303272459.PNG",
+    "category": "medicinal",
+    "color": "asd",
+    "price": 3424
   }
 ]
