@@ -4,15 +4,15 @@
 <body>
     <%- include("../includes/header.ejs")  %>
     <main>
-        <form method="post" action="" enctype="multipart/form-data">
+        <form method="post" action="/products/edit/<%=product.id %>?m=PUT" enctype="multipart/form-data">
             <label for="name">Nombre del Producto</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" value="<%=product.name %>">
             <label for="description">Descripción del Producto</label>
-            <textarea name="description" id="description">Contenido</textarea>
+            <textarea name="description" id="description" autocomplete="off"><%=product.description %></textarea>
             <label for="image">Imagen del Producto</label>
-            <input type="file" name="product-image" id="image">
+            <input type="file" name="product-image" id="image" autocomplete="off">
             <label for="category">Categoría del Producto</label>
-            <select name="category" id="category">
+            <select name="category" id="category" value="<%=product.category %>">
                 <option value="accesorios">ACCESORIOS</option>
                 <option value="aditivos">ADITIVOS</option>
                 <option value="medicinal">MEDICINAL</option>
@@ -20,10 +20,10 @@
                 <option value="sustratos">SUSTRATOS</option>
             </select>
             <label for="color">Color del Producto</label>
-            <input type="text" name="color" id="color">
+            <input type="text" name="color" id="color" value="<%=product.color %>">
             <label for="price">Precio del Producto</label>
-            <input type="number" name="price" id="price">
-            <button type="submit">Crear Producto</button>
+            <input type="number" name="price" id="price" value="<%=product.price %>">
+            <button type="submit">Actualizar datos del producto</button>
         </form>
     </main>
     <%- include("../includes/footer.ejs")  %>

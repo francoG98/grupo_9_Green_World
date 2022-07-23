@@ -48,19 +48,6 @@ module.exports = {
           "footer"
         ]
       })
-
-      //if(!product){
-      //return res.redirect('/products/')
-      //}
-      //return res.render('products/productBacklog', {
-      //    title: 'Detalle del Producto',
-      //    product:product,
-      //    styles: [
-      //      "product",
-      //      "header",
-      //      "footer"
-      //    ]
-      //})
     },
     create: (req,res)=>{
       return res.render("products/create",{
@@ -79,5 +66,20 @@ module.exports = {
       products.push(newProduct);
       write(products)
       return res.redirect('/products/')
-  }
+  },
+    edit:(req, res)=>{
+      let product = one(parseInt(req.params.id))
+      if(!product){
+        return res.redirect('/products/')
+      }
+      return res.render('products/edit', {
+        title: "Editar el producto",
+        product: product,
+        styles: [
+          "main-create",
+          "header",
+          "footer"
+        ]
+      })
+    }
 }

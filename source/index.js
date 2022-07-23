@@ -3,8 +3,8 @@ const express = require ("express")
 const {port, callback} = require("./modules/port")
 const public = require ("./modules/public")
 const app = express()
+const method = require("method-override")
 
-//falta mehotd-override
 
 app.listen(port, callback)
 app.set ("views", resolve(__dirname, "views"));
@@ -16,7 +16,7 @@ app.use(public)
 
 app.use(express.urlencoded({extended:false}));
 app.use(express.json())
-//app.use(method('m'))
+app.use(method("m"))
 
 
 
