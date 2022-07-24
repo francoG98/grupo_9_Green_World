@@ -48,7 +48,7 @@ main{
     background-repeat: no-repeat;
 }
 
-.imgbantn {
+.imgbanbtn {
     width: 40px;
     height: 40px;
     background-color: black;
@@ -60,8 +60,22 @@ main{
     cursor: pointer;
 }
 
-.imgbantn:hover {
+.imgbanbtn:hover {
     opacity: 0.9;
+}
+
+.imgbanbtn-pre {
+    left: 5px;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.imgbanbtn-next {
+    right: 5px;
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 nav.main-nav-contenedor a{

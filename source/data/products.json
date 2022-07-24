@@ -1,4 +1,6 @@
 [
+  
+
   {
     "id": 1,
     "name": "Grinder Tres Pisos",
@@ -8,49 +10,148 @@
     "color": "Dorado",
     "price": 650
   },
+
   {
     "id": 2,
-    "name": "asd",
-    "description": "asd",
-    "image": "product-image-1658531692680-902293328.jfif",
-    "category": "medicinal",
-    "color": "asd",
-    "price": 345
+    "name": "Pipas de cristal",
+    "description": "La Pipa de Cristal Champ High de 11 cm está fabricada en cristal de borosilicato de uso médico con alta resistencia térmica para conseguir una calada fresca y limpia. Cuenta con carb (carburador) para vaciar la pipa. Su forma redondeada resulta perfecta para llevar en un bolsillo.Disponible en colores azul, rosa, transparente y verde.",
+    "image": "weed-pipes.jpg",
+    "category":"parafernalia",
+    "color": "Dorado",
+    "price": 120
+
   },
+
   {
     "id": 3,
-    "name": "asd",
-    "description": "asd",
-    "image": "product-image-1658531707868-923566818.jfif",
-    "category": "medicinal",
-    "color": "asd",
-    "price": 345
+    "name": "Celulosa",
+    "description": "Papel de celulosa Zeus de color naranja es un papel naranja fabricado a partir de celulosa 100% natural. Esta presentación de celulosa Zeus no produce ceniza ni tampoco necesita pegamento, ya que humedeciendo uno de sus extremos, el cigarrillo queda prolijamente cerrado. Las celulosas vienen de color Naranja lo que le da un toque estético único.",
+    "image": "celulosa.jpg",
+    "category": "parafernalia",
+    "color": "NA",
+    "price": 100
   },
+
   {
     "id": 4,
-    "name": "asd",
-    "description": "asd",
-    "image": "product-image-1658531756886-798558614.jpg",
+    "name": "Aceite hidratante corporal que ayuda a la relajación.",
+    "image": "aceite-500mg-30ml-Caja-Front-copia.jpg",
     "category": "medicinal",
-    "color": "asd",
-    "price": 345
+    "price": 120
   },
+
   {
     "id": 5,
-    "name": "asd",
-    "description": "asd",
-    "image": "product-image-1658532018845-884778168.jpg",
-    "category": "parafernalia",
-    "color": "asd",
-    "price": 354
+    "name": "Crema de cannabis Kif Skin Control 60grs",
+    "description": "Este es un producto que cuenta con todas las propiedades cosméticas del cannabis ya que contiene extracto de la flor, y por ende es un producto de última tendencia en el mercado nacional. Es una novedosa formulación cosmética con todos los beneficios del cannabis (CBD) y la caléndula para el cuidado de la piel, con propiedades antioxidantes, ayuda a combatir las manchas y marcas producidas por el acné para obtener una piel más sana y lúcida.",
+    "image": "Cannabis-Power-Skin-Control-50g-Front.jpg",
+    "category": "medicinal",
+    "color": "NA",
+    "price": 345
   },
+
   {
     "id": 6,
-    "name": "asd",
-    "description": "asd",
-    "image": "product-image-1658534224992-303272459.PNG",
+    "name": "Aceite-DnSelva-30ml-Caja-Frontal",
+    "description": "El aceite de cannabis es a base de oliva extravirgen con extracto de cannabis full spectrum, contiene aproximadamente entre 2.75% de CBD y menos del 1% de THC.",
+    "image": "Aceite-DnSelva-30ml-Caja-Frontal.jpg",
     "category": "medicinal",
-    "color": "asd",
-    "price": 3424
+    "color": "NA",
+    "price": 345
+  },
+
+  
+
+  {
+    "id": 7,
+    "name": "Top Veg",
+    "description": "Top Crop es un fertilizante líquido completo rico en ácidos húmicos y fúlvicos así como en macro y micronutrientes solubles en agua.",
+    "image": "COCOB-300x300.png",
+    "category": "aditivos",
+    "color": "NA",
+    "price": 125
+  },
+
+  {
+    "id": 8,
+    "name": "Go-nitro-300x300",
+    "description": " Go Green Argentina es un bio-fertilizante totalmente orgánico y natural indicado para el periodo vegetativo de tus plantas, que representa una estable e inigualable fuente de nitrógeno «saludable».",
+    "image": "Go-nitro-300x300.png",
+    "category": "aditivos",
+    "color": "NA",
+    "price": 125
+  },
+
+  {
+    "id": 9,
+    "name": "GO-WORMS-300x300",
+    "description": " Go Green Argentina es un bio-fertilizante totalmente orgánico y natural indicado para el periodo vegetativo de tus plantas, que representa una estable e inigualable fuente de nitrógeno «saludable».",
+    "image": "GO-WORMS-300x300.png",
+    "category": "aditivos",
+    "color": "NA",
+    "price": 125
+  },
+
+  
+
+  {
+    "id": 10,
+    "name": "Turba Musgo Sphagnum",
+    "description": "La Turba de Musgo Sphagnum Fueguina de la empresa Terrafertil ofrece una buena retención de agua lo cual favorece la rápida absorción de los elementos nutricionales necesarios y el desarrollo radicular de las plantas. Aporta porosidad y baja el pH.",
+    "image": "TERRAFERTIL-TURBA-20L.png",
+    "category": "sustratos",
+    "color": "NA",
+    "price": 125
+  },
+
+  {
+    "id": 11,
+    "name": "LightMix",
+    "description": "Nuestro Sustrato Premium LightMix de Go Green Argentina es un tipo de suelo de origen natural y orgánico que aporta todos los elementos necesarios a nuestras plantas y semillas para obtener resultados de alta calidad.",
+    "image": "Lightmix-10.png",
+    "category": "sustratos",
+    "color": "NA",
+    "price": 125
+  },
+
+  {
+    "id": 12,
+    "name": "Vermiculita",
+    "description": "La Vermiculita de Go Green Argentina es un sustrato ideal para mezclas con turba, compost, fertilizantes orgánicos, fibra de coco, etc. Constituye un componente principal en el medio del cultivo para obtener un sustrato equilibrado con el fin de lograr una planta sana.",
+    "image": "VERMICULITA-GO-GREEN.png",
+    "category": "sustratos",
+    "color": "NA",
+    "price": 125
+  },
+
+  {
+    "id": 13,
+    "name": "Filtros Para Extractores Hydra",
+    "description": "Filtro de carbón activado Go Green Argentina para reducción de olor de 6 Pulgadas, usados generalmente en armarios y carpas. Incluye una capa de carbón que reduce considerablemente los olores orgánicos. Diseñado para ser usados con extractores marca Hydra o similares de 6 pulgadas.",
+    "image": "FILTRO-6-COOLER-B1.png",
+    "category": "accesorios",
+    "color": "NA",
+    "price": 125
+  },
+  {
+    "id": 14,
+    "name": "Toberas",
+    "description": "presenta esta tobera/ adaptador, diseñada especialmente y a medida para su utilización en coolers de 120. Este producto se encuentra preparado para ser conectado a conductos de 4 pulgadas con la finalidad de realizar extracción o intracción de aire.",
+    "image": "TOBERA-COOLER-4a4.png",
+    "category": "accesorios",
+    "color": "NA",
+    "price": 125
+  },
+  {
+    "id": 15,
+    "name": "Red Plástica Para Scrog",
+    "description": "Malla apta RED SCROG Naranja/ Seguridad y Señalización – Una solución Super Económica!",
+    "image": "MALLA-SCROG-SEGURIDAD-B.png",
+    "category": "accesorios",
+    "color": "NA",
+    "price": 125
   }
+
+
+ 
 ]
