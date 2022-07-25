@@ -7,7 +7,7 @@
        <h2>Todos Los Productos ( <%= products.length %> )</h2>
        <form action="/products/" method="get">
             <input type="text" name="name" id="name" placeholder="Nombre del Producto">
-            <button type="submit">Search</button>
+            <button class="boton-buscar" type="submit">Search</button>
         </form>
     <section class="productos">
         <% products.forEach(element => { %> 
