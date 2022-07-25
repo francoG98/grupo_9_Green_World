@@ -65,7 +65,7 @@ nav.chart-burger a{
     display:flex;
     flex-direction:column;
     justify-content: flex-start;
-    z-index: 20;
+    z-index: 100000;
     gap: 15px;
     opacity: 0;
     border-radius:3px;
