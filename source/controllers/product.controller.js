@@ -1,4 +1,6 @@
 const { index,create, write, one} = require('../models/products.model')
+const {unlinkSync} = require('fs')
+const {join} = require('path')
 module.exports = {
      
     categories: (req,res)=>{
@@ -91,7 +93,12 @@ module.exports = {
           p.description = req.body.description
           p.price = parseInt(req.body.price)
           p.color = req.body.color
-          p.image = req.files && req.files.length > 0 ? req.files[0].filename : p.image
+          if(req.files && req.files.length > 0){
+            unlinkSync(join(__dirname, "../../public/assets/", "products-images",p.image))
+            p.image = req.files[0].filename 
+          } else{
+            p.image = p.image
+          }
         }
         return p
       })
@@ -103,6 +110,7 @@ module.exports = {
       if(!product){
         return res.redirect("/products/")
       }
+      unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image))
       let products = index()
       let productsDeleted = products.filter(p=>p.id !== product.id)
       write(productsDeleted)
