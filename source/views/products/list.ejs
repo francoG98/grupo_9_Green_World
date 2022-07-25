@@ -12,11 +12,11 @@
     <section>
         <% products.forEach(element => { %> 
         <article>
-            <img src="/assets/products-images/<%= element.image %>" alt="Imagen de producto">
+            <img src="/assets/products-images/<%= element.image %>" alt="Imagen de producto" width="50%">
             <h3><%= element.name %> </h3>
             <nav>
-                <a href="/products/edit/<%=element.id%>">Editar Producto</a>
-                <a href="products/delete/<%=element.id%>">Eliminar Producto</a>
+                <a class="boton" href="/products/edit/<%=element.id%>">Editar Producto</a>
+                <a class="boton" href="products/delete/<%=element.id%>">Eliminar Producto</a>
             </nav>
         </article>
         <% }) %>

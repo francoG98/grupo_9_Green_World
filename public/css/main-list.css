@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Anek Gujarati";
+}
+
+.boton{
+    margin-left: 10px;
+    text-decoration: none;
+    color: #f9f9f9;
+    background-color: #57CC99;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+h3{
+    margin: 10px;
+}
+
+form{
+    margin-bottom: 10px;
+}

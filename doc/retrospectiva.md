@@ -1,7 +1,7 @@
-Como grupo creeriamos, a modo de retrospectiva, que deberiamos:
+Como grupo creemos, a modo de retrospectiva, que deberiamos:
 
-- comenzar a hacer: reuniones entre todos los miembros para debatir ciertos detalles o cuestiones relacionadas al proyecto,
-- hacer mas: organizacion para dividir bien las tareas,
-- continuar haciendo: ayudandonos entre todos para cumplir con la entrega de cada sprint,
-- hacer menos: las cosas rapido y tomarnos el tiempo para hacer y corregir lo hecho,
-- dejar de hacer: procrastinar o dejar las cosas para ultimo momento.
+- comenzar a hacer: organizar las tareas para que todos cumplan su parte del trabajo,
+- hacer mas: reuniones orientativas,
+- continuar haciendo: buscar en google o clases anteriores o consultas a compañeros/profesores cuando algo no sale,
+- hacer menos: todo en uno o pocos dias y tomarnos el tiempo para hacer y corregir lo hecho,
+- dejar de hacer: las cosas a ultimo momento.
