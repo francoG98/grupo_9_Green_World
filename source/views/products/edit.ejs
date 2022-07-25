@@ -25,6 +25,9 @@
             <input type="number" name="price" id="price" value="<%=product.price %>">
             <button type="submit">Actualizar datos del producto</button>
         </form>
+        <form action="/products/delete/<%=product.id%>?m=DELETE" method="POST">
+            <button class="boton" type="submit">Eliminar Producto</button>
+        </form>
     </main>
     <%- include("../includes/footer.ejs")  %>
 </body>

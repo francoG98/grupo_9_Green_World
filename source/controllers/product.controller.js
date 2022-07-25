@@ -95,5 +95,17 @@ module.exports = {
         }
         return p
       })
+      write(productsEdited)
+      return res.redirect("/products/detail/" + product.id)
+    },
+    destroy: (req, res)=>{
+      let product = one(parseInt(req.params.id))
+      if(!product){
+        return res.redirect("/products/")
+      }
+      let products = index()
+      let productsDeleted = products.filter(p=>p.id !== product.id)
+      write(productsDeleted)
+      return res.redirect("/products/")
     }
 }

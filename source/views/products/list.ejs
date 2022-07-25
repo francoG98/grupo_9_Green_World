@@ -16,7 +16,9 @@
             <h3><%= element.name %> </h3>
             <nav>
                 <a class="boton" href="/products/edit/<%=element.id%>">Editar Producto</a>
-                <a class="boton" href="products/delete/<%=element.id%>">Eliminar Producto</a>
+                <form action="/products/delete/<%=element.id%>?m=DELETE" method="POST">
+                    <button class="boton" type="submit">Eliminar Producto</button>
+                </form>
             </nav>
         </article>
         <% }) %>

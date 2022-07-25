@@ -1,27 +1,13 @@
 [
-  
-
-  {
-    "id": 1,
-    "name": "Grinder Tres Pisos",
-    "description": "Picador de metal con 3 espacios, uno para picado con base de agujeros y rejilla, otro para la recoleccion de resina y el restante para guardar los restos",
-    "image": "detalle-producto.jpg",
-    "category": "parafernalia",
-    "color": "Dorado",
-    "price": 650
-  },
-
   {
     "id": 2,
     "name": "Pipas de cristal",
     "description": "La Pipa de Cristal Champ High de 11 cm está fabricada en cristal de borosilicato de uso médico con alta resistencia térmica para conseguir una calada fresca y limpia. Cuenta con carb (carburador) para vaciar la pipa. Su forma redondeada resulta perfecta para llevar en un bolsillo.Disponible en colores azul, rosa, transparente y verde.",
     "image": "weed-pipes.jpg",
-    "category":"parafernalia",
+    "category": "parafernalia",
     "color": "Dorado",
     "price": 120
-
   },
-
   {
     "id": 3,
     "name": "Celulosa",
@@ -31,7 +17,6 @@
     "color": "NA",
     "price": 100
   },
-
   {
     "id": 4,
     "name": "Aceite hidratante corporal que ayuda a la relajación.",
@@ -39,7 +24,6 @@
     "category": "medicinal",
     "price": 120
   },
-
   {
     "id": 5,
     "name": "Crema de cannabis Kif Skin Control 60grs",
@@ -49,7 +33,6 @@
     "color": "NA",
     "price": 345
   },
-
   {
     "id": 6,
     "name": "Aceite-DnSelva-30ml-Caja-Frontal",
@@ -59,9 +42,6 @@
     "color": "NA",
     "price": 345
   },
-
-  
-
   {
     "id": 7,
     "name": "Top Veg",
@@ -71,7 +51,6 @@
     "color": "NA",
     "price": 125
   },
-
   {
     "id": 8,
     "name": "Go-nitro-300x300",
@@ -81,7 +60,6 @@
     "color": "NA",
     "price": 125
   },
-
   {
     "id": 9,
     "name": "GO-WORMS-300x300",
@@ -91,9 +69,6 @@
     "color": "NA",
     "price": 125
   },
-
-  
-
   {
     "id": 10,
     "name": "Turba Musgo Sphagnum",
@@ -103,7 +78,6 @@
     "color": "NA",
     "price": 125
   },
-
   {
     "id": 11,
     "name": "LightMix",
@@ -113,7 +87,6 @@
     "color": "NA",
     "price": 125
   },
-
   {
     "id": 12,
     "name": "Vermiculita",
@@ -123,7 +96,6 @@
     "color": "NA",
     "price": 125
   },
-
   {
     "id": 13,
     "name": "Filtros Para Extractores Hydra",
@@ -151,7 +123,4 @@
     "color": "NA",
     "price": 125
   }
-
-
- 
 ]
