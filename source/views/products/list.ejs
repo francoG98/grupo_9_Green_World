@@ -6,18 +6,18 @@
     <main>
        <h2>Todos Los Productos ( <%= products.length %> )</h2>
        <form action="/products/" method="get">
-        <input type="text" name="name" id="name" placeholder="Nombre del Producto">
-        <button type="submit">Search</button>
-    </form>
-    <section>
+            <input type="text" name="name" id="name" placeholder="Nombre del Producto">
+            <button type="submit">Search</button>
+        </form>
+    <section class="productos">
         <% products.forEach(element => { %> 
         <article>
             <img src="/assets/products-images/<%= element.image %>" alt="Imagen de producto" width="50%">
             <h3><%= element.name %> </h3>
-            <nav>
-                <a class="boton" href="/products/edit/<%=element.id%>">Editar Producto</a>
+            <nav class="botones">
+                <a class="boton-editar" href="/products/edit/<%=element.id%>">Editar Producto</a>
                 <form action="/products/delete/<%=element.id%>?m=DELETE" method="POST">
-                    <button class="boton" type="submit">Eliminar Producto</button>
+                    <button class="boton-eliminar" type="submit">Eliminar Producto</button>
                 </form>
             </nav>
         </article>

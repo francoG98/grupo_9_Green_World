@@ -5,19 +5,71 @@
     font-family: "Anek Gujarati";
 }
 
-.boton{
+.botones{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.boton-editar{
+    font-size: 16px;
+    height: 39px;
     margin-left: 10px;
     text-decoration: none;
     color: #f9f9f9;
     background-color: #57CC99;
-    padding: 5px;
+    padding: 6px;
     border-radius: 3px;
+    opacity: 1;
+    transition: all 300ms;
 }
 
-h3{
+.boton-eliminar{
+    font-size: 16px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #f9f9f9;
+    background-color: #f25f5c;
+    padding: 7px;
+    border: none;
+    border-radius: 3px;
+    opacity: 1;
+    transition: all 300ms;
+}
+
+.productos{
+    width: 90vw;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    gap:10px
+}
+
+article h3{
     margin: 10px;
 }
 
 form{
     margin-bottom: 10px;
+}
+
+.productos article{
+    flex-basis: 100%;
+}
+
+@media(min-width:768px){
+    .productos article{
+        flex-basis: 49%
+    }
+}
+
+@media(min-width:1024px){
+    .productos article{
+        flex-basis: 24%
+    }
+    .botones{
+        gap: 5px
+    }
 }
