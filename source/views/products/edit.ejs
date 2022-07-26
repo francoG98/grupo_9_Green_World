@@ -12,12 +12,12 @@
             <label for="image">Imagen del Producto</label>
             <input type="file" name="product-image" id="image" autocomplete="off">
             <label for="category">Categoría del Producto</label>
-            <select name="category" id="category" value="<%=product.category %>">
-                <option value="accesorios">ACCESORIOS</option>
-                <option value="aditivos">ADITIVOS</option>
-                <option value="medicinal">MEDICINAL</option>
-                <option value="parafernalia">PARAFERNALIA</option>
-                <option value="sustratos">SUSTRATOS</option>
+            <select name="category" id="category">
+                <option value="accesorios" <%= product.category == "accesorios" ? "selected": null %> >ACCESORIOS</option>
+                <option value="aditivos" <%= product.category == "aditivos" ? "selected": null %> >ADITIVOS</option>
+                <option value="medicinal" <%= product.category == "medicinal" ? "selected": null %> >MEDICINAL</option>
+                <option value="parafernalia" <%= product.category == "parafernalia" ? "selected": null %> >PARAFERNALIA</option>
+                <option value="sustratos" <%= product.category == "sustratos" ? "selected": null %> >SUSTRATOS</option>
             </select>
             <label for="color">Color del Producto</label>
             <input type="text" name="color" id="color" value="<%=product.color %>">

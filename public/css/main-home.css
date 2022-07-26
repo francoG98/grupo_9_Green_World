@@ -48,36 +48,6 @@ main{
     background-repeat: no-repeat;
 }
 
-.imgbanbtn {
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    border-radius: 4px;
-    position: absolute;
-    top: 180px;
-    z-index: 2000;
-    opacity: 0.8;
-    cursor: pointer;
-}
-
-.imgbanbtn:hover {
-    opacity: 0.9;
-}
-
-.imgbanbtn-pre {
-    left: 5px;
-    background-size: 60%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.imgbanbtn-next {
-    right: 5px;
-    background-size: 60%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 nav.main-nav-contenedor a{
     text-decoration: none;
     margin-top:0;
