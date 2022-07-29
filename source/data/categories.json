@@ -3,30 +3,30 @@
         "id":"uno",
         "name":"accesorios",
         "description":"Todo lo necesario para indoor y outdoor, como macetas, platos, tijeras, carpas, luces, coolers, timmers y más...",
-        "image":"/assets/main/accesorios-unsplash.jpg"
+        "image":"accesorios-unsplash.jpg"
     },
     {
         "id":"dos",
         "name":"aditivos",
         "description":"Tenemos los nutrientes ideales para que a tus plantas no les falte nada en su crecimiento. Encontrá productos para germinación, vegetación, floración y más...",
-        "image":"/assets/main/aditivos-unsplash.jpg"
+        "image":"aditivos-unsplash.jpg"
     },
     {
         "id":"tres",
         "name":"medicinal",
         "description":"Aceites y cremas a base de CBD que te ayudaran a rejalar y aliviar dolores",
-        "image": "/assets/main/medicinal-unsplash.jpg"
+        "image": "medicinal-unsplash.jpg"
     },
     {
         "id":"cuatro",
         "name":"parafernalia",
         "description":"Para disfrutar de la cosecha, acá vas a encontar los modelos más cancheros de bongs, pipas, bandejas, picadores, sedas y más...",
-        "image":"/assets/main/parafernalia-unsplash-2.jpg"
+        "image":"parafernalia-unsplash-2.jpg"
     },
     {
         "id":"cinco",
         "name":"sustratos",
         "description":"Superficie en la que vivirán tus cultivos. Compralo preparado o llevate para armarlo a tu gusto, contamos con turba, perlita, humus, fibra de coco y más...",
-        "image":"/assets/main/sustratos-unsplash.jpg"
+        "image":"sustratos-unsplash.jpg"
     }
 ]    
