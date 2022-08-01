@@ -13,7 +13,7 @@ module.exports = {
         return res.render("users/register",{
             title: "Registrate",
             styles: [
-                "main-register",
+                "main-forms",
                 "header",
                 "footer"
             ]

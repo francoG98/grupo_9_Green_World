@@ -5,18 +5,25 @@
     <%- include("../includes/header.ejs") %> 
     <main>
           <form method="post" action="/">
-            <input type="text" name="nombre-apellido" placeholder="Nombre y Apellido" required>
-            <input type="text" name="usuario" placeholder="Nombre de Usuario" required>
-            <input type="mail" name="mail" placeholder="Correo Electrónico" required>
-            <label for="cultivo"> Cultivas ?</label>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre"  required>
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido" id="apellido"  required>
+            <label for="usuario">Nombre de Usuario</label>
+            <input type="text" name="usuario" id="usuario"  required>
+            <label for="mail">Correo Electrónico</label>
+            <input type="mail" name="mail" id="mail"  required>
+            <label for="cultivo">Realizas algun tipo de cultivo?</label>
                 <select name="cultivo" id="cultivo" required>
-                    <option value="Indoor">Indoor</option>
+                    <option value="indoor">Indoor</option>
                     <option value="outdoor">Outdoor</option>
                     <option value="ambas">Ambas</option>
                     <option value="ninguna">No cultivo</option>
                 </select>
-            <input type="password" name="password" placeholder="Contraseña" required>
-            <input type="password" name="repetir-password" placeholder="Repetir Contraseña" required>
+            <label for="password">Elige tu Contraseña</label>
+            <input type="password" name="password" id="password"  required>
+            <label for="pass-confirm">Confirma tu Contraseña</label>           
+            <input type="password" name="pass-confirm" id="pass-confirm"  required>
             <button type="submit" name="registrar"> Envíar </button>
             </form>
     </main>

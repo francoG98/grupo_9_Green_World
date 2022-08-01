@@ -1,4 +1,4 @@
-const {categorias} = require('../models/products.model')
+const {categorias} = require('../models/categorias.model')
 module.exports = {
     home: (req,res) =>{
         return res.render("home",{

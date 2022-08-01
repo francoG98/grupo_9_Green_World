@@ -55,7 +55,7 @@ module.exports = {
       return res.render("products/create",{
         title: "Crear Producto",
         styles: [
-          "main-create",
+          "main-forms",
           "header",
           "footer"
         ]
@@ -78,7 +78,7 @@ module.exports = {
         title: "Editar el producto",
         product: product,
         styles: [
-          "main-create",
+          "main-forms",
           "header",
           "footer"
         ]

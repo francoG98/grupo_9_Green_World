@@ -9,8 +9,16 @@
             <input type="text" name="name" id="name" value="<%=product.name %>">
             <label for="description">Descripción del Producto</label>
             <textarea name="description" id="description" autocomplete="off"><%=product.description %></textarea>
-            <label for="image">Imagen del Producto</label>
-            <input type="file" name="product-image" id="image" autocomplete="off">
+            <fieldset class="gp-fieldset">
+                <figure class="dad-figure">
+                    <h3>Imagen del Producto</h3>
+                    <img src="/assets/products-images/<%= product.image %>">
+                </figure>
+                <fieldset class="dad-fieldset">
+                    <label for="image">Actualizar Imagen</label>
+                    <input type="file" name="product-image" id="image" autocomplete="off">
+                </fieldset>
+            </fieldset>
             <label for="category">Categoría del Producto</label>
             <select name="category" id="category">
                 <option value="accesorios" <%= product.category == "accesorios" ? "selected": null %> >ACCESORIOS</option>
@@ -25,7 +33,7 @@
             <input type="number" name="price" id="price" value="<%=product.price %>">
             <button type="submit">Actualizar datos del producto</button>
         </form>
-        <form action="/products/delete/<%=product.id%>?m=DELETE" method="POST">
+        <form action="/products/delete/<%=product.id%>?m=DELETE" method="POST" id="delete">
             <button class="boton" type="submit">Eliminar Producto</button>
         </form>
     </main>

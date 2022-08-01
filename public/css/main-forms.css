@@ -3,6 +3,10 @@
     margin:0;
     box-sizing: border-box;
 }
+main{
+    padding: 30px 0;
+    background-color: lavender;
+}
 
 main form{
     display: flex;
@@ -11,8 +15,8 @@ main form{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background-color: lavender;
-    padding: 20px 0
+    
+    
 }
 main form label{
     width:80vw;
@@ -63,17 +67,61 @@ main form input{
     border: 3px solid #5c3d99;
 }
 main form button{
-    margin-top: 30px;
-    display:block;
     text-decoration: none;
+    font-size: 18px;
+    width:auto;
+    color:#f9f9f9;
     background-color:#57CC99;
-    color: #ffffff;
-    padding: 5px;
-    border-radius: 3px;
-    font-size: 16px;
+    padding:7px 6px 5px 6px;
     border: none;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 3px;
     transition: all 300ms
 }
 button:hover{
     opacity:0.7
+}
+#delete{
+    padding-top: none;
+    justify-content: flex-start;
+}
+#delete button{
+    background-color: #f25f5c;
+    margin-top: none
+}
+
+.gp-fieldset{
+    max-width: 700px;
+    width:80vw;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap
+}
+.dad-figure{
+    width: 40%
+
+}
+.dad-figure h3{
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+.dad-figure img{
+width: 100%;
+border: 3px solid #5c3d99;
+}
+.dad-fieldset{
+    border: none;
+    width: 58%
+}
+.dad-fieldset label{
+    width: 100%;
+    text-align: center
+}
+.dad-fieldset input{
+    width: 100%
 }

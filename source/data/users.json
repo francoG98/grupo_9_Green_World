@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "name",
+        "lastname":"lastname",
+        "username": "username",
+        "email": "email",
+        "cultivo": "cultivo",
+        "password": "password",
+        "admin": 1
+    }
+]
