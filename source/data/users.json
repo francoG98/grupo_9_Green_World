@@ -34,5 +34,23 @@
     "cultivo": "indoor",
     "password": "$2a$10$KPO0qsd4cxITPMl7Sskzb.KULSP.fRZvBEhQqzUogLBbwJA6S.KOC",
     "admin": false
+  },
+  {
+    "id": 5,
+    "name": "Eric",
+    "lastname": "Zatel",
+    "email": "ericzatel13@gmail.com",
+    "cultivo": "ninguna",
+    "password": "$2a$10$XqcAxg3ocz/jHspmBS8eheyl3hVKWPVOt3HS3On5B3rf5.eaESG.O",
+    "admin": false
+  },
+  {
+    "id": 6,
+    "name": "jdhjdhjds",
+    "lastname": "dofhejfhajh",
+    "email": "micaelarajchel@gmail.com",
+    "cultivo": "ninguna",
+    "password": "$2a$10$AM6h9tQPPzGz2dVE5l4oGeXz9r.1PhsVmsZeKKB0iI1ssNV1XmPG.",
+    "admin": false
   }
 ]

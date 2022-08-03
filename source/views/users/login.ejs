@@ -4,9 +4,15 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-        <form method="post" action="/">
-            <input type="text" name="usuario" placeholder="Usuario" required>
-            <input type='password' name='password' placeholder='Contraseña' required>
+        <form method="post" action="/users/login">
+            <input type="email" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>" required>
+            <% if (locals.errors && errors.email) { %>
+                <p class="msg-error"><%= errors.email.msg %></p>
+            <% } %>
+            <input type='password' name='password' placeholder='Contraseña' value="<%= locals.oldData ? oldData.password : null %>" required>
+            <% if (locals.errors && errors.password) { %>
+                <p class="msg-error"><%= errors.password.msg %></p>
+            <% } %>
             <fieldset>
                 <input class="checkbox" type='checkbox' name='mantener-sesion' id="mantener-sesion">
                 <label for="mantener-sesion">Mantener sesión iniciada</label>

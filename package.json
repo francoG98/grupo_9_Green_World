@@ -25,5 +25,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francoG98/grupo_9_Green_World.git"
+  },
+  "bugs": {
+    "url": "https://github.com/francoG98/grupo_9_Green_World/issues"
+  },
+  "homepage": "https://github.com/francoG98/grupo_9_Green_World#readme"
 }
