@@ -66,6 +66,10 @@ main form input{
     width:80vw;
     border: 3px solid #5c3d99;
 }
+
+main form p{
+    color: red
+}
 main form button{
     text-decoration: none;
     font-size: 18px;

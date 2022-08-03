@@ -22,7 +22,7 @@ app.use(method("m"))
 
 //LO DE ACA ABAJO SON LAS RUTAS
 app.use(require("./routes/home.routes"))
-app.use( require("./routes/user.routes"))
+app.use( "/users", require("./routes/user.routes"))
 app.use(require("./routes/chart.routes"))
 app.use("/products",require("./routes/products.routes"))
 
@@ -32,6 +32,6 @@ app.use("/products",require("./routes/products.routes"))
 
 
 
-app.get("/product", (req, res) =>res.sendFile(path.join(__dirname,"views/productBacklog.html")))
+
 
 

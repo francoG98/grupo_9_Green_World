@@ -1,12 +1,38 @@
 [
-    {
-        "id": 1,
-        "name": "name",
-        "lastname":"lastname",
-        "username": "username",
-        "email": "email",
-        "cultivo": "cultivo",
-        "password": "password",
-        "admin": 1
-    }
+  {
+    "id": 1,
+    "name": "name",
+    "lastname": "lastname",
+    "email": "email",
+    "cultivo": "cultivo",
+    "password": "password",
+    "admin": true
+  },
+  {
+    "id": 2,
+    "name": "asd",
+    "lastname": "s",
+    "email": "",
+    "cultivo": "ninguna",
+    "password": "$2a$10$.KAXCGpRxYZwvuk0Lq0eNuwIsw0cL03Ve0y.JPpvuJo.qTNpjUDui",
+    "admin": false
+  },
+  {
+    "id": 3,
+    "name": "asd",
+    "lastname": "s",
+    "email": "",
+    "cultivo": "outdoor",
+    "password": "$2a$10$af/nI7jBhrao76AE197HP.KhXsSChgu/HtpDkjEcErRdXSLE2e23.",
+    "admin": false
+  },
+  {
+    "id": 4,
+    "name": "",
+    "lastname": "",
+    "email": "",
+    "cultivo": "indoor",
+    "password": "$2a$10$KPO0qsd4cxITPMl7Sskzb.KULSP.fRZvBEhQqzUogLBbwJA6S.KOC",
+    "admin": false
+  }
 ]

@@ -4,26 +4,64 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-          <form method="post" action="/">
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre"  required>
-            <label for="apellido">Apellido</label>
-            <input type="text" name="apellido" id="apellido"  required>
-            <label for="usuario">Nombre de Usuario</label>
-            <input type="text" name="usuario" id="usuario"  required>
-            <label for="mail">Correo Electrónico</label>
-            <input type="mail" name="mail" id="mail"  required>
+          <form method="post" action="/users/register">
+            <label for="name">Nombre</label>
+            <input type="text"
+                name="name"
+                id="name"
+                value="<%= locals.oldData ? oldData.name : null %>">
+            <% if (locals.errors && errors.name) { %>
+                <p class="msg-error"><%= errors.name.msg %></p>
+            <% } %>    
+
+
+            <label for="lastname">Apellido</label>
+            <input type="text"
+                name="lastname"
+                id="lastname"
+                value="<%= locals.oldData ? oldData.lastname : null %>">
+                <% if (locals.errors && errors.lastname) { %>
+                    <p class="msg-error"><%= errors.lastname.msg %></p>
+                <% } %> 
+
+
+            <label for="email">Correo Electrónico</label>
+            <input type="email"
+                name="email"
+                id="email"
+                value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                    <p class="msg-error"><%= errors.email.msg %></p>
+                <% } %> 
+
+
             <label for="cultivo">Realizas algun tipo de cultivo?</label>
                 <select name="cultivo" id="cultivo" required>
-                    <option value="indoor">Indoor</option>
-                    <option value="outdoor">Outdoor</option>
-                    <option value="ambas">Ambas</option>
-                    <option value="ninguna">No cultivo</option>
+                    <option value="ninguna" <%= (locals.oldData &&  (locals.oldData.cultivo == "ninguna"))  ? "selected": null %>>No cultivo</option>
+                    <option value="indoor" <%= (locals.oldData &&  (locals.oldData.cultivo == "indoor")) ? "selected": null %>>Indoor</option>
+                    <option value="outdoor" <%= (locals.oldData &&  (locals.oldData.cultivo == "outdoor" ))? "selected": null %>>Outdoor</option>
+                    <option value="ambas" <%= (locals.oldData &&  (locals.oldData.cultivo == "ambas" ))? "selected": null %>>Ambas</option>                    
                 </select>
+
+
             <label for="password">Elige tu Contraseña</label>
-            <input type="password" name="password" id="password"  required>
-            <label for="pass-confirm">Confirma tu Contraseña</label>           
-            <input type="password" name="pass-confirm" id="pass-confirm"  required>
+            <input type="password"
+                name="password"
+                id="password"
+                value="<%= locals.oldData ? oldData.password : null %>">
+                <% if (locals.errors && errors.password) { %>
+                    <p class="msg-error"><%= errors.password.msg %></p>
+                <% } %>
+
+
+            <label for="passConfirm">Confirma tu Contraseña</label>           
+            <input type="password"
+                name="passConfirm"
+                id="passConfirm"
+                value="<%= locals.oldData ? oldData.passConfirm : null %>">
+                <% if (locals.errors && errors.passConfirm) { %>
+                    <p class="msg-error"><%= errors.passConfirm.msg %></p>
+                <% } %>
             <button type="submit" name="registrar"> Envíar </button>
             </form>
     </main>
