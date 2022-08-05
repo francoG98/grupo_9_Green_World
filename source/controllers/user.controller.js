@@ -25,13 +25,14 @@ const usersController = {
                 oldData: req.body,
                 errors:validaciones.mapped()
             })
-        } else {
-            let users = index()
-            let user = users.find(u => u.email === req.body.email)
-            req.session.user = user
-            console.log(req.session.user)
-            return res.redirect('/')
         }
+        let users = index()
+        let user = users.find(u => u.email === req.body.email)
+        req.session.user = user
+        if(req.body.recordame != undefined){
+            res.cookie("recordame", user.email, {maxAge:172800000})
+        }
+        return res.redirect('/')
     },
     register: (req,res) =>{
         return res.render("users/register",{

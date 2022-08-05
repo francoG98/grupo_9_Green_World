@@ -5,6 +5,8 @@ const public = require ("./modules/public")
 const app = express()
 const method = require("method-override")
 const session = require("express-session")
+const cookieParser = require("cookie-parser")
+const recordameMiddleware = require("./middlewares/recordameMiddleware")
 
 app.listen(port, callback)
 app.set ("views", resolve(__dirname, "views"));
@@ -17,12 +19,15 @@ app.use(public)
 app.use(express.urlencoded({extended:false}));
 app.use(express.json())
 app.use(method("m"))
+app.use(cookieParser())
+app.use(recordameMiddleware)
 app.use(session({
     secret: "nodejs", 
     saveUninitialized: true,
     resave: true
-}))
+})) // nos da la posibilidad de acceder a req.session
 
+app.use(require("./middlewares/user"))
 
 
 //LO DE ACA ABAJO SON LAS RUTAS
