@@ -65,7 +65,11 @@ const usersController = {
             write(users)
             return res.redirect('/users/login?msg="El registro fue exitoso"')
         }
-    }
+    },
+    logout: function (req,res) {
+        delete req.session.user 
+        return res.redirect('/')
+      }
 }
 
 module.exports = usersController
