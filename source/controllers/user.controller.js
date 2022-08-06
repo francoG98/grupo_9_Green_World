@@ -59,13 +59,18 @@ const usersController = {
                 oldData: req.body,
                 errors:validaciones.mapped()
             })
-        } else{
-            let newUser = create(req.body)
-            let users = index()
-            users.push(newUser)
-            write(users)
-            return res.redirect('/users/login?msg="El registro fue exitoso"')
         }
+        if (!req.files || req.files.length == 0){
+            req.body.image = "default-image.jpg"
+        } else{
+            req.body.image = req.files[0].filename;
+        }
+        let newUser = create(req.body)
+        let users = index()
+        users.push(newUser)
+        write(users)
+        return res.redirect('/users/login?msg="El registro fue exitoso"')
+        
     },
     logout: function (req,res) {
         if(req.cookies.recordame != undefined){

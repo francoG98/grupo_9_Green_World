@@ -25,6 +25,7 @@ const model ={
            email: data.email,
            cultivo :data.cultivo,
            password: hashSync(data.password,10),
+           image: data.image,
            admin: data.email.includes('@gworld.com')
        })
     },

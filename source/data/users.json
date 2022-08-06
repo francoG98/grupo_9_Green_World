@@ -6,6 +6,7 @@
     "email": "email",
     "cultivo": "cultivo",
     "password": "password",
+    "image": "",
     "admin": true
   },
   {
@@ -15,6 +16,7 @@
     "email": "ericzatel13@gmail.com",
     "cultivo": "ninguna",
     "password": "$2a$10$XqcAxg3ocz/jHspmBS8eheyl3hVKWPVOt3HS3On5B3rf5.eaESG.O",
+    "image": "",
     "admin": false
   },
   {
@@ -24,6 +26,7 @@
     "email": "npinol@gworld.com",
     "cultivo": "indoor",
     "password": "$2a$10$HrtMAnZDgw8jsE91UEKt7OHe1ppFHwH4Eb9/UNhH315MpvjX9BNse",
+    "image": "",
     "admin": true
   },
   {
@@ -33,6 +36,27 @@
     "email": "nicolas.pinol@hotmail.com",
     "cultivo": "indoor",
     "password": "$2a$10$HTg1xemwr8MCTY2g.ANf1.hplwVAFZcIBJaTYSZyZsKaJXAmYhNNK",
+    "image": "",
     "admin": false
+  },
+  {
+    "id": 5,
+    "name": "Eric",
+    "lastname": "Zatel",
+    "email": "ezatel@gworld.com",
+    "cultivo": "ninguna",
+    "password": "$2a$10$EbHBIJj2t.IHM8f6UsFTtecKRQ3QxhrJEuYMZyeJM9kvzCxwpPM5C",
+    "image": "default-image.jpg",
+    "admin": true
+  },
+  {
+    "id": 6,
+    "name": "Franco",
+    "lastname": "Groupierre",
+    "email": "fgroupierre@gworld.com",
+    "cultivo": "ninguna",
+    "password": "$2a$10$uPAkYociszoNGKlJo5wxIeeO0pLNMMGswljH71zh5goa3v.P8jh3y",
+    "image": "default-image.jpg",
+    "admin": true
   }
 ]
