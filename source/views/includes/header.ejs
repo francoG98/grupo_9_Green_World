@@ -3,34 +3,57 @@
             <a href="/"><img src="/assets/logo-edu.svg" alt="Logo Green World" class="header-logo"></a>
         </nav>
         <nav class="chart-burger">
-            <a href="/chart" >
-                <i class="fa-solid fa-basket-shopping"></i>
-            </a>
+            <% if (user && !user.admin) { %>
+                <a href="/chart" >
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </a>  
+            <% } %>
             <a href="#burger-menu" >
                 <i class="fas fa-bars"></i>
             </a>
         </nav>
         <nav id="burger-menu">
             <a href="#">Cerrar</a>
-            <a href="/users/login">INICIAR SESIÓN</a>
-            <a href="/users/register">REGISTRARSE</a>
-            <a href="/products/create">CREAR PRODUCTO</a>
-            <a href="/products/">LISTA DE PRODUCTOS</a>
-            <a href="/products/categorias/accesorios">ACCESORIOS</a>
-            <a href="/products/categorias/aditivos">ADITIVOS</a>
-            <a href="/products/categorias/medicinal">MEDICINAL</a>
-            <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
-            <a href="/products/categorias/sustratos">SUSTRATOS</a>
-            <a href="/chart">CARRITO</a>
+            <% if (!user) { %>
+                <a href="/users/login">INICIAR SESIÓN</a>
+                <a href="/users/register">REGISTRARSE</a>
+                <a href="/products/categorias/accesorios">ACCESORIOS</a>
+                <a href="/products/categorias/aditivos">ADITIVOS</a>
+                <a href="/products/categorias/medicinal">MEDICINAL</a>
+                <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
+                <a href="/products/categorias/sustratos">SUSTRATOS</a>                
+            <% } else if (user && !user.admin){ %>
+                <a href="/products/categorias/accesorios">ACCESORIOS</a>
+                <a href="/products/categorias/aditivos">ADITIVOS</a>
+                <a href="/products/categorias/medicinal">MEDICINAL</a>
+                <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
+                <a href="/products/categorias/sustratos">SUSTRATOS</a>
+                <a href="/chart">CARRITO</a>
+            <% } else { %>
+                <a href="/products/create">CREAR PRODUCTO</a>
+                <a href="/products/">LISTA DE PRODUCTOS</a>
+                <a href="/products/categorias/accesorios">ACCESORIOS</a>
+                <a href="/products/categorias/aditivos">ADITIVOS</a>
+                <a href="/products/categorias/medicinal">MEDICINAL</a>
+                <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
+                <a href="/products/categorias/sustratos">SUSTRATOS</a>              
+            <% } %>    
+          
 
         </nav>
         <nav class="header-top-nav-bar">
-        
+        <% if (!user) { %>
             <a href="/users/register">Registrarse</a>
             <a href="/users/login">Iniciar Sesión</a>
+         
+        <% } else if(user && !user.admin){%>
+            <a href="/chart"><i class="fa-solid fa-cart-shopping"></i>  Carrito</a>
+
+        <% } else{ %>
             <a href="/products/create">Crear Producto</a>
             <a href="/products/">Lista de Productos</a>
-            <a href="/chart"><i class="fa-solid fa-cart-shopping"></i>  Carrito</a>
+        <% } %>    
+    
         </nav>
     
     <section>
@@ -38,6 +61,10 @@
     </section>    
 
     <nav class="header-bottom-nav-bar">
+        <% if (user) { %>
+            <a href="/"><%=user.name%></a>
+        <% } %>
+        
         <!-- Se podria hacer un foreach para esta nav, pero tampoco molestan estas 5 lineas-->
         <a href="/products/categorias/accesorios">ACCESORIOS</a>
         <a href="/products/categorias/aditivos">ADITIVOS</a>

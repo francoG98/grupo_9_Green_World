@@ -10,33 +10,6 @@
   },
   {
     "id": 2,
-    "name": "asd",
-    "lastname": "s",
-    "email": "",
-    "cultivo": "ninguna",
-    "password": "$2a$10$.KAXCGpRxYZwvuk0Lq0eNuwIsw0cL03Ve0y.JPpvuJo.qTNpjUDui",
-    "admin": false
-  },
-  {
-    "id": 3,
-    "name": "asd",
-    "lastname": "s",
-    "email": "",
-    "cultivo": "outdoor",
-    "password": "$2a$10$af/nI7jBhrao76AE197HP.KhXsSChgu/HtpDkjEcErRdXSLE2e23.",
-    "admin": false
-  },
-  {
-    "id": 4,
-    "name": "",
-    "lastname": "",
-    "email": "",
-    "cultivo": "indoor",
-    "password": "$2a$10$KPO0qsd4cxITPMl7Sskzb.KULSP.fRZvBEhQqzUogLBbwJA6S.KOC",
-    "admin": false
-  },
-  {
-    "id": 5,
     "name": "Eric",
     "lastname": "Zatel",
     "email": "ericzatel13@gmail.com",
@@ -45,12 +18,21 @@
     "admin": false
   },
   {
-    "id": 6,
-    "name": "jdhjdhjds",
-    "lastname": "dofhejfhajh",
-    "email": "micaelarajchel@gmail.com",
-    "cultivo": "ninguna",
-    "password": "$2a$10$AM6h9tQPPzGz2dVE5l4oGeXz9r.1PhsVmsZeKKB0iI1ssNV1XmPG.",
+    "id": 3,
+    "name": "Nicolas",
+    "lastname": "Piniol",
+    "email": "npinol@gworld.com",
+    "cultivo": "indoor",
+    "password": "$2a$10$HrtMAnZDgw8jsE91UEKt7OHe1ppFHwH4Eb9/UNhH315MpvjX9BNse",
+    "admin": true
+  },
+  {
+    "id": 4,
+    "name": "Nico",
+    "lastname": "Pini",
+    "email": "nicolas.pinol@hotmail.com",
+    "cultivo": "indoor",
+    "password": "$2a$10$HTg1xemwr8MCTY2g.ANf1.hplwVAFZcIBJaTYSZyZsKaJXAmYhNNK",
     "admin": false
   }
 ]

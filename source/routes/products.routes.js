@@ -5,16 +5,18 @@ const {categories, create, created, detail, list, edit, edited, destroy} = requi
 const multer = require('multer');
 const storage = require('../modules/storage')
 const upload = multer({storage: storage('products-images')});
+const loggedMiddleware = require('../middlewares/logged')
+const adminMiddleware = require("../middlewares/isAdmin")
 
 // requerir el controlador;
 
-router.get("/create", create)
+router.get("/create",[adminMiddleware], create)
 router.get("/categorias/:category", categories)
 router.get("/detail/:idProduct", detail)
-router.get("/", list)
+router.get("/",[adminMiddleware], list)
 router.post('/created',[upload.any()],created)
-router.get('/edit/:id', edit)
+router.get('/edit/:id',[adminMiddleware], edit)
 router.put('/edit/:id', [upload.any()], edited)
-router.delete('/delete/:id', destroy)
+router.delete('/delete/:id',[adminMiddleware], destroy)
 
 module.exports = router;

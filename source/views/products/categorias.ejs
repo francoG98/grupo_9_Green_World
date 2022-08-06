@@ -20,7 +20,9 @@
                         <nav class="datos-chart">
                             <a class="nombre-producto" href="/products/detail/<%= element.id %> " ><h3><%= element.name %></h3></a>
                             <p>$<%= element.price %></p>
-                            <a href="" class="confirmar-compra"><h2>Agregar al Carrito</h2></a>
+                            <% if (user && !user.admin) { %>
+                                <a href="" class="confirmar-compra"><h2>Agregar al Carrito</h2></a>
+                            <% } %>
                         </nav>
                     </article>
                  

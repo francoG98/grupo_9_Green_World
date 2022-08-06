@@ -68,7 +68,12 @@ const usersController = {
         }
     },
     logout: function (req,res) {
+        if(req.cookies.recordame != undefined){
+            res.cookie("recordame", {maxAge:0})
+        }
         delete req.session.user 
+         
+        
         return res.redirect('/')
       }
 }

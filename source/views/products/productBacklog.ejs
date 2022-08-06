@@ -14,11 +14,14 @@
                 <h1><%= product.name %> </h1>
                 <p class="precio">$ <%= product.price %> </p>
                 <p class="descripcion-precio">(los impuestos no estan incluídos en el precio)</p>
-                <form method="post" action="">
-                    <label for="quantity">Cantidad: </label>
-                    <input type="number" id="quantity" name="quantity" min="1" max="10">
-                    <button class="boton" type="submit"><a class="hipervinculo" href="/chart"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</a></button>
-                </form>
+                <% if (user && !user.admin) { %>
+                    <form method="post" action="">
+                        <label for="quantity">Cantidad: </label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="10">
+                        <button class="boton" type="submit"><a class="hipervinculo" href="/chart"><i class="fa-solid fa-cart-shopping"></i> Agregar al Carrito</a></button>
+                    </form>
+                <% } %>
+                
                 <p class="informacion-producto"><%= product.description %> </p>
             </nav>
             

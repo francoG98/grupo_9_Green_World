@@ -1,3 +1,5 @@
+const {resolve} = require("path")
+const {readFileSync} = require("fs");
 function recordame(req,res,next){
     if(req.cookies.recordame != undefined && req.session.user == undefined){
         let file = resolve(__dirname,'../data','users.json')

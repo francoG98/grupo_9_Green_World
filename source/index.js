@@ -19,14 +19,13 @@ app.use(public)
 app.use(express.urlencoded({extended:false}));
 app.use(express.json())
 app.use(method("m"))
-app.use(cookieParser())
-app.use(recordameMiddleware)
 app.use(session({
     secret: "nodejs", 
     saveUninitialized: true,
     resave: true
 })) // nos da la posibilidad de acceder a req.session
-
+app.use(cookieParser())
+app.use(recordameMiddleware)
 app.use(require("./middlewares/user"))
 
 
