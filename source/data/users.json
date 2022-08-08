@@ -6,7 +6,7 @@
     "email": "email",
     "cultivo": "cultivo",
     "password": "password",
-    "image": "",
+    "image": "default-image.jpg",
     "admin": true
   },
   {
@@ -16,7 +16,7 @@
     "email": "ericzatel13@gmail.com",
     "cultivo": "ninguna",
     "password": "$2a$10$XqcAxg3ocz/jHspmBS8eheyl3hVKWPVOt3HS3On5B3rf5.eaESG.O",
-    "image": "",
+    "image": "default-image.jpg",
     "admin": false
   },
   {
@@ -26,7 +26,7 @@
     "email": "npinol@gworld.com",
     "cultivo": "indoor",
     "password": "$2a$10$HrtMAnZDgw8jsE91UEKt7OHe1ppFHwH4Eb9/UNhH315MpvjX9BNse",
-    "image": "",
+    "image": "default-image.jpg",
     "admin": true
   },
   {
@@ -36,7 +36,7 @@
     "email": "nicolas.pinol@hotmail.com",
     "cultivo": "indoor",
     "password": "$2a$10$HTg1xemwr8MCTY2g.ANf1.hplwVAFZcIBJaTYSZyZsKaJXAmYhNNK",
-    "image": "",
+    "image": "default-image.jpg",
     "admin": false
   },
   {
@@ -57,6 +57,16 @@
     "cultivo": "ninguna",
     "password": "$2a$10$uPAkYociszoNGKlJo5wxIeeO0pLNMMGswljH71zh5goa3v.P8jh3y",
     "image": "default-image.jpg",
+    "admin": true
+  },
+  {
+    "id": 7,
+    "name": "Inosuke",
+    "lastname": "Hashibira",
+    "email": "ihashibira@gworld.com",
+    "cultivo": "ambas",
+    "password": "$2a$10$mzCJ1mpvE/6wrvwNDXIG1OF47KURTvm4eJXytI.JGCBoFJAO9JCyO",
+    "image": "avatar-1659939057487-970811873.jpg",
     "admin": true
   }
 ]

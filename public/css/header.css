@@ -101,6 +101,10 @@ nav.header-top-nav-bar ul li{
 .header-bottom-nav-bar{
     visibility: hidden;
 }
+.profile-menu-b{
+    display: none
+
+}
 @media(min-width:768px){
     .header-top-nav-bar{
         display: none;
@@ -128,7 +132,6 @@ nav.header-top-nav-bar ul li{
         align-items: center; 
         display:flex;
         justify-content: flex-end;
-        align-items: center;
         gap: 20px;
         width:auto;
         margin:7px;
@@ -151,16 +154,115 @@ nav.header-top-nav-bar ul li{
     nav.header-top-nav-bar a:hover{
         opacity: 0.7
     }
+/* PERFIL FONDO BLANCO */
+    .profile-menu-a{
+        display: flex;
+        position: relative;
+        gap: 5px;
+        align-items: center;
+        flex-wrap: wrap;
+        height:40px;
+        width: 150px;
+        max-width: auto;
+        transition: all 2s ease
+    }
+    .profile-image-a{
+        width: 35px;
+        height: 35px;
+        display: grid;
+        align-items: center;
+        
+    }
+    .profile-image-a img{
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+        border: 2px solid #57CC99;
+    }
+    .profile-options{
+        display: none;
+        width: 100%;
+        z-index: 999999999999;
+    }
+    .profile-options a{
+        width:100%;
+    }
+
+    .profile-menu-a:hover .profile-options{
+        display: block;
+    }
+    
+    .profile-menu-a i {
+        rotate: 90deg;
+        transition: all 0.1s ease-out;
+    }
+    
+    .profile-menu-a:hover i {
+        rotate: 0deg
+    }
+    /* PERFIL FONDO NEGRO*/
+    .profile-menu-b{
+        display: flex;
+        position: relative;
+        gap: 5px;
+        align-items: center;
+        flex-wrap: wrap;
+        height:40px;
+        width: 150px;
+        max-width: auto;
+        justify-content: flex-end;
+        margin-right:10px;
+        transition: all 2s ease
+    }
+    .profile-image-b{
+        width: 35px;
+        height: 35px;
+        display: grid;
+        align-items: center;   
+    }
+    .profile-image-b img{
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+        border: 2px solid #57CC99;
+    }
+    .profile-menu-b p{
+        color: white
+    }
+    .profile-menu-b i{
+        color: white;
+        rotate: 90deg;
+        transition: all 0.1s ease-out;
+    }
+    .profile-menu-b:hover i {
+        rotate: 0deg
+    }
+    
+    .profile-menu-b:hover .profile-options{
+        display: block;
+    }
+    
+    
+    
+    .profile-menu-b:hover i {
+        rotate: 0deg
+    }
+
     header section{
         order: 4;
         width:100vw;
-        height: 50px
+        height: 50px;
+        justify-content: flex-end;
+        position: relative;
     }
     header section h2{    
         font-weight: normal;
         background-color:black;
         color: #f9f9f9;
-        font-size: 20px;        
+        font-size: 20px;
+        right: calc(50% - 118.25px);
+        position: absolute;     
+        
     }
     #pala{
         transition: color 500ms, font-size 500ms

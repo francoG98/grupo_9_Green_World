@@ -6,7 +6,7 @@
     "image": "weed-pipes.jpg",
     "category": "parafernalia",
     "color": "Dorado",
-    "price": 120
+    "price": 400
   },
   {
     "id": 3,
@@ -22,7 +22,9 @@
     "name": "Aceite hidratante corporal que ayuda a la relajación.",
     "image": "aceite-500mg-30ml-Caja-Front-copia.jpg",
     "category": "medicinal",
-    "price": 120
+    "price": 300,
+    "description": "",
+    "color": ""
   },
   {
     "id": 5,
@@ -94,7 +96,7 @@
     "image": "VERMICULITA-GO-GREEN.png",
     "category": "sustratos",
     "color": "NA",
-    "price": 125
+    "price": 500
   },
   {
     "id": 13,

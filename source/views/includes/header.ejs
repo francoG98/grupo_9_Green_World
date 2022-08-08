@@ -29,6 +29,8 @@
                 <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
                 <a href="/products/categorias/sustratos">SUSTRATOS</a>
                 <a href="/chart">CARRITO</a>
+                <a href="/users/logout">Cerrar Sesión</a>
+
             <% } else { %>
                 <a href="/products/create">CREAR PRODUCTO</a>
                 <a href="/products/">LISTA DE PRODUCTOS</a>
@@ -36,7 +38,8 @@
                 <a href="/products/categorias/aditivos">ADITIVOS</a>
                 <a href="/products/categorias/medicinal">MEDICINAL</a>
                 <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
-                <a href="/products/categorias/sustratos">SUSTRATOS</a>              
+                <a href="/products/categorias/sustratos">SUSTRATOS</a>
+                <a href="/users/logout">Cerrar Sesión</a>              
             <% } %>    
           
 
@@ -48,16 +51,44 @@
          
         <% } else if(user && !user.admin){%>
             <a href="/chart"><i class="fa-solid fa-cart-shopping"></i>  Carrito</a>
+            <span class="profile-menu-a">
+                <figure class="profile-image-a"><img src="/assets/avatars/<%=user.image%>"></figure> 
+                <p><%= user.name %> </p>
+                <i class="fa-solid fa-caret-down"></i>
+                <nav class="profile-options">
+                    <a href="/users/logout">Cerrar sesión</a>
+                </nav>
+            </span>
 
         <% } else{ %>
             <a href="/products/create">Crear Producto</a>
             <a href="/products/">Lista de Productos</a>
+            <span class="profile-menu-a">
+                <figure class="profile-image-a"><img src="/assets/avatars/<%=user.image%>"></figure> 
+                <p><%= user.name %> </p>
+                <i class="fa-solid fa-caret-down"></i>
+                <nav class="profile-options">
+                    <a href="/users/logout">Cerrar sesión</a>
+                </nav>
+            </span>
         <% } %>    
     
         </nav>
     
     <section>
         <h2>CULTIVA TU MUNDO   <i id="pala" class="fa-solid fa-trowel"></i>    <i id="planta" class="fa-solid fa-seedling"></i>    <i id="agua" class="fa-solid fa-hand-holding-droplet"></i></h2>
+        <% if (user) { %>
+            <span class="profile-menu-b">
+                <figure class="profile-image-b"><img src="/assets/avatars/<%=user.image%>"></figure> 
+                <p><%= user.name %> </p>
+                <i class="fa-solid fa-caret-down"></i>
+                <nav class="profile-options">
+                    <a href="/users/logout">Cerrar sesión</a>
+                </nav>
+            </span>
+         
+        <% } %>
+        
     </section>    
 
     <nav class="header-bottom-nav-bar">        
