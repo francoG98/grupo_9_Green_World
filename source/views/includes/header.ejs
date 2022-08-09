@@ -51,26 +51,27 @@
          
         <% } else if(user && !user.admin){%>
             <a href="/chart"><i class="fa-solid fa-cart-shopping"></i>  Carrito</a>
-            <span class="profile-menu-a">
-                <figure class="profile-image-a"><img src="/assets/avatars/<%=user.image%>"></figure> 
-                <p><%= user.name %> </p>
+            <!-- Por ahora queda lo de abajo <span class="profile-menu-a">
+                <figure class="profile-image-a"><img src="/assets/avatars/user.image"></figure> 
+                <p> user.name  </p>
                 <i class="fa-solid fa-caret-down"></i>
                 <nav class="profile-options">
+                    <a href="/users/profile/ user.id%">Perfil</a>
                     <a href="/users/logout">Cerrar sesión</a>
                 </nav>
-            </span>
+            </span>-->
 
         <% } else{ %>
             <a href="/products/create">Crear Producto</a>
             <a href="/products/">Lista de Productos</a>
-            <span class="profile-menu-a">
-                <figure class="profile-image-a"><img src="/assets/avatars/<%=user.image%>"></figure> 
-                <p><%= user.name %> </p>
+            <!-- Por ahora queda lo de abajo <<span class="profile-menu-a">
+                <figure class="profile-image-a"><img src="/assets/avatars/ejsout user.image"></figure> 
+                <p> ejsout user.name </p>
                 <i class="fa-solid fa-caret-down"></i>
                 <nav class="profile-options">
                     <a href="/users/logout">Cerrar sesión</a>
                 </nav>
-            </span>
+            </span>-->
         <% } %>    
     
         </nav>
@@ -83,6 +84,7 @@
                 <p><%= user.name %> </p>
                 <i class="fa-solid fa-caret-down"></i>
                 <nav class="profile-options">
+                    <a href="/users/profile/<%= user.id%>">Perfil</a>
                     <a href="/users/logout">Cerrar sesión</a>
                 </nav>
             </span>

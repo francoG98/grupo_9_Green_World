@@ -34,7 +34,7 @@
     "name": "Nico",
     "lastname": "Pini",
     "email": "nicolas.pinol@hotmail.com",
-    "cultivo": "indoor",
+    "cultivo": "ambas",
     "password": "$2a$10$HTg1xemwr8MCTY2g.ANf1.hplwVAFZcIBJaTYSZyZsKaJXAmYhNNK",
     "image": "default-image.jpg",
     "admin": false
@@ -61,7 +61,7 @@
   },
   {
     "id": 7,
-    "name": "Inosuke",
+    "name": "Inosuke Tanjiro",
     "lastname": "Hashibira",
     "email": "ihashibira@gworld.com",
     "cultivo": "ambas",
