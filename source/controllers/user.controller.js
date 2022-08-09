@@ -1,5 +1,6 @@
 const {validationResult} = require('express-validator')
 const {index,create,write, one} = require('../models/users.model');
+const{hashSync}= require("bcryptjs")
 const usersController = {
     login: (req,res) =>{
         return res.render("users/login",{
@@ -104,38 +105,43 @@ const usersController = {
 
     },
     edited:function(req,res){
+        let usuario = one(parseInt(req.params.id))
+        
         let validaciones = validationResult(req)
         let {errors} = validaciones
         if(errors && errors.length > 0){
-            return res.render ("users/edit",{
+            return res.render("users/edit",{
                 title: "Editar Perfil",
                 styles:[
                     "main-forms",
                     "header",
                     "footer"
                 ],
-                oldData: req.body,
                 errors:validaciones.mapped()
             })
         }
+        
         if (!req.files || req.files.length == 0){
-            req.body.image = user.image
+            avatar = usuario.image
         } else{
-            req.body.image = req.files[0].filename;
+            avatar = req.files[0].filename;
         }
         if(!req.body.password || req.body.password.length == 0){
-            req.body.password = user.password
+            passw = usuario.password
+        }else{
+            passw = hashSync(req.body.password,10)
         }
-        let usuario = one(parseInt(req.params.id))
+        
         let usuarios = index()
         let usuariosEditados = usuarios.map(u=>{
             if(u.id == usuario.id){
+                u.id = usuario.id
                 u.name = req.body.name
                 u.lastname = req.body.lastname
                 u.email = req.body.email
                 u.cultivo = req.body.cultivo
-                u.password = hashSync(req.body.password,10)
-                u.image = req.body.image
+                u.password = passw
+                u.image = avatar
                 u.admin = req.body.email.includes('@gworld.com')
             }
             return u

@@ -5,12 +5,12 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-        <form method="post" action="/users/edit/<%=user.id%>?m=PUT" enctype="multipart/form-data">
+        <form method="post" action="/users/edit/<%=user.id%>"" enctype="multipart/form-data">
             <label for="name">Nombre</label>
             <input type="text"
                 name="name"
                 id="name"
-                value="<%= locals.oldData ? oldData.name : user.name %>">
+                value="<%= user.name %>">
                 <% if (locals.errors && errors.name) { %>
                     <p class="msg-error"><%= errors.name.msg %></p>
                 <% } %>  
@@ -54,17 +54,17 @@
 
             <label for="cultivo">Tipo de cultivo?</label>
                 <select name="cultivo" id="cultivo" required>
-                    <option value="ninguna" <%= (locals.oldData &&  (locals.oldData.cultivo == "ninguna"))  ? "selected": user.cultivo == "ninguna"? "selected" : null%>>No cultivo</option>
-                    <option value="indoor" <%= (locals.oldData &&  (locals.oldData.cultivo == "indoor")) ? "selected": user.cultivo == "indoor"? "selected" : null %>>Indoor</option>
-                    <option value="outdoor" <%= (locals.oldData &&  (locals.oldData.cultivo == "outdoor" ))? "selected": user.cultivo == "outdoor"? "selected" : null %>>Outdoor</option>
-                    <option value="ambas" <%= (locals.oldData &&  (locals.oldData.cultivo == "ambas" ))? "selected": user.cultivo == "ambas"? "selected" : null %>>Indoor y Outdoor</option>                    
+                    <option value="ninguna" <%=  user.cultivo == "ninguna"? "selected" : null%>>No cultivo</option>
+                    <option value="indoor" <%= user.cultivo == "indoor"? "selected" : null %>>Indoor</option>
+                    <option value="outdoor" <%=  user.cultivo == "outdoor"? "selected" : null %>>Outdoor</option>
+                    <option value="ambas" <%=  user.cultivo == "ambas"? "selected" : null %>>Indoor y Outdoor</option>                    
                 </select>
             
             <label for="password">Nueva Contraseña</label>
             <input type="password"
                 name="password"
                 id="password"
-                value="<%= locals.oldData ? oldData.password : null %>">
+                >
                 <% if (locals.errors && errors.password) { %>
                     <p class="msg-error"><%= errors.password.msg %></p>
                 <% } %>
@@ -74,7 +74,7 @@
             <input type="password"
                 name="passConfirm"
                 id="passConfirm"
-                value="<%= locals.oldData ? oldData.passConfirm : null %>">
+                >
                 <% if (locals.errors && errors.passConfirm) { %>
                     <p class="msg-error"><%= errors.passConfirm.msg %></p>
                 <% } %>

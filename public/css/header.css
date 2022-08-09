@@ -208,7 +208,7 @@ nav.header-top-nav-bar ul li{
         align-items: center;
         flex-wrap: wrap;
         height:40px;
-        width: 150px;
+        width: auto;
         max-width: auto;
         justify-content: flex-end;
         margin-right:10px;
