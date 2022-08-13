@@ -68,5 +68,15 @@
     "password": "$2a$10$mzCJ1mpvE/6wrvwNDXIG1OF47KURTvm4eJXytI.JGCBoFJAO9JCyO",
     "image": "avatar-1659939057487-970811873.jpg",
     "admin": true
+  },
+  {
+    "id": 8,
+    "name": "xxx",
+    "lastname": "xxx",
+    "email": "jania_2004@hotmail.com",
+    "cultivo": "indoor",
+    "password": "$2a$10$a5QAh752LVDLXmk7sP8WTusHjjwsru5OsofcoEMVw7rJ7x4losJyG",
+    "image": "default-image.jpg",
+    "admin": false
   }
 ]
