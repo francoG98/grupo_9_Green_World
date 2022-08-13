@@ -208,7 +208,7 @@ nav.header-top-nav-bar ul li{
         align-items: center;
         flex-wrap: wrap;
         height:40px;
-        width: 150px;
+        width: auto;
         max-width: auto;
         justify-content: flex-end;
         margin-right:10px;
@@ -227,7 +227,8 @@ nav.header-top-nav-bar ul li{
         border: 2px solid #57CC99;
     }
     .profile-menu-b p{
-        color: white
+        color: white;
+        font-size: 18px
     }
     .profile-menu-b i{
         color: white;
@@ -237,9 +238,28 @@ nav.header-top-nav-bar ul li{
     .profile-menu-b:hover i {
         rotate: 0deg
     }
-    
+    .profile-options{
+        align-content: flex-end;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2px
+    }
+    .profile-options a{
+        text-align: center;
+        text-decoration: none;
+        background-color: #9f9f9f;
+        color: white;
+        padding: 3px;
+        border-radius: 3px;
+        justify-self: flex-end;
+        width: auto;
+        transition: all 200ms
+    }
+    .profile-options a:hover{
+        background-color: #9f9f9f9f
+    }
     .profile-menu-b:hover .profile-options{
-        display: block;
+        display: flex;
     }
     
     

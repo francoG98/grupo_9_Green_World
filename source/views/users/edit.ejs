@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../includes/head.ejs")  %>
+<body>
+    <%- include("../includes/header.ejs") %> 
+    <main>
+        <form method="post" action="/users/edit/<%=user.id%>"" enctype="multipart/form-data">
+            <label for="name">Nombre</label>
+            <input type="text"
+                name="name"
+                id="name"
+                value="<%= user.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <p class="msg-error"><%= errors.name.msg %></p>
+                <% } %>  
+            
+
+
+            <label for="lastname">Apellido</label>
+            <input type="text"
+                name="lastname"
+                id="lastname"
+                value="<%= locals.oldData ? oldData.lastname : user.lastname %>">
+                <% if (locals.errors && errors.lastname) { %>
+                    <p class="msg-error"><%= errors.lastname.msg %></p>
+                <% } %>     
+
+
+
+            <label for="email">Correo Electrónico</label>
+            <input type="email"
+                name="email"
+                id="email"
+                value="<%= locals.oldData ? oldData.email : user.email %>">
+                <% if (locals.errors && errors.email) { %>
+                    <p class="msg-error"><%= errors.email.msg %></p>
+                <% } %> 
+
+                
+            <fieldset class="gp-fieldset">
+                <figure class="dad-figure">
+                    <h3>Imagen de Perfil</h3>
+                    <img src="/assets/avatars/<%= user.image %>">
+                </figure>
+                <fieldset class="dad-fieldset">
+                    <label for="avatar">Actualizar Imagen</label>
+                    <input type="file" name="avatar" id="avatar" autocomplete="off">
+                    <% if (locals.errors && errors.avatar) { %>
+                        <p class="msg-error"> <%= errors.avatar.msg %> </p>
+                    <% } %>   
+                </fieldset>
+            </fieldset>
+
+            <label for="cultivo">Tipo de cultivo?</label>
+                <select name="cultivo" id="cultivo" required>
+                    <option value="ninguna" <%=  user.cultivo == "ninguna"? "selected" : null%>>No cultivo</option>
+                    <option value="indoor" <%= user.cultivo == "indoor"? "selected" : null %>>Indoor</option>
+                    <option value="outdoor" <%=  user.cultivo == "outdoor"? "selected" : null %>>Outdoor</option>
+                    <option value="ambas" <%=  user.cultivo == "ambas"? "selected" : null %>>Indoor y Outdoor</option>                    
+                </select>
+            
+            <label for="password">Nueva Contraseña</label>
+            <input type="password"
+                name="password"
+                id="password"
+                >
+                <% if (locals.errors && errors.password) { %>
+                    <p class="msg-error"><%= errors.password.msg %></p>
+                <% } %>
+
+
+            <label for="passConfirm">Confirma tu Nueva Contraseña</label>           
+            <input type="password"
+                name="passConfirm"
+                id="passConfirm"
+                >
+                <% if (locals.errors && errors.passConfirm) { %>
+                    <p class="msg-error"><%= errors.passConfirm.msg %></p>
+                <% } %>
+            
+
+            <label for="actualPass">Contraseña Actual</label>           
+            <input type="password"
+                name="actualPass"
+                id="actualPass">
+                <% if (locals.errors && errors.actualPass) { %>
+                    <p class="msg-error"><%= errors.actualPass.msg %></p>
+                <% } %>
+        
+            <button type="submit" name="actualizar">Actualizar Datos</button>        
+        </form>
+    </main>
+    <%- include("../includes/footer.ejs") %> 
+    
+</body>
+</html>        

@@ -25,7 +25,7 @@
     "lastname": "Piniol",
     "email": "npinol@gworld.com",
     "cultivo": "indoor",
-    "password": "$2a$10$HrtMAnZDgw8jsE91UEKt7OHe1ppFHwH4Eb9/UNhH315MpvjX9BNse",
+    "password": "$2a$10$7SUtTEIo.x1/ssCzmQSG2exBuTnjzNJ7bDYjXOJgYjTvGpNrWKrlS",
     "image": "default-image.jpg",
     "admin": true
   },
@@ -34,8 +34,8 @@
     "name": "Nico",
     "lastname": "Pini",
     "email": "nicolas.pinol@hotmail.com",
-    "cultivo": "indoor",
-    "password": "$2a$10$HTg1xemwr8MCTY2g.ANf1.hplwVAFZcIBJaTYSZyZsKaJXAmYhNNK",
+    "cultivo": "ambas",
+    "password": "$2a$10$WKED5cYWhDGgqU4MHgG8CuQPJKfEThHWR/s3tS5EIVan0DocSdlXS",
     "image": "default-image.jpg",
     "admin": false
   },
@@ -64,8 +64,8 @@
     "name": "Inosuke",
     "lastname": "Hashibira",
     "email": "ihashibira@gworld.com",
-    "cultivo": "ambas",
-    "password": "$2a$10$mzCJ1mpvE/6wrvwNDXIG1OF47KURTvm4eJXytI.JGCBoFJAO9JCyO",
+    "cultivo": "outdoor",
+    "password": "$2a$10$dwIiGPKgYnE1VwscsmSCQeMUX2lDWkngpHns1fEp7WZj7vPgzrMye",
     "image": "avatar-1659939057487-970811873.jpg",
     "admin": true
   },

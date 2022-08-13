@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("../includes/head.ejs")  %>
+<body>
+    <%- include("../includes/header.ejs") %> 
+    <main>
+   <% if (user) { %>
+    <section class="profile-info">
+        <figure class="profile-image">
+            <img src="/assets/avatars/<%= user.image %>" alt="foto de perfil">
+        </figure>
+        <h2 class="profile-name"><%=user.name%> <%=user.lastname%></h2>
+        <nav><a href="/users/edit/<%=user.id%>"><i class="fa-solid fa-pen-to-square"></i></a></nav>
+        <p class="profile-email"><%= user.email %></p>
+        <div class="tipo-cultivo">
+            <% if (user.cultivo == "indoor") { %>
+                <h3><i class="fa-solid fa-cannabis"> </i>Cultivador de Interior <i class="fa-solid fa-bong"></i></h3>
+                <figure  class="cultivo-image">
+                    <img src="/assets/cultivo/indoor.jpg" alt="foto indoor">
+                </figure>
+            <% } else if(user.cultivo == "outdoor"){%>
+                <h3><i class="fa-solid fa-cannabis"></i> Cultivador de Exterior <i class="fa-solid fa-joint"></i></h3>
+                <figure class="cultivo-image">
+                    <img src="/assets/cultivo/outdoor.jpg" alt="foto outdoor">
+                </figure>
+            <% } else if(user.cultivo == "ambas"){%>
+                <figure class="cultivo-image">
+                    <img src="/assets/cultivo/indoor.jpg" alt="foto indoor">
+                </figure> 
+                <h3><i class="fa-solid fa-cannabis"></i> Cultivador Todoterreno <i class="fa-solid fa-cannabis"></i></h3>
+                <figure class="cultivo-image">
+                    <img src="/assets/cultivo/outdoor.jpg" alt="foto outdoor">
+                </figure>    
+            <% } %>
+        </div>
+    </section>
+    <!--ES LA PARTE DE FAVORITOS DONDE PODES BUSCAR LOS PRODUCTOS QUE FAVEASTE
+        <section class="favoritos">
+        <h3><i class="fa-solid fa-crown"></i> Favoritos</h3>
+        <forms action="/users/profile/<user.id">
+            <input type="text" name="name" id="name" placeholder="Nombre del producto">
+            <button class="search-button" type="submit">Buscar</button>
+        </forms>
+    </section>-->
+    
+   <% } %> 
+        
+    </main>
+    <%- include("../includes/footer.ejs") %> 
+    
+</body>
+</html>       

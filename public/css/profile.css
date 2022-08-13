@@ -1,0 +1,64 @@
+main{
+    background-color: lavender
+
+}
+.profile-info{
+    padding: 10px 0;
+    width: 100vw;
+    display: flex;
+    gap: 5px 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.profile-image{
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+.profile-image img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid black
+}
+.profile-name{
+    font-family: "Abel"
+
+}
+.profile-info nav a{
+    color: #57CC99;
+    transition: all 200ms ease-in-out;  
+}
+.profile-info nav a:hover{
+    font-size: 20px;
+    opacity: 0.7
+}
+.profile-email{
+    width: 100%;
+    text-align:center
+
+}
+.tipo-cultivo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%
+}
+.tipo-cultivo h3{
+    width: 100vw;
+    text-align: center;
+    font-size: 24px;
+    font-family: "Abel";
+}
+.cultivo-image{
+ width: 85vw;
+ height:60vw;
+ text-align: center;
+}
+.cultivo-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
