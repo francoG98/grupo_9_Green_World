@@ -2,13 +2,16 @@ const {body} = require("express-validator")
 const {extname,resolve} = require('path')
 const {unlinkSync} = require('fs')
 const {compareSync} = require("bcryptjs")
+//const {user} = require('../database/models/index')
 const {index, one}= require ("../models/users.model")
 
 const edit = [
     body("name").notEmpty().withMessage("El nombre no puede quedar vacío.").bail().isLength({min:2}).withMessage("El nombre debe contener al menos dos caracteres").bail(),
     body("lastname").notEmpty().withMessage("El apellido no puede quedar vacío.").bail().isLength({min:2}).withMessage("El apellido debe contener al menos dos caracteres").bail(),
     body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom((value,{req}) =>{
+       // ¿aca corregir one por findByPk?
         let usuario = one(parseInt(req.params.id))
+        //let users = await user.findAll()
         let users = index();        
         
         users = users.map(u => u.email != usuario.email ? u.email : null)
@@ -18,6 +21,7 @@ const edit = [
         }
         return true
     }).bail(),
+    //en el custom ahora va a ser: custom(async(value)=>{...})
     body("avatar").custom((value, {req})=>{
         let archivos = req.files
         let extensiones = [".svg", ".jpg", ".png","jpeg"]
@@ -36,12 +40,14 @@ const edit = [
         }
         return true
     }).bail(),
+    //en el custom ahora va a ser: custom(async(value)=>{...})
     body("password").custom((value)=>{
         if(value.length > 0 && value.length < 4 ){
             throw new Error("La contraseña debe tener al menos cuatro caracteres")
         }
         return true
     }).bail(),
+    //en el custom ahora va a ser: custom(async(value)=>{...})
     body("passConfirm").custom((value,{req})=>{
         let {password} = req.body
         if(password.length > 0 && value !== password){
@@ -52,6 +58,7 @@ const edit = [
         return true
     }).bail(),
     body("actualPass").notEmpty().withMessage("Para actualizar tus datos debes ingresar tu contraseña actual").bail().isLength({min:4}).withMessage("La contraseña actual contiene al menos cuatro caracteres").bail().custom((value, {req}) => {
+        // ¿aca corregir one por findByPk?
         let usuario = one(parseInt(req.params.id))
         
         
