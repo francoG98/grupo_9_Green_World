@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 *{
     margin: 0px;
     padding: 0px;
@@ -11,41 +13,44 @@ main{
 }
 
 
-.banner{
-    height:200px;
-    width:100vw;
+/* Slideshow container */
+.slideshow-container {
     margin: 0 auto;
     overflow: hidden;
+    height:400px;
+    width:1200px;
     position: relative;
+    margin: auto;
 }
 
-.banner .imgban {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    transition: all ease-in-out 500ms;
-    -webkit-transition: all ease-in-out 500ms;
-    -moz-transition: all ease-in-out 500ms;
-    -o-transition: all ease-in-out 500ms;
+/*
+.mySlides {
+    display: none;
+}
+*/
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #57CC99;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-.banner #imgban3 {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.active, .dot:hover {
+    background-color: #5c3d99;
 }
 
-.banner #imgban2 {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
-
-.banner #imgban1 {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 nav.main-nav-contenedor a{
