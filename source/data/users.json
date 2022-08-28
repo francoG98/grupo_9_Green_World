@@ -64,9 +64,29 @@
     "name": "Inosuke",
     "lastname": "Hashibira",
     "email": "ihashibira@gworld.com",
-    "cultivo": "outdoor",
+    "cultivo": "indoor",
     "password": "$2a$10$dwIiGPKgYnE1VwscsmSCQeMUX2lDWkngpHns1fEp7WZj7vPgzrMye",
     "image": "avatar-1659939057487-970811873.jpg",
     "admin": true
+  },
+  {
+    "id": 8,
+    "name": "Maria Gisela",
+    "lastname": "Reta Romero",
+    "email": "gisela@pini.com.ar",
+    "cultivo": "ninguna",
+    "password": "$2a$10$an9q.n.pWFWmVNCPyzt96.eW672l6OZVnw23iA6EJwYwfSNFrP.oO",
+    "image": "avatar-1660079814199-897962764.jpg",
+    "admin": false
+  },
+  {
+    "id": 9,
+    "name": "123",
+    "lastname": "123",
+    "email": "123@123.com",
+    "cultivo": "ambas",
+    "password": "$2a$10$OL2wulCKOrRTPTFChbCMGeV9wRvM5HwhHxxbqZPCRZgbqWphlKHDS",
+    "image": "default-image.jpg",
+    "admin": false
   }
 ]
