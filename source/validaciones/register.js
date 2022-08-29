@@ -1,12 +1,15 @@
 const {body} = require("express-validator")
 const {extname,resolve} = require('path')
 const {unlinkSync} = require('fs')
+//const {user} = require('../database/models/index)
 const {index}= require ("../models/users.model")
 
 const register = [
     body("name").notEmpty().withMessage("El nombre no puede quedar vacío.").bail().isLength({min:2}).withMessage("El nombre debe contener al menos dos caracteres").bail(),
     body("lastname").notEmpty().withMessage("El apellido no puede quedar vacío.").bail().isLength({min:2}).withMessage("El apellido debe contener al menos dos caracteres").bail(),
     body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom(value =>{
+    //en el custom ahora va a ser: custom(async(value)=>{...})
+    //let users = await user.findAll()
         let users = index()
         users= users.map( u => u.email)
         if(users.includes(value)){

@@ -1,8 +1,9 @@
 const {validationResult} = require('express-validator')
+//const {user} = require('../database/models/index)
 const {index,create,write, one} = require('../models/users.model');
 const{hashSync}= require("bcryptjs")
 const usersController = {
-    login: (req,res) =>{
+    login: async (req,res) =>{
         return res.render("users/login",{
             title: "Inicia Sesión",
             styles: [
@@ -12,7 +13,7 @@ const usersController = {
             ]
         })
     },
-    processLogin: function(req, res){
+    processLogin: async (req, res) => {
         let validaciones = validationResult(req)
         let {errors} = validaciones
         if(errors && errors.length > 0){
@@ -24,18 +25,19 @@ const usersController = {
                     "footer"
                 ],
                 oldData: req.body,
-                errors:validaciones.mapped()
+                errors: validaciones.mapped()
             })
         }
+        //let users = await user.findAll()
         let users = index()
-        let user = users.find(u => u.email === req.body.email)
+        let user = await users.find(u => u.email === req.body.email)
         req.session.user = user
         if(req.body.recordame != undefined){
             res.cookie("recordame", user.email, {maxAge:172800000})
         }
         return res.redirect('/')
     },
-    register: (req,res) =>{
+    register: async (req,res) =>{
         return res.render("users/register",{
             title: "Registrate",
             styles: [
@@ -46,7 +48,7 @@ const usersController = {
         })
     },
    
-    processRegistration:function(req,res){
+    processRegistration: async (req,res) => {
         let validaciones = validationResult(req)
         let {errors} = validaciones
         if(errors && errors.length > 0){
@@ -68,7 +70,8 @@ const usersController = {
         }
         let newUser = create(req.body)
         let users = index()
-        users.push(newUser)
+        await users.push(newUser)
+        // aca tenemos que cambiar el write por .create (creo)
         write(users)
         return res.redirect('/users/login?msg="El registro fue exitoso"')
         
@@ -104,7 +107,7 @@ const usersController = {
         })
 
     },
-    edited:function(req,res){
+    edited: async (req,res) =>{
         let usuario = one(parseInt(req.params.id))
         
         let validaciones = validationResult(req)
@@ -146,6 +149,7 @@ const usersController = {
             }
             return u
         })
+        //corregir write
         write(usuariosEditados)
         return res.redirect("/users/profile/" + usuario.id)
     }

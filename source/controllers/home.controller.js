@@ -1,3 +1,4 @@
+//const {home} = require('../database/models/index)
 const {categorias} = require('../models/categorias.model')
 module.exports = {
     home: (req,res) =>{
