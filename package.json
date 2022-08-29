@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "nodemon source/index.js -e json,js,mjs,ejs",
-    "start": "nodemon source/index.js -e json,js,mjs,ejs"
+    "start": "nodemon source/index.js -e json,js,mjs,ejs",
+    "sq-i":"sequelize init",
+    "sq-ms":"sequelize init:migrations && sequelize init:seeders"
   },
   "keywords": [],
   "author": "",
@@ -19,13 +21,16 @@
     "express-validator": "^6.14.2",
     "exrpess": "^0.0.1-security",
     "method-override": "^3.0.0",
-    "multer": "^1.4.5-lts.1"
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.4"
   },
   "directories": {
     "doc": "doc"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "sequelize-cli": "^6.4.1"
   },
   "repository": {
     "type": "git",
