@@ -1,6 +1,6 @@
 const {validationResult} = require('express-validator')
-//const {user} = require('../database/models/index)
-const {index,create,write, one} = require('../models/users.model');
+const {Usuario} = require('../database/models/index')
+//const {index,create,write, one} = require('../models/users.model');
 const{hashSync}= require("bcryptjs")
 const usersController = {
     login: async (req,res) =>{
@@ -28,16 +28,15 @@ const usersController = {
                 errors: validaciones.mapped()
             })
         }
-        //let users = await user.findAll()
-        let users = index()
-        let user = await users.find(u => u.email === req.body.email)
+        let users = await usuario.findAll()
+        let user = users.find(u => u.email === req.body.email)
         req.session.user = user
         if(req.body.recordame != undefined){
             res.cookie("recordame", user.email, {maxAge:172800000})
         }
         return res.redirect('/')
     },
-    register: async (req,res) =>{
+    register: async (req,res) => {
         return res.render("users/register",{
             title: "Registrate",
             styles: [
@@ -69,14 +68,14 @@ const usersController = {
             req.body.image = req.files[0].filename;
         }
         let newUser = create(req.body)
-        let users = index()
-        await users.push(newUser)
+        let users = await usuario.findAll()
+        users.push(newUser)
         // aca tenemos que cambiar el write por .create (creo)
         write(users)
         return res.redirect('/users/login?msg="El registro fue exitoso"')
         
     },
-    logout: function (req,res) {
+    logout: async (req,res) => {
         if(req.cookies.recordame != undefined){
             res.cookie("recordame", {maxAge:0})
         }
@@ -85,7 +84,7 @@ const usersController = {
         
         return res.redirect('/')
     },
-    profile: function(req,res){
+    profile: async (req,res) => {
         return res.render("users/profile",{
             title: "Perfil de Usuario",
             styles:[
@@ -95,7 +94,7 @@ const usersController = {
             ]
         })
     },
-    edit: function(req,res){
+    edit: async (req,res) => {
         
         return res.render("users/edit", {
             title: "Editar Usuario",
@@ -108,7 +107,7 @@ const usersController = {
 
     },
     edited: async (req,res) =>{
-        let usuario = one(parseInt(req.params.id))
+        let usuario = await usuario.findByPk(req.params.id, {include:{all: true}})
         
         let validaciones = validationResult(req)
         let {errors} = validaciones
@@ -135,7 +134,7 @@ const usersController = {
             passw = hashSync(req.body.password,10)
         }
         
-        let usuarios = index()
+        let usuarios = await usuario.findAll()
         let usuariosEditados = usuarios.map(u=>{
             if(u.id == usuario.id){
                 u.id = usuario.id

@@ -108,10 +108,8 @@ module.exports = {
         ]
       })
     },
-    //agregar el async
-    edited:(req, res)=>{
-      //corregir por findByPk
-      let product = one(parseInt(req.params.id))
+    edited: async (req, res)=>{
+      let product = await producto.findByPk(req.params.id,{include:{all:true}})
       //corregir por findAll (en realidad creo q no vamos a necesitarlo, se borra)
       let products = index()
       //y todo esto lo reemplazamos por:  await productDB.update({
@@ -138,10 +136,8 @@ module.exports = {
       write(productsEdited)
       return res.redirect("/products/detail/" + product.id)
     },
-    //agregar el async
-    destroy: (req, res)=>{
-      //findByPk
-      let product = one(parseInt(req.params.id))
+    destroy: async (req, res)=>{
+      let product = await producto.findByPk(req.params.id,{include:{all:true}})
       if(!product){
         return res.redirect("/products/")
       }

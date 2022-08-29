@@ -2,17 +2,16 @@ const {body} = require("express-validator")
 const {extname,resolve} = require('path')
 const {unlinkSync} = require('fs')
 const {compareSync} = require("bcryptjs")
-//const {user} = require('../database/models/index')
-const {index, one}= require ("../models/users.model")
+const {Usuario} = require('../database/models/index')
+//const {index, one}= require ("../models/users.model")
 
 const edit = [
     body("name").notEmpty().withMessage("El nombre no puede quedar vacío.").bail().isLength({min:2}).withMessage("El nombre debe contener al menos dos caracteres").bail(),
     body("lastname").notEmpty().withMessage("El apellido no puede quedar vacío.").bail().isLength({min:2}).withMessage("El apellido debe contener al menos dos caracteres").bail(),
-    body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom((value,{req}) =>{
-       // ¿aca corregir one por findByPk?
-        let usuario = one(parseInt(req.params.id))
-        //let users = await user.findAll()
-        let users = index();        
+    body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom( async (value,{req}) => {
+       // ¿aca corregir one por findByPk? let usuario = one(parseInt(req.params.id))
+        let usuario = await usuario.findByPk(req.params.id, {include:{all:true}});
+        let users = await usuario.findAll()    
         
         users = users.map(u => u.email != usuario.email ? u.email : null)
         
@@ -21,8 +20,7 @@ const edit = [
         }
         return true
     }).bail(),
-    //en el custom ahora va a ser: custom(async(value)=>{...})
-    body("avatar").custom((value, {req})=>{
+    body("avatar").custom( async (value, {req})=>{
         let archivos = req.files
         let extensiones = [".svg", ".jpg", ".png","jpeg"]
         if (archivos.length != 0){
@@ -40,15 +38,13 @@ const edit = [
         }
         return true
     }).bail(),
-    //en el custom ahora va a ser: custom(async(value)=>{...})
-    body("password").custom((value)=>{
+    body("password").custom( async (value) => {
         if(value.length > 0 && value.length < 4 ){
             throw new Error("La contraseña debe tener al menos cuatro caracteres")
         }
         return true
     }).bail(),
-    //en el custom ahora va a ser: custom(async(value)=>{...})
-    body("passConfirm").custom((value,{req})=>{
+    body("passConfirm").custom( async (value,{req}) => {
         let {password} = req.body
         if(password.length > 0 && value !== password){
             throw new Error("Las contraseñas deben coincidir")
@@ -57,10 +53,9 @@ const edit = [
         
         return true
     }).bail(),
-    body("actualPass").notEmpty().withMessage("Para actualizar tus datos debes ingresar tu contraseña actual").bail().isLength({min:4}).withMessage("La contraseña actual contiene al menos cuatro caracteres").bail().custom((value, {req}) => {
-        // ¿aca corregir one por findByPk?
-        let usuario = one(parseInt(req.params.id))
-        
+    body("actualPass").notEmpty().withMessage("Para actualizar tus datos debes ingresar tu contraseña actual").bail().isLength({min:4}).withMessage("La contraseña actual contiene al menos cuatro caracteres").bail().custom( async (value, {req}) => {
+        // ¿aca corregir one por findByPk? let usuario = one(parseInt(req.params.id))
+        let usuario = await usuario.findByPk(req.params.id, {include:{all:true}});
         
         if(!compareSync(value, usuario.password)){
             throw new Error("La contraseña es incorrecta")

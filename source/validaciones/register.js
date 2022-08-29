@@ -1,16 +1,14 @@
 const {body} = require("express-validator")
 const {extname,resolve} = require('path')
 const {unlinkSync} = require('fs')
-//const {user} = require('../database/models/index)
-const {index}= require ("../models/users.model")
+const {Usuario} = require('../database/models/index')
+//const {index}= require ("../models/users.model")
 
 const register = [
     body("name").notEmpty().withMessage("El nombre no puede quedar vacío.").bail().isLength({min:2}).withMessage("El nombre debe contener al menos dos caracteres").bail(),
     body("lastname").notEmpty().withMessage("El apellido no puede quedar vacío.").bail().isLength({min:2}).withMessage("El apellido debe contener al menos dos caracteres").bail(),
-    body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom(value =>{
-    //en el custom ahora va a ser: custom(async(value)=>{...})
-    //let users = await user.findAll()
-        let users = index()
+    body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom( async (value) => {
+        let users = await usuario.findAll()
         users= users.map( u => u.email)
         if(users.includes(value)){
             throw new Error("Este email ya está registrado")
@@ -18,7 +16,7 @@ const register = [
         return true
     }).bail(),
     body("password").notEmpty().withMessage("La contraseña no puede quedar vacía").bail().isLength({min:4}).withMessage("La contraseña debe contener al menos cuatro caracteres").bail(),
-    body("passConfirm").custom( (value,{req}) =>{
+    body("passConfirm").custom( async (value,{req}) => {
         let {password} = req.body
         if(value !== password){
             throw new Error("Las contraseñas deben coincidir")
@@ -26,7 +24,7 @@ const register = [
         return true
 
     }).bail(),
-    body("avatar").custom((value, {req})=>{
+    body("avatar").custom( async (value, {req})=>{
         let archivos = req.files
         let extensiones = [".svg", ".jpg", ".png","jpeg"]
         if (archivos.length != 0){
