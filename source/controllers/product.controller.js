@@ -1,20 +1,21 @@
-//const {product} = require('../database/models/index)
-const { index,create, write, one} = require('../models/products.model')
+const {producto, imagen} = require("../database/models/index")
+//const { index,create, write, one} = require('../models/products.model')
 const {unlinkSync} = require('fs')
 const {join} = require('path')
 module.exports = {
      
-    categories: (req,res)=>{
+    categories: async (req,res)=>{ //LISTO
       let categoria = req.params.category;
-      //let productos = await product.findAll()
-      //o tambien puede ser: let productos = await product.findAll({include:{all:true}})
-      let productos = index()
-      let pertenecen = productos.filter(element=>{
-        if (element.category == categoria)
-        return element
-      })
+      let products = await producto.findAll({
+        include:{all:true},
+        where:{
+          category:{
+            [Op.like]:categoria
+          }
+        }
+      })      
         return res.render("products/categorias",{
-          products: pertenecen,
+          products: products,
           title: categoria.toUpperCase(),
           styles: [
             "main-categories",
@@ -23,10 +24,8 @@ module.exports = {
           ]
         })      
     },
-    //agregar el async
-    list: (req,res)=>{
-      //await product.findAll()
-      let products = index();
+    list: async(req,res)=>{ //LISTO
+      let products = await producto.findAll({include:{all:true}})
       if(req.query && req.query.name){
         products = products.filter(product=> product.name.toLowerCase().indexOf(req.query.name.toLowerCase())> -1)
       }
@@ -40,14 +39,12 @@ module.exports = {
         ]
       })
     },
-//agregar el async
-    detail: (req,res)=>{
-      //let product = await product.findByPk(req.params.idProduct, {include:{all:true}})
-      let product = one(parseInt(req.params.idProduct))
+    detail: async(req,res)=>{ //LISTO
+      let product = await producto.findByPk(req.params.idProduct, {include:{all:true}})
       if(!product){
       return res.redirect('/products/')
       }
-      res.render("products/productBacklog",{
+      return res.render("products/productBacklog",{
         title: "Detalle del Producto",
         product: product,
         styles:[
@@ -57,8 +54,8 @@ module.exports = {
         ]
       })
     },
-    //agregar el async
-    create: (req,res)=>{
+   
+    create: async(req,res)=>{ //LISTO
       return res.render("products/create",{
         title: "Crear Producto",
         styles: [
@@ -68,18 +65,23 @@ module.exports = {
         ]
       })
     },
-    //agregar el async
-    created:(req,res)=>{
-      req.body.image = req.files[0].filename;
-      //await product.create(req.body)
-      let newProduct=create(req.body)
-      //await product.findAll()
-      let products = index();
-      products.push(newProduct);
-      //¿corregir el write?
-      write(products)
+    created:async(req,res)=>{
+      
+      if(req.files &&req.files.length >0){
+        let images = await Promise.all(req.files.map( file =>{
+          return imagen.create({
+            path:file.filename
+          })
+        }))
+        let nuevoProducto = await producto.create(req.body)
+      //req.body.image = req.files[0].filename;
+      //let newProduct=create(req.body)     
+      //let products = index();
+      //products.push(newProduct);      
+      //write(products)
+      
       return res.redirect('/products/')
-  },
+  }},
   //agregar el async
     edit:(req, res)=>{
       //corregir el one por findByPk
