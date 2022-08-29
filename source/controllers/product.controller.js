@@ -1,10 +1,21 @@
-const {producto, imagen} = require("../database/models/index")
+const {producto, imagen, categoria} = require("../database/models/index")
 //const { index,create, write, one} = require('../models/products.model')
 const {unlinkSync} = require('fs')
 const {join} = require('path')
 module.exports = {
      
     categories: async (req,res)=>{ //LISTO
+
+      /*OTRA FORMA:
+      let category = await categoria.findAll({
+        include:{all:true},
+        where:{
+          name:{
+            [Op.like]: req.params.category
+          }
+        }
+      })
+      let products = category.products */ 
       let categoria = req.params.category;
       let products = await producto.findAll({
         include:{all:true},
@@ -82,10 +93,8 @@ module.exports = {
       
       return res.redirect('/products/')
   }},
-  //agregar el async
-    edit:(req, res)=>{
-      //corregir el one por findByPk
-      let product = one(parseInt(req.params.id))
+    edit:async(req, res)=>{//LISTO
+      let product = await producto.findByPk(req.params.id,{include:{all:true}})
       if(!product){
         return res.redirect('/products/')
       }
