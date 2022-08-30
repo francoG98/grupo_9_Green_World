@@ -2,7 +2,6 @@ const {body} = require("express-validator")
 const {extname,resolve} = require('path')
 const {unlinkSync} = require('fs')
 const {Usuario} = require('../database/models/index')
-//const {index}= require ("../models/users.model")
 
 const register = [
     body("name").notEmpty().withMessage("El nombre no puede quedar vacío.").bail().isLength({min:2}).withMessage("El nombre debe contener al menos dos caracteres").bail(),

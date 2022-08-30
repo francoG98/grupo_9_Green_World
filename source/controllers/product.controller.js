@@ -1,5 +1,4 @@
 const {producto, imagen, categoria} = require("../database/models/index")
-//const { index,create, write, one} = require('../models/products.model')
 const {unlinkSync} = require('fs')
 const {join} = require('path')
 module.exports = {
@@ -76,9 +75,9 @@ module.exports = {
         ]
       })
     },
-    created:async(req,res)=>{
+    created: async (req,res) => {
       
-      if(req.files &&req.files.length >0){
+      if(req.files && req.files.length > 0){
         let images = await Promise.all(req.files.map( file =>{
           return imagen.create({
             path:file.filename

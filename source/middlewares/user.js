@@ -1,5 +1,4 @@
 const middleware = (req, res, next)=>{
-// ¿ agregar el async ?
     let user = null;
 
     if(req.session && req.session.user){

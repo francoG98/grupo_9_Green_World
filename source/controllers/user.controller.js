@@ -1,6 +1,5 @@
 const {validationResult} = require('express-validator')
 const {Usuario} = require('../database/models/index')
-//const {index,create,write, one} = require('../models/users.model');
 const{hashSync}= require("bcryptjs")
 const usersController = {
     login: async (req,res) =>{
