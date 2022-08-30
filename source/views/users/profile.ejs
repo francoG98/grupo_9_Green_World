@@ -7,7 +7,7 @@
    <% if (user) { %>
     <section class="profile-info">
         <figure class="profile-image">
-            <img src="/assets/avatars/<%= user.image %>" alt="foto de perfil">
+            <img src="/assets/avatars/<%= user.image.path %>" alt="foto de perfil">
         </figure>
         <h2 class="profile-name"><%=user.name%> <%=user.lastname%></h2>
         <nav><a href="/users/edit/<%=user.id%>"><i class="fa-solid fa-pen-to-square"></i></a></nav>
