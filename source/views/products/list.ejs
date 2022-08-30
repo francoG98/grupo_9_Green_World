@@ -12,7 +12,7 @@
     <section class="productos">
         <% products.forEach(element => { %> 
         <article>
-            <img src="/assets/products-images/<%= element.image %>" alt="Imagen de producto" width="50%">
+            <img src="/assets/products-images/<%= element.image[0].path %>" alt="Imagen de producto" width="50%">
             <h3><%= element.name %> </h3>
             <nav class="botones">
                 <a class="boton-editar" href="/products/edit/<%=element.id%>">Editar Producto</a>

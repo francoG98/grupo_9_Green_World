@@ -7,20 +7,23 @@
         <form method="post" action="/products/edit/<%=product.id %>?m=PUT" enctype="multipart/form-data">
             <label for="name">Nombre del Producto</label>
             <input type="text" name="name" id="name" value="<%=product.name %>">
+
             <label for="description">Descripción del Producto</label>
             <textarea name="description" id="description" autocomplete="off"><%=product.description %></textarea>
+
             <fieldset class="gp-fieldset">
                 <figure class="dad-figure">
                     <h3>Imagen del Producto</h3>
-                    <img src="/assets/products-images/<%= product.image.path %>">
+                    <img src="/assets/products-images/<%= product.image[0].path %>">
                 </figure>
                 <fieldset class="dad-fieldset">
                     <label for="image">Actualizar Imagen</label>
                     <input type="file" name="product-image" id="image" autocomplete="off">
                 </fieldset>
             </fieldset>
+            
             <label for="category">Categoría del Producto</label>
-            <select name="category" id="category">
+            <select name="categoria_id" id="category">
                 <option value="1" <%= product.category.name == "accesorios" ? "selected": null %> >ACCESORIOS</option>
                 <option value="2" <%= product.category.name == "aditivos" ? "selected": null %> >ADITIVOS</option>
                 <option value="3" <%= product.category.name == "medicinal" ? "selected": null %> >MEDICINAL</option>
