@@ -12,7 +12,7 @@
             <fieldset class="gp-fieldset">
                 <figure class="dad-figure">
                     <h3>Imagen del Producto</h3>
-                    <img src="/assets/products-images/<%= product.image %>">
+                    <img src="/assets/products-images/<%= product.image.path %>">
                 </figure>
                 <fieldset class="dad-fieldset">
                     <label for="image">Actualizar Imagen</label>
@@ -21,11 +21,11 @@
             </fieldset>
             <label for="category">Categoría del Producto</label>
             <select name="category" id="category">
-                <option value="accesorios" <%= product.category == "accesorios" ? "selected": null %> >ACCESORIOS</option>
-                <option value="aditivos" <%= product.category == "aditivos" ? "selected": null %> >ADITIVOS</option>
-                <option value="medicinal" <%= product.category == "medicinal" ? "selected": null %> >MEDICINAL</option>
-                <option value="parafernalia" <%= product.category == "parafernalia" ? "selected": null %> >PARAFERNALIA</option>
-                <option value="sustratos" <%= product.category == "sustratos" ? "selected": null %> >SUSTRATOS</option>
+                <option value="1" <%= product.category.name == "accesorios" ? "selected": null %> >ACCESORIOS</option>
+                <option value="2" <%= product.category.name == "aditivos" ? "selected": null %> >ADITIVOS</option>
+                <option value="3" <%= product.category.name == "medicinal" ? "selected": null %> >MEDICINAL</option>
+                <option value="4" <%= product.category.name == "parafernalia" ? "selected": null %> >PARAFERNALIA</option>
+                <option value="5" <%= product.category.name == "sustratos" ? "selected": null %> >SUSTRATOS</option>
             </select>
             <label for="color">Color del Producto</label>
             <input type="text" name="color" id="color" value="<%=product.color %>">

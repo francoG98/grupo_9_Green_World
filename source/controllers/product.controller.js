@@ -82,17 +82,13 @@ module.exports = {
           return imagen.create({
             path:file.filename
           })
+          req.body.image = images.id
         }))
-        let nuevoProducto = await producto.create(req.body)
-      //req.body.image = req.files[0].filename;
-      //let newProduct=create(req.body)     
-      //let products = index();
-      //products.push(newProduct);      
-      //write(products)
+        await producto.create(req.body)
       
       return res.redirect('/products/')
   }},
-    edit:async(req, res)=>{//LISTO
+    edit: async (req, res) => {//LISTO
       let product = await producto.findByPk(req.params.id,{include:{all:true}})
       if(!product){
         return res.redirect('/products/')
@@ -109,31 +105,21 @@ module.exports = {
     },
     edited: async (req, res)=>{
       let product = await producto.findByPk(req.params.id,{include:{all:true}})
-      //corregir por findAll (en realidad creo q no vamos a necesitarlo, se borra)
-      let products = index()
-      //y todo esto lo reemplazamos por:  await productDB.update({
-     // name :  req.body.name,
-      //description : req.body.description,
-      //price : parseInt(req.body.price)
-      //})
-      let productsEdited = products.map(p=>{
-        if(p.id == product.id){
-          p.name = req.body.name
-          p.description = req.body.description
-          p.price = parseInt(req.body.price)
-          p.color = req.body.color
-      //hasta aca (a chequear igual)
-          if(req.files && req.files.length > 0){
-            unlinkSync(join(__dirname, "../../public/assets/", "products-images",p.image))
-            p.image = req.files[0].filename 
-          } else{
-            p.image = p.image
-          }
-        }
-        return p
+      await product.update({
+      name :  req.body.name,
+      description : req.body.description,
+      price : parseInt(req.body.price)
       })
-      write(productsEdited)
-      return res.redirect("/products/detail/" + product.id)
+          if(req.files && req.files.length > 0){
+            unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image.path))
+            let foto = await imagen.create({
+              path: req.files[0].filename 
+            }) 
+            await product.update({
+              image_id: foto.id
+            })
+          }
+          return res.redirect("/products/detail/" + product.id)
     },
     destroy: async (req, res)=>{
       let product = await producto.findByPk(req.params.id,{include:{all:true}})
