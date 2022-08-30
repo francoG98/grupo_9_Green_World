@@ -1,7 +1,9 @@
 //const {home} = require('../database/models/index)
-const {categorias} = require('../models/categorias.model')
+const {categoria} = require('../database/models/index')
 module.exports = {
-    home: (req,res) =>{
+    home: async(req,res) =>{
+
+        let categorias = await categoria.findAll({include:{all:true}})
         return res.render("home",{
             title: "Green World",
             styles: [
@@ -9,7 +11,7 @@ module.exports = {
                 "header",
                 "footer"
             ],
-            categorias: categorias()
+            categorias: categorias
         })
     }
 }

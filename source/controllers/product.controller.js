@@ -15,18 +15,18 @@ module.exports = {
         }
       })
       let products = category.products */ 
-      let categoria = req.params.category;
+      let category = req.params.category;
       let products = await producto.findAll({
         include:{all:true},
         where:{
           category:{
-            [Op.like]:categoria
+            [Op.like]:category
           }
         }
       })      
         return res.render("products/categorias",{
           products: products,
-          title: categoria.toUpperCase(),
+          title: category.toUpperCase(),
           styles: [
             "main-categories",
             "header",
@@ -82,12 +82,15 @@ module.exports = {
           return imagen.create({
             path:file.filename
           })
-          req.body.image = images.id
+          
         }))
-        await producto.create(req.body)
-      
+        req.body.image_id = images.id
+      } else {
+        req.body.image_id = 7
+      }
+      await producto.create(req.body)
       return res.redirect('/products/')
-  }},
+    },
     edit: async (req, res) => {//LISTO
       let product = await producto.findByPk(req.params.id,{include:{all:true}})
       if(!product){
@@ -108,7 +111,10 @@ module.exports = {
       await product.update({
       name :  req.body.name,
       description : req.body.description,
-      price : parseInt(req.body.price)
+      price : parseInt(req.body.price),
+      category_id:req.body.categoria_id,
+      color: req.body.color,
+
       })
           if(req.files && req.files.length > 0){
             unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image.path))
@@ -121,7 +127,7 @@ module.exports = {
           }
           return res.redirect("/products/detail/" + product.id)
     },
-    destroy: async (req, res)=>{
+    destroid: async (req, res)=>{
       let product = await producto.findByPk(req.params.id,{include:{all:true}})
       if(!product){
         return res.redirect("/products/")
