@@ -1,8 +1,8 @@
 const {validationResult} = require('express-validator')
-const {Usuario} = require('../database/models/index')
+const {usuario, imagen} = require('../database/models/index')
 //const {index,create,write, one} = require('../models/users.model');
 const{hashSync}= require("bcryptjs")
-const usersController = {
+const usersController = { //LISTO
     login: async (req,res) =>{
         return res.render("users/login",{
             title: "Inicia Sesión",
@@ -13,7 +13,9 @@ const usersController = {
             ]
         })
     },
-    processLogin: async (req, res) => {
+
+    //USAMOS ASYNC PORQUE ES UNA FUNCION ASINCRONA Y POR ESO USAMOS LAS PROMESAS COMO AWAIT 
+    processLogin: async (req, res) => { //LISTO
         let validaciones = validationResult(req)
         let {errors} = validaciones
         if(errors && errors.length > 0){
@@ -28,15 +30,20 @@ const usersController = {
                 errors: validaciones.mapped()
             })
         }
-        let users = await usuario.findAll()
+        //ACA USAMOS EL AWAIT ANTES DE SOLICITARLE DATOS A SQL, PARA QUE NO SE TRABE LA EJECUCION DE LA APP ESPERANDO A LA BASE DE DATOS
+        let users = await usuario.findAll({include:{all:true}})
         let user = users.find(u => u.email === req.body.email)
+        //ESTO ES DE LA SESION, NO HAY CAMBIOS
         req.session.user = user
+        //LO DE ACA ABAJO SON LAS COOKIES, SIGUE SIN CAMBIOS
         if(req.body.recordame != undefined){
             res.cookie("recordame", user.email, {maxAge:172800000})
         }
         return res.redirect('/')
     },
-    register: async (req,res) => {
+
+    //POR MAS QUE NO UTILICEMOS DATOS DE LA BASE DE DATOS EN ESTE METODO, LE DAMOS ASYNC DE TODAS FORMAS.
+    register: async (req,res) => {//LISTO
         return res.render("users/register",{
             title: "Registrate",
             styles: [
@@ -47,7 +54,9 @@ const usersController = {
         })
     },
    
-    processRegistration: async (req,res) => {
+    processRegistration: async (req,res) => {//LISTO
+
+        //ESTO ES DE LAS VALIDACIONES, SIGUE IGUAL
         let validaciones = validationResult(req)
         let {errors} = validaciones
         if(errors && errors.length > 0){
@@ -62,16 +71,25 @@ const usersController = {
                 errors:validaciones.mapped()
             })
         }
+        //HASHEAMOS LA PASS DEL USER
+        req.body.password= hashSync(req.body.password, 10)
+
+        //COMPROBAMOS QUE ES ADMIN
+        req.body.isAdmin = String(req.body.username).toLocaleLowerCase().includes('@gworld.com')
+
+        //ALMACENAMOS LA DIRECCION DE LA IMAGEN EN LA BASE DE DATOS
         if (!req.files || req.files.length == 0){
-            req.body.image = "default-image.jpg"
-        } else{
-            req.body.image = req.files[0].filename;
+            //ESTE CASO ES EN EL CASO QUE NO HAYA 
+            
+            req.body.image = 6 // EL ID 6 ES DONDE TENEMOS ALMACENADA LA IMAGEN POR DEFECTO DE USUARIOS
+            let avatar = await imagen.create({
+                //SI SE REGISTRA CON UNA IMAGEN AHORA SI LE GUARDAMOS EL PATH EN NUESTRA TABLA DE IMAGENES
+                path: req.files[0].filename
+            })
+            req.body.image = avatar.id //Y COLOCAMOS COMO DATO EL ID DE ESA IMAGEN
         }
-        let newUser = create(req.body)
-        let users = await usuario.findAll()
-        users.push(newUser)
-        // aca tenemos que cambiar el write por .create (creo)
-        write(users)
+        await usuario.create(req.body)
+        
         return res.redirect('/users/login?msg="El registro fue exitoso"')
         
     },
