@@ -1,4 +1,3 @@
-//const {home} = require('../database/models/index)
 const {categoria} = require('../database/models/index')
 module.exports = {
     home: async(req,res) =>{

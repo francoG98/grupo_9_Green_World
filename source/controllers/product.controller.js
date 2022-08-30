@@ -133,6 +133,7 @@ module.exports = {
       if(!product){
         return res.redirect("/products/")
       }
+      unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image[0].path))
       await product.destroy()
       return res.redirect('/products/');
     }

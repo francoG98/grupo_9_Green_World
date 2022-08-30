@@ -74,7 +74,7 @@ const usersController = { //LISTO
         req.body.password= hashSync(req.body.password, 10)
 
         //COMPROBAMOS QUE ES ADMIN
-        req.body.isAdmin = String(req.body.username).toLocaleLowerCase().includes('@gworld.com')
+        req.body.isAdmin = String(req.body.email).toLocaleLowerCase().includes('@gworld.com')
 
         //ALMACENAMOS LA DIRECCION DE LA IMAGEN EN LA BASE DE DATOS
         if (!req.files || req.files.length == 0){
@@ -98,8 +98,6 @@ const usersController = { //LISTO
             res.cookie("recordame", {maxAge:0})
         }
         delete req.session.user 
-         
-        
         return res.redirect('/')
     },
     profile: async (req,res) => {
