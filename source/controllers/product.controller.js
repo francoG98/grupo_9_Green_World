@@ -75,7 +75,7 @@ module.exports = {
         ]
       })
     },
-    created: async (req,res) => {
+    created: async (req,res) => { //LISTO
       
       if(req.files && req.files.length > 0){
         let images = await Promise.all(req.files.map( file =>{
@@ -103,7 +103,7 @@ module.exports = {
         ]
       })
     },
-    edited: async (req, res)=>{
+    edited: async (req, res)=>{ //LISTO
       let product = await producto.findByPk(req.params.id,{include:{all:true}})
       await product.update({
       name :  req.body.name,
@@ -121,18 +121,12 @@ module.exports = {
           }
           return res.redirect("/products/detail/" + product.id)
     },
-    destroy: async (req, res)=>{
-      let product = await producto.findByPk(req.params.id,{include:{all:true}})
-      if(!product){
-        return res.redirect("/products/")
+    destroid: async (req, res) => { //LISTO
+      let productDB = await product.findByPk(req.body.id,{include:{all:true}})
+      if(!productDB){
+        return res.redirect('/products/');
       }
-      unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image))
-      let products = index()
-      //CREO que aca se podria hacer un await product.destroy({where:{
-      //id: productDB.id
-      //}})
-      let productsDeleted = products.filter(p=>p.id !== product.id)
-      write(productsDeleted)
-      return res.redirect("/products/")
+      await productDB.destroy()
+      return res.redirect('/products/');
     }
 }

@@ -7,7 +7,7 @@ const register = [
     body("name").notEmpty().withMessage("El nombre no puede quedar vacío.").bail().isLength({min:2}).withMessage("El nombre debe contener al menos dos caracteres").bail(),
     body("lastname").notEmpty().withMessage("El apellido no puede quedar vacío.").bail().isLength({min:2}).withMessage("El apellido debe contener al menos dos caracteres").bail(),
     body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom( async (value) => {
-        let users = await usuario.findAll()
+        let users = await usuario.findAll({include:{all:true}})
         users= users.map( u => u.email)
         if(users.includes(value)){
             throw new Error("Este email ya está registrado")

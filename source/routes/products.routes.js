@@ -17,6 +17,6 @@ router.get("/",[adminMiddleware], list)
 router.post('/created',[upload.any()],created)
 router.get('/edit/:id',[adminMiddleware], edit)
 router.put('/edit/:id', [upload.any()], edited)
-router.delete('/delete/:id',[adminMiddleware], destroy)
+router.delete('/delete/:id',[adminMiddleware], destroid)
 
 module.exports = router;
