@@ -42,12 +42,12 @@ module.exports=(sequelize,DataTypes)=>{
 
     const Usuario= sequelize.define(alias, cols, config)
 
-    Usuario.associate= function(models){
-        Usuario.belongsTo(models.imagen,{
-            as: "image",
-            foreignKey:"image_id"
-        })
-    }
+  Usuario.associate = function(model){
+    Usuario.belongsTo(model.imagene,{
+        as:"image",
+        foreignKey:"image_id"
+    })
+  } 
 
 
     return Usuario

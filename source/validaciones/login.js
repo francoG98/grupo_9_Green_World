@@ -1,5 +1,5 @@
 const {body} = require("express-validator")
-const {Usuario} = require('../database/models/index')
+const {usuario} = require('../database/models/index')
 const {compareSync} = require("bcryptjs")
 const login = [
     body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom( async (value) => {

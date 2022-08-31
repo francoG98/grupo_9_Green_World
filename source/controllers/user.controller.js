@@ -1,5 +1,5 @@
 const {validationResult} = require('express-validator')
-const {usuario, imagen} = require('../database/models/index')
+const {usuario, imagene} = require('../database/models/index')
 const{hashSync}= require("bcryptjs")
 const usersController = { //LISTO
     login: async (req,res) =>{
@@ -82,7 +82,7 @@ const usersController = { //LISTO
             
             req.body.image = 6 // EL ID 6 ES DONDE TENEMOS ALMACENADA LA IMAGEN POR DEFECTO DE USUARIOS
         } else {
-            let avatar = await imagen.create({
+            let avatar = await imagene.create({
                 //SI SE REGISTRA CON UNA IMAGEN AHORA SI LE GUARDAMOS EL PATH EN NUESTRA TABLA DE IMAGENES
                 path: req.files[0].filename
             })

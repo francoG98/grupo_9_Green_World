@@ -1,5 +1,7 @@
-const {producto, imagen, categoria} = require("../database/models/index")
+const {producto, imagene, categoria} = require("../database/models/index")
 const {unlinkSync} = require('fs')
+const sequelize =require("sequelize")
+const {Op} = sequelize
 const {join} = require('path')
 module.exports = {
      
@@ -79,14 +81,14 @@ module.exports = {
       
       if(req.files && req.files.length > 0){
         let images = await Promise.all(req.files.map( file =>{
-          return imagen.create({
+          return imagene.create({
             path:file.filename
           })
           
         }))
         req.body.image_id = images.id
       } else {
-        req.body.image_id = 7
+        req.body.image_id = 8
       }
       await producto.create(req.body)
       return res.redirect('/products/')
@@ -118,7 +120,7 @@ module.exports = {
       })
           if(req.files && req.files.length > 0){
             unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image.path))
-            let foto = await imagen.create({
+            let foto = await imagene.create({
               path: req.files[0].filename 
             }) 
             await product.update({
