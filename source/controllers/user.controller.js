@@ -123,7 +123,7 @@ const usersController = { //LISTO
 
     },
     edited: async (req,res) =>{
-        let usuario = await usuario.findByPk(req.params.id, {include:{all: true}})
+        let user = await usuario.findByPk(req.params.id, {include:{all: true}})
         let avatar
         let validaciones = validationResult(req)
         let {errors} = validaciones
@@ -140,7 +140,7 @@ const usersController = { //LISTO
         }
         
         if (!req.files || req.files.length == 0){
-            avatar = usuario.image.id
+            avatar = user.image.id
         } else{
             let foto = await imagene.create({
                 path:req.files[0].filename
@@ -148,12 +148,12 @@ const usersController = { //LISTO
             avatar = foto.id;
         }
         if(!req.body.password || req.body.password.length == 0){
-            passw = await usuario.password
+            passw = await user.password
         }else{
             passw = hashSync(req.body.password,10)
         }
 
-        await usuario.update({
+        await user.update({
             name:req.body.name,
             lastname:req.body.lastname,
             email:req.body.email,
@@ -163,7 +163,7 @@ const usersController = { //LISTO
             admin:req.dody.email.includes('@gworld.com')
         })
         
-        return res.redirect("/users/profile/" + usuario.id)
+        return res.redirect("/users/profile/" + user.id)
     }
 
 }
