@@ -122,7 +122,51 @@ const usersController = { //LISTO
         })
 
     },
-    
+
+    edited: async (req,res) =>{
+        let user = await usuario.findByPk(req.params.id, {include:{all: true}})
+        let avatar
+        let validaciones = validationResult(req)
+        let {errors} = validaciones
+        if(errors && errors.length > 0){
+            return res.render("users/edit",{
+                title: "Editar Perfil",
+                styles:[
+                    "main-forms",
+                    "header",
+                    "footer"
+                ],
+                errors:validaciones.mapped()
+            })
+        }
+        
+        if (!req.files || req.files.length == 0){
+            avatar = user.image.id
+        } else{
+            let foto = await imagene.create({
+                path:req.files[0].filename
+            })
+            avatar = foto.id;
+        }
+        if(!req.body.password || req.body.password.length == 0){
+            passw = await user.password
+        }else{
+            passw = hashSync(req.body.password,10)
+        }
+
+        await user.update({
+            name:req.body.name,
+            lastname:req.body.lastname,
+            email:req.body.email,
+            cultivo:req.body.cultivo,
+            password:req.body.passw,
+            image_id:avatar,
+            admin:req.dody.email.includes('@gworld.com')
+        })
+        
+        return res.redirect("/users/profile/" + user.id)
+    }
+
 }
 
 module.exports = usersController

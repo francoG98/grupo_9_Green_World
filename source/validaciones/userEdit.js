@@ -60,7 +60,6 @@ const edit = [
         return true
 
     })
-
 ]
 
 module.exports = edit
