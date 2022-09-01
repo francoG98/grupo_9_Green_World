@@ -124,7 +124,7 @@ const usersController = { //LISTO
     },
     edited: async (req,res) =>{
         let usuario = await usuario.findByPk(req.params.id, {include:{all: true}})
-        
+        let avatar
         let validaciones = validationResult(req)
         let {errors} = validaciones
         if(errors && errors.length > 0){
@@ -140,32 +140,29 @@ const usersController = { //LISTO
         }
         
         if (!req.files || req.files.length == 0){
-            avatar = usuario.image
+            avatar = usuario.image.id
         } else{
-            avatar = req.files[0].filename;
+            let foto = await imagene.create({
+                path:req.files[0].filename
+            })
+            avatar = foto.id;
         }
         if(!req.body.password || req.body.password.length == 0){
-            passw = usuario.password
+            passw = await usuario.password
         }else{
             passw = hashSync(req.body.password,10)
         }
-        
-        let usuarios = await usuario.findAll()
-        let usuariosEditados = usuarios.map(u=>{
-            if(u.id == usuario.id){
-                u.id = usuario.id
-                u.name = req.body.name
-                u.lastname = req.body.lastname
-                u.email = req.body.email
-                u.cultivo = req.body.cultivo
-                u.password = passw
-                u.image = avatar
-                u.admin = req.body.email.includes('@gworld.com')
-            }
-            return u
+
+        await usuario.update({
+            name:req.body.name,
+            lastname:req.body.lastname,
+            email:req.body.email,
+            cultivo:req.body.cultivo,
+            password:req.body.passw,
+            image_id:avatar,
+            admin:req.dody.email.includes('@gworld.com')
         })
-        //corregir write
-        write(usuariosEditados)
+        
         return res.redirect("/users/profile/" + usuario.id)
     }
 

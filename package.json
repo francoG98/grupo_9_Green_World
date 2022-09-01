@@ -6,8 +6,8 @@
   "scripts": {
     "test": "nodemon source/index.js -e json,js,mjs,ejs",
     "start": "nodemon source/index.js -e json,js,mjs,ejs",
-    "sq-i":"sequelize init",
-    "sq-ms":"sequelize init:migrations && sequelize init:seeders"
+    "sq-i": "sequelize init",
+    "sq-ms": "sequelize init:migrations && sequelize init:seeders"
   },
   "keywords": [],
   "author": "",
