@@ -9,14 +9,14 @@ const login = [
             throw new Error("El email no está registrado")
         } 
         return true
-    }),
+    }).bail(),
     body("password").notEmpty().withMessage("La contraseña no puede quedar vacía").bail().isLength({min:4}).withMessage("La contraseña debe contener al menos cuatro caracteres").bail().custom( async (value, {req}) => {
         let {email} = req.body
         let users = await usuario.findAll({include:{all:true}})
         let user = users.find(u => u.email === email)
-        if(!user){
-            throw new Error("Usuario no encontrado")
-        }
+        //if(!user){
+         //   throw new Error("Usuario no encontrado")
+        //}
         if(!compareSync(value, user.password)){
             throw new Error("La contraseña es incorrecta")
         }

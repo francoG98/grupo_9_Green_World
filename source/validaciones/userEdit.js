@@ -2,16 +2,16 @@ const {body} = require("express-validator")
 const {extname,resolve} = require('path')
 const {unlinkSync} = require('fs')
 const {compareSync} = require("bcryptjs")
-const {Usuario} = require('../database/models/index')
+const {usuario} = require('../database/models/index')
 
 const edit = [
     body("name").notEmpty().withMessage("El nombre no puede quedar vacío.").bail().isLength({min:2}).withMessage("El nombre debe contener al menos dos caracteres").bail(),
     body("lastname").notEmpty().withMessage("El apellido no puede quedar vacío.").bail().isLength({min:2}).withMessage("El apellido debe contener al menos dos caracteres").bail(),
     body("email").notEmpty().withMessage("El email no puede quedar vacío").bail().isEmail().withMessage("El formato de email no es válido.").bail().custom( async (value,{req}) => {
-        let usuario = await usuario.findByPk(req.params.id, {include:{all:true}});
+        let userId = await usuario.findByPk(req.params.id, {include:{all:true}});
         let users = await usuario.findAll({include:{all:true}})    
         
-        users = users.map(u => u.email != usuario.email ? u.email : null)
+        users = users.map(u => u.email != userId.email ? u.email : null)
         
         if(users.includes(value)){
             throw new Error("Este email ya está registrado")
@@ -52,9 +52,9 @@ const edit = [
         return true
     }).bail(),
     body("actualPass").notEmpty().withMessage("Para actualizar tus datos debes ingresar tu contraseña actual").bail().isLength({min:4}).withMessage("La contraseña actual contiene al menos cuatro caracteres").bail().custom( async (value, {req}) => {
-        let usuario = await usuario.findByPk(req.params.id, {include:{all:true}});
+        let userId = await usuario.findByPk(req.params.id, {include:{all:true}});
         
-        if(!compareSync(value, usuario.password)){
+        if(!compareSync(value, userId.password)){
             throw new Error("La contraseña es incorrecta")
         }
         return true

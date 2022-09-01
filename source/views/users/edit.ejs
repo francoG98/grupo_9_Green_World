@@ -5,7 +5,7 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-        <form method="post" action="/users/edit/<%=user.id%>"" enctype="multipart/form-data">
+        <form method="post" action="/users/edit/<%=user.id%>?m=PUT" enctype="multipart/form-data">
             <label for="name">Nombre</label>
             <input type="text"
                 name="name"

@@ -15,6 +15,6 @@ router.post("/login", loginMiddleware, processLogin)
 router.get('/logout', [loggedMiddleware], logout)
 router.get("/profile/:id",[loggedMiddleware], profile)
 router.get("/edit/:id",[loggedMiddleware], edit)
-router.post("/edit/:id",editMiddleware, edited)
+router.put("/edit/:id",editMiddleware, edited)
 
 module.exports = router

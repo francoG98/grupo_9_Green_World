@@ -122,53 +122,7 @@ const usersController = { //LISTO
         })
 
     },
-    edited: async (req,res) =>{
-        let usuario = await usuario.findByPk(req.params.id, {include:{all: true}})
-        
-        let validaciones = validationResult(req)
-        let {errors} = validaciones
-        if(errors && errors.length > 0){
-            return res.render("users/edit",{
-                title: "Editar Perfil",
-                styles:[
-                    "main-forms",
-                    "header",
-                    "footer"
-                ],
-                errors:validaciones.mapped()
-            })
-        }
-        
-        if (!req.files || req.files.length == 0){
-            avatar = usuario.image
-        } else{
-            avatar = req.files[0].filename;
-        }
-        if(!req.body.password || req.body.password.length == 0){
-            passw = usuario.password
-        }else{
-            passw = hashSync(req.body.password,10)
-        }
-        
-        let usuarios = await usuario.findAll()
-        let usuariosEditados = usuarios.map(u=>{
-            if(u.id == usuario.id){
-                u.id = usuario.id
-                u.name = req.body.name
-                u.lastname = req.body.lastname
-                u.email = req.body.email
-                u.cultivo = req.body.cultivo
-                u.password = passw
-                u.image = avatar
-                u.admin = req.body.email.includes('@gworld.com')
-            }
-            return u
-        })
-        //corregir write
-        write(usuariosEditados)
-        return res.redirect("/users/profile/" + usuario.id)
-    }
-
+    
 }
 
 module.exports = usersController
