@@ -4,13 +4,13 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-        <article class="producto-total">
+        <section class="producto-total">
             
     
             <figure class="imagen">
-                <img src="/assets/products-images/<%= product.image.path%>" alt="Grinder" width="100%">
+                <img src="/assets/products-images/<%= product.image.path%>" alt="Grinder" >
             </figure>
-            <nav class="descripcion-producto">
+            <article class="descripcion-producto">
                 <h1><%= product.name %> </h1>
                 <p class="precio">$ <%= product.price %> </p>
                 <p class="descripcion-precio">(los impuestos no estan incluídos en el precio)</p>
@@ -23,9 +23,19 @@
                 <% } %>
                 
                 <p class="informacion-producto"><%= product.description %> </p>
-            </nav>
+
+                <% if (user && user.admin) { %>
+                    <nav class="botones">
+                        <a class="boton-editar" href="/products/edit/<%=product.id%>">Editar Producto</a>
+                        <form action="/products/delete/<%=product.id%>?m=DELETE" method="POST">
+                            <button class="boton-eliminar" type="submit">Eliminar Producto</button>
+                        </form>
+                    </nav>
+                 
+                <% } %>
+            </article>
             
-        </article>
+        </section>
     </main>
     <%- include("../includes/footer.ejs") %> 
 </body>
