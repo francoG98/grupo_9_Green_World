@@ -30,9 +30,12 @@ module.exports=(sequelize,DataTypes)=>{
             as:"image",
             foreignKey:"image_id"
         })
+        /*Categoria.hasMany(model.producto,{
+            as:"product",
+            foreignKey:"category_id"
+        })*/
       }
 
-   
 
     return Categoria
 

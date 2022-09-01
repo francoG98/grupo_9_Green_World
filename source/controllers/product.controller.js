@@ -3,6 +3,7 @@ const {unlinkSync} = require('fs')
 const sequelize =require("sequelize")
 const {Op} = sequelize
 const {join} = require('path')
+const { indexOf } = require("../middlewares/register")
 module.exports = {
      
     categories: async (req,res)=>{ //LISTO
@@ -17,12 +18,24 @@ module.exports = {
         }
       })
       let products = category.products */ 
+      let value 
+      if(req.params.category == "accesorios"){
+        value = 1
+      }else if(req.params.category == "aditivos"){
+        value = 2
+      }else if(req.params.category == "medicinal"){
+        value = 3
+      }else if(req.params.category == "parafernalia"){
+        value = 4
+      }else if(req.params.category == "sustratos"){
+        value = 5
+      }
       let category = req.params.category;
       let products = await producto.findAll({
         include:{all:true},
         where:{
-          category:{
-            [Op.like]:category
+          category_id:{
+            [Op.eq]:value
           }
         }
       })      
@@ -78,18 +91,17 @@ module.exports = {
       })
     },
     created: async (req,res) => { //LISTO
-      
-      if(req.files && req.files.length > 0){
-        let images = await Promise.all(req.files.map( file =>{
-          return imagene.create({
-            path:file.filename
-          })
-          
-        }))
-        req.body.image_id = images.id
-      } else {
+
+
+      if(!req.files || req.files.length == 0){
         req.body.image_id = 8
+      } else{
+        let imagenProduct = await imagene.create({
+          path: req.files[0].filename
+        })
+        req.body.image_id = imagenProduct.id
       }
+      
       await producto.create(req.body)
       return res.redirect('/products/')
     },
@@ -119,7 +131,7 @@ module.exports = {
 
       })
           if(req.files && req.files.length > 0){
-            unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image.path))
+            await unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image.path))
             let foto = await imagene.create({
               path: req.files[0].filename 
             }) 
@@ -131,12 +143,15 @@ module.exports = {
     },
 
     destroid: async (req, res)=>{
+      
       let product = await producto.findByPk(req.params.id,{include:{all:true}})
       if(!product){
         return res.redirect("/products/")
       }
-      unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image[0].path))
+      let imageProd = await imagene.findByPk(product.image.id)
+      await unlinkSync(join(__dirname, "../../public/assets/", "products-images",product.image.path))
       await product.destroy()
+      await imageProd.destroy()
       return res.redirect('/products/');
     }
   }
