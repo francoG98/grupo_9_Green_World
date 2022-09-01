@@ -80,13 +80,13 @@ const usersController = { //LISTO
         if (!req.files || req.files.length == 0){
             //ESTE CASO ES EN EL CASO QUE NO HAYA 
             
-            req.body.image = 6 // EL ID 6 ES DONDE TENEMOS ALMACENADA LA IMAGEN POR DEFECTO DE USUARIOS
+            req.body.image_id = 6 // EL ID 6 ES DONDE TENEMOS ALMACENADA LA IMAGEN POR DEFECTO DE USUARIOS
         } else {
             let avatar = await imagene.create({
                 //SI SE REGISTRA CON UNA IMAGEN AHORA SI LE GUARDAMOS EL PATH EN NUESTRA TABLA DE IMAGENES
                 path: req.files[0].filename
             })
-            req.body.image = avatar.id //Y COLOCAMOS COMO DATO EL ID DE ESA IMAGEN
+            req.body.image_id = avatar.id //Y COLOCAMOS COMO DATO EL ID DE ESA IMAGEN
         }
         await usuario.create(req.body)
         
@@ -161,8 +161,15 @@ const usersController = { //LISTO
             cultivo:req.body.cultivo,
             password:req.body.passw,
             image_id:avatar,
-            admin:req.dody.email.includes('@gworld.com')
+            admin:req.body.email.includes('@gworld.com')
         })
+        
+        //ACA VOLVEMOS A CREAR LA SESION PARA QUE SE ACTUALICEN LOS DATOS
+        let users = await usuario.findAll({include:{all:true}})
+        let userSession = users.find(u => u.email === req.body.email)
+       
+        req.session.user = userSession
+
         
         return res.redirect("/users/profile/" + user.id)
     }
