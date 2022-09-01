@@ -25,7 +25,8 @@ module.exports=(sequelize,DataTypes)=>{
         },
         user_id:{
             type: DataTypes.INTEGER,
-            defaultValue:null
+            defaultValue:null,
+            allowNull:true
         },
         color:{
             type:DataTypes.STRING
@@ -41,6 +42,10 @@ module.exports=(sequelize,DataTypes)=>{
         Producto.belongsTo(model.imagene,{
             as:"image",
             foreignKey:"image_id"
+        })
+        Producto.belongsTo(model.categoria,{
+            as:"category",
+            foreignKey:"category_id"
         })
       } 
    
