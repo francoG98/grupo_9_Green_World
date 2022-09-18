@@ -20,7 +20,7 @@ const edit = [
     }).bail(),
     body("avatar").custom( async (value, {req})=>{
         let archivos = req.files
-        let extensiones = [".svg", ".jpg", ".png","jpeg"]
+        let extensiones = [".svg", ".jpg", ".png",".jpeg",".gif"]
         if (archivos.length != 0){
             
             let avatar = archivos[0]
@@ -37,7 +37,7 @@ const edit = [
         return true
     }).bail(),
     body("password").custom( async (value) => {
-        if(value.length > 0 && value.length < 4 ){
+        if(value.length > 0 && value.length < 8 ){
             throw new Error("La contraseña debe tener al menos cuatro caracteres")
         }
         return true

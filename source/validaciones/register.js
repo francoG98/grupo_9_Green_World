@@ -14,7 +14,7 @@ const register = [
         }
         return true
     }).bail(),
-    body("password").notEmpty().withMessage("La contraseña no puede quedar vacía").bail().isLength({min:4}).withMessage("La contraseña debe contener al menos cuatro caracteres").bail(),
+    body("password").notEmpty().withMessage("La contraseña no puede quedar vacía").bail().isLength({min:8}).withMessage("La contraseña debe contener al menos ocho caracteres").bail(),
     body("passConfirm").custom( async (value,{req}) => {
         let {password} = req.body
         if(value !== password){
@@ -25,7 +25,7 @@ const register = [
     }).bail(),
     body("avatar").custom( async (value, {req})=>{
         let archivos = req.files
-        let extensiones = [".svg", ".jpg", ".png","jpeg"]
+        let extensiones = [".svg", ".jpg", ".png",".jpeg", ".gif"]
         if (archivos.length != 0){
             
             let avatar = archivos[0]

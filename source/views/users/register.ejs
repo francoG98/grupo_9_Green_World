@@ -4,7 +4,7 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-          <form method="post" action="/users/register" enctype="multipart/form-data">
+          <form method="post" action="/users/register" enctype="multipart/form-data" id="registerForm">
             <label for="name">Nombre</label>
             <input type="text"
                 name="name"
@@ -13,6 +13,7 @@
             <% if (locals.errors && errors.name) { %>
                 <p class="msg-error"><%= errors.name.msg %></p>
             <% } %>    
+            <p class="feed name"></p>
 
 
             <label for="lastname">Apellido</label>
@@ -23,6 +24,7 @@
                 <% if (locals.errors && errors.lastname) { %>
                     <p class="msg-error"><%= errors.lastname.msg %></p>
                 <% } %> 
+            <p class="feed lastname"></p>
 
 
             <label for="email">Correo Electrónico</label>
@@ -33,7 +35,8 @@
                 <% if (locals.errors && errors.email) { %>
                     <p class="msg-error"><%= errors.email.msg %></p>
                 <% } %>
-            
+            <p class="feed email"></p>
+
             <label for="avatar">Imagen de Perfil</label>
             <input type="file"
                 name="image_id"
@@ -41,6 +44,7 @@
                 <% if (locals.errors && errors.avatar) { %>
                     <p class="msg-error"> <%= errors.avatar.msg %> </p>
                 <% } %>     
+            <p class="feed image_id"></p>  
 
 
             <label for="cultivo">Realizas algun tipo de cultivo?</label>
@@ -60,6 +64,7 @@
                 <% if (locals.errors && errors.password) { %>
                     <p class="msg-error"><%= errors.password.msg %></p>
                 <% } %>
+            <p class="feed password"></p>
 
 
             <label for="passConfirm">Confirma tu Contraseña</label>           
@@ -70,9 +75,13 @@
                 <% if (locals.errors && errors.passConfirm) { %>
                     <p class="msg-error"><%= errors.passConfirm.msg %></p>
                 <% } %>
-            <button type="submit" name="registrar"> Envíar </button>
+            <p class="feed passConfirm"></p> 
+
+            <button type="submit" name="registrar">Enviar</button>
             </form>
     </main>
-    <%- include("../includes/footer.ejs") %> 
+    <%- include("../includes/footer.ejs") %>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/scripts/register.js"></script>
 </body>
 </html>
