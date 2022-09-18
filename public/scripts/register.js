@@ -11,20 +11,38 @@ inputs.name.addEventListener("input", function(e){
     let value = e.target.value
     let feed = document.querySelector("p.name")
     let msg = null
+    let checkIcon = document.querySelector("label.name i.fa-circle-check")
+    let notCheckIcon = document.querySelector("label.name i.fa-circle-xmark")
+    feed.style.display="block"
+    
     if(validator.isEmpty(value)){
         msg = "El nombre no puede quedar vacío."
     } else if(!validator.isLength(value,{min:2})){
         msg = "El nombre debe contener al menos 2 caracteres"
     }
-    
+
     if(msg){
         feed.innerText = msg 
         feed.style.color="red"
+        checkIcon.style.display= "none"
+        notCheckIcon.style.display= "inline"
     } else{
         feed.innerText = "El campo Nombre es correcto"
-        feed.style.color= "#57CC99"
+        feed.style.color= "#57CC99"  
+        checkIcon.style.display= "inline"
+        notCheckIcon.style.display= "none"
     }
+    inputs.name.addEventListener("blur",function(){
+        feed.style.display="none"
+    })
+    inputs.name.addEventListener("focus",function(){
+        feed.style.display="block"
+    })
+
 })
+        
+    
+
 
 inputs.lastname.addEventListener("input", function(e){ 
     let value = e.target.value

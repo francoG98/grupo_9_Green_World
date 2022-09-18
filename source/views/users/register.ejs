@@ -5,7 +5,7 @@
     <%- include("../includes/header.ejs") %> 
     <main>
           <form method="post" action="/users/register" enctype="multipart/form-data" id="registerForm">
-            <label for="name">Nombre</label>
+            <label class="name" for="name">Nombre <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="text"
                 name="name"
                 id="name"
@@ -16,7 +16,7 @@
             <p class="feed name"></p>
 
 
-            <label for="lastname">Apellido</label>
+            <label class="lastname" for="lastname">Apellido</label>
             <input type="text"
                 name="lastname"
                 id="lastname"
@@ -27,7 +27,7 @@
             <p class="feed lastname"></p>
 
 
-            <label for="email">Correo Electrónico</label>
+            <label class="email" for="email">Correo Electrónico</label>
             <input type="email"
                 name="email"
                 id="email"
@@ -56,7 +56,7 @@
                 </select>
 
 
-            <label for="password">Elige tu Contraseña</label>
+            <label class="password" for="password">Elige tu Contraseña</label>
             <input type="password"
                 name="password"
                 id="password"
@@ -67,7 +67,7 @@
             <p class="feed password"></p>
 
 
-            <label for="passConfirm">Confirma tu Contraseña</label>           
+            <label class="passConfirm" for="passConfirm">Confirma tu Contraseña</label>           
             <input type="password"
                 name="passConfirm"
                 id="passConfirm"
