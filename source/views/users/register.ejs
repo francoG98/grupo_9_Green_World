@@ -44,7 +44,7 @@
                 <% if (locals.errors && errors.avatar) { %>
                     <p class="msg-error"> <%= errors.avatar.msg %> </p>
                 <% } %>     
-            <p class="avatar"></p>  
+            <p class="avatar valid"></p>  
 
 
             <label for="cultivo">Realizas algun tipo de cultivo?</label>
@@ -82,6 +82,8 @@
     </main>
     <%- include("../includes/footer.ejs") %>
     <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/scripts/register.js"></script>
+    
 </body>
 </html>

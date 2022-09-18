@@ -22,11 +22,13 @@ inputs.name.addEventListener("input", function(e){
     }
 
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
+        feed.classList.add("valid")
         feed.innerText = "El campo Nombre es correcto"
         feed.style.color= "#57CC99"  
         checkIcon.style.display= "inline"
@@ -58,11 +60,13 @@ inputs.lastname.addEventListener("input", function(e){
         msg = "El apellido debe contener al menos 2 caracteres"
     }
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
+        feed.classList.add("valid")
         feed.innerText = "El campo Apellido es correcto"
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
@@ -88,11 +92,13 @@ inputs.email.addEventListener("input", function(e){
         msg = "El formato de email no es válido"
     }//else if(){} //ACA PONER SI SE ENCUENTRA REGISTRADO
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
+        feed.classList.add("valid")
         feed.innerText = "El campo Email es correcto"
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
@@ -115,7 +121,7 @@ inputs.avatar.addEventListener("change", function(e){
     let msg = null
     let checkIcon=document.querySelector("label.avatar i.fa-circle-check")
     let notCheckIcon = document.querySelector("label.avatar i.fa-circle-xmark")
-    
+   
 
     if(!validTypes.includes(type)){
         msg = "La imagen no tiene una extensión válida"
@@ -123,11 +129,13 @@ inputs.avatar.addEventListener("change", function(e){
         msg = null
     }
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText= msg
         feed.style.color = "red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     }else{
+        feed.classList.add("valid")
         feed.innerText= null
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
@@ -151,12 +159,12 @@ inputs.password.addEventListener("input", function(e){
     let conFeed= document.querySelector("p.passConfirm")
     let confPass = inputs.passConfirm.value
     let msg = null
+    
     let checkIcon = document.querySelector("label.password i.fa-circle-check")
     let notCheckIcon = document.querySelector("label.password i.fa-circle-xmark")
 
     let confCheck=document.querySelector("label.passConfirm i.fa-circle-check")
     let confXmark= document.querySelector("label.passConfirm i.fa-circle-xmark")
-
 
     let config = {
         minLength: 8,
@@ -167,11 +175,13 @@ inputs.password.addEventListener("input", function(e){
         returnScore: false}
 
     if(value != confPass){
+        conFeed.classList.remove("valid")
         conFeed.innerText="Las contraseñas deben coincidir"
         conFeed.style.color = "red"
         confCheck.style.display="none"
         confXmark.style.display="inline"
     } else{
+        conFeed.classList.add("valid")
         conFeed.innerText="Las contraseñas coinciden"
         conFeed.style.color = "#57CC99"
         confCheck.style.display="inline"
@@ -185,11 +195,13 @@ inputs.password.addEventListener("input", function(e){
         msg = "La contraseña debe tener al menos 1 minúscula, 1 mayúscula, 1 número y 1 caracter especial"
     }
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText= msg
         feed.style.color = "red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
+        feed.classList.add("valid")
         feed.innerText= "La contraseña es Segura"
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
@@ -215,11 +227,13 @@ inputs.passConfirm.addEventListener("input", function(e){
         msg = "Las contraseñas deben coincidir"
     }
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText=msg
         feed.style.color = "red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
+        feed.classList.add("valid")
         feed.innerText="Las contraseñas coinciden"
         feed.style.color = "#57CC99"
         checkIcon.style.display= "inline"
@@ -231,6 +245,34 @@ inputs.passConfirm.addEventListener("input", function(e){
     inputs.passConfirm.addEventListener("focus",function(){
         feed.style.display="block"
     })
+})
+
+form.addEventListener("submit",function(e){
+    e.preventDefault()
+    let isCorrect = false
+
+    if(e.target.querySelectorAll("p.valid").length === 6){
+        isCorrect= true
+    }
+
+    if(isCorrect){
+        Swal.fire({
+            title: 'Felicidades!',
+            text: 'Creaste tu cuenta en Green World!',
+            icon: 'success',
+            confirmButtonText: 'Continuar'
+          }).then(()=>{
+            e.target.submit()
+          })
+        
+    } else{
+        Swal.fire({
+            title: 'Error!',
+            text: 'Tenes campos sin completar o completados erroneamente',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+    }
 })
 
 
