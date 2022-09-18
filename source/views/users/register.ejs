@@ -13,10 +13,10 @@
             <% if (locals.errors && errors.name) { %>
                 <p class="msg-error"><%= errors.name.msg %></p>
             <% } %>    
-            <p class="feed name"></p>
+            <p class="name"></p>
 
 
-            <label class="lastname" for="lastname">Apellido</label>
+            <label class="lastname" for="lastname">Apellido <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="text"
                 name="lastname"
                 id="lastname"
@@ -24,10 +24,10 @@
                 <% if (locals.errors && errors.lastname) { %>
                     <p class="msg-error"><%= errors.lastname.msg %></p>
                 <% } %> 
-            <p class="feed lastname"></p>
+            <p class="lastname"></p>
 
 
-            <label class="email" for="email">Correo Electrónico</label>
+            <label class="email" for="email">Correo Electrónico <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="email"
                 name="email"
                 id="email"
@@ -35,16 +35,16 @@
                 <% if (locals.errors && errors.email) { %>
                     <p class="msg-error"><%= errors.email.msg %></p>
                 <% } %>
-            <p class="feed email"></p>
+            <p class="email"></p>
 
-            <label for="avatar">Imagen de Perfil</label>
+            <label class="avatar" for="avatar">Imagen de Perfil <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="file"
                 name="image_id"
                 id="avatar">
                 <% if (locals.errors && errors.avatar) { %>
                     <p class="msg-error"> <%= errors.avatar.msg %> </p>
                 <% } %>     
-            <p class="feed image_id"></p>  
+            <p class="avatar"></p>  
 
 
             <label for="cultivo">Realizas algun tipo de cultivo?</label>
@@ -56,7 +56,7 @@
                 </select>
 
 
-            <label class="password" for="password">Elige tu Contraseña</label>
+            <label class="password" for="password">Elige tu Contraseña <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="password"
                 name="password"
                 id="password"
@@ -64,10 +64,10 @@
                 <% if (locals.errors && errors.password) { %>
                     <p class="msg-error"><%= errors.password.msg %></p>
                 <% } %>
-            <p class="feed password"></p>
+            <p class="password"></p>
 
 
-            <label class="passConfirm" for="passConfirm">Confirma tu Contraseña</label>           
+            <label class="passConfirm" for="passConfirm">Confirma tu Contraseña <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>           
             <input type="password"
                 name="passConfirm"
                 id="passConfirm"
@@ -75,7 +75,7 @@
                 <% if (locals.errors && errors.passConfirm) { %>
                     <p class="msg-error"><%= errors.passConfirm.msg %></p>
                 <% } %>
-            <p class="feed passConfirm"></p> 
+            <p class="passConfirm"></p> 
 
             <button type="submit" name="registrar">Enviar</button>
             </form>
