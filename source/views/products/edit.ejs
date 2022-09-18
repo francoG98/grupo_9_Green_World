@@ -4,24 +4,24 @@
 <body>
     <%- include("../includes/header.ejs")  %>
     <main>
-        <form method="post" action="/products/edit/<%=product.id %>?m=PUT" enctype="multipart/form-data">
-            <label for="name">Nombre del Producto</label>
+        <form method="post" action="/products/edit/<%=product.id %>?m=PUT" enctype="multipart/form-data" id="editProductForm">
+            <label for="name">Nombre del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="text" name="name" id="name" value="<%=product.name %>">
-
-            <label for="description">Descripción del Producto</label>
+            <p class="name"></p>
+            <label for="description">Descripción del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <textarea name="description" id="description" autocomplete="off"><%=product.description %></textarea>
-
+            <p class="description"></p>
             <fieldset class="gp-fieldset">
                 <figure class="dad-figure">
                     <h3>Imagen del Producto</h3>
                     <img src="/assets/products-images/<%= product.image.path %>">
                 </figure>
                 <fieldset class="dad-fieldset">
-                    <label for="image">Actualizar Imagen</label>
+                    <label for="image">Actualizar Imagen <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
                     <input type="file" name="product-image" id="image" autocomplete="off">
                 </fieldset>
             </fieldset>
-            
+            <p class="product-image"></p>
             <label for="category">Categoría del Producto</label>
             <select name="categoria_id" id="category">
                 <option value="1" <%= product.category.name == "accesorios" ? "selected": null %> >ACCESORIOS</option>
@@ -32,8 +32,9 @@
             </select>
             <label for="color">Color del Producto</label>
             <input type="text" name="color" id="color" value="<%=product.color %>">
-            <label for="price">Precio del Producto</label>
+            <label for="price">Precio del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="number" name="price" id="price" value="<%=product.price %>">
+            <p class="price"></p>
             <button type="submit">Actualizar datos del producto</button>
         </form>
         <form action="/products/delete/<%=product.id%>?m=DELETE" method="POST" id="delete">
@@ -41,5 +42,7 @@
         </form>
     </main>
     <%- include("../includes/footer.ejs")  %>
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/scripts/editProduct.js"></script>
 </body>
 </html>

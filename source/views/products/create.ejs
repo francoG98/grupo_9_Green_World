@@ -4,13 +4,16 @@
 <body>
     <%- include("../includes/header.ejs")  %>
     <main>
-        <form method="post" action="/products/created" enctype="multipart/form-data">
-            <label for="name">Nombre del Producto</label>
+        <form method="post" action="/products/created" enctype="multipart/form-data" id="createForm">
+            <label for="name">Nombre del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="text" name="name" id="name" required>
-            <label for="description">Descripción del Producto</label>
+            <p class="name"></p>
+            <label for="description">Descripción del Producto  <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <textarea name="description" id="description" required></textarea>
-            <label for="image">Imagen del Producto</label>
+            <p class="description"></p>
+            <label for="image">Imagen del Producto  <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="file" name="image_id" id="image" >
+            <p class="image_id"></p>
             <label for="category">Categoría del Producto</label>
             <select name="category_id" id="category" required>
                 <option value="1">ACCESORIOS</option>
@@ -21,12 +24,14 @@
             </select>
             <label for="color">Color del Producto</label>
             <input type="text" name="color" id="color" required>
-            <label for="price">Precio del Producto</label>
+            <label for="price">Precio del Producto  <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="number" name="price" id="price" required>
+            <p class="price"></p>
             <button type="submit">Crear Producto</button>
         </form>
     </main>
     <%- include("../includes/footer.ejs")  %>
-    
+    <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script src="/scripts/create.js"></script>
 </body>
 </html>
