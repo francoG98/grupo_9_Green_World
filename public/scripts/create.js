@@ -107,15 +107,15 @@ inputs.price.addEventListener("input", function(e){
 
 })
 
-inputs.avatar.addEventListener("change", function(e){
+inputs.image.addEventListener("change", function(e){
     let file = e.target.files
     console.log(file)
     let type = file[0].type 
     let validTypes=["image/jpeg","image/png","image/svg+xml"]
     let feed = document.querySelector("p.avatar")
     let msg = null
-    let checkIcon=document.querySelector("label.avatar i.fa-circle-check")
-    let notCheckIcon = document.querySelector("label.avatar i.fa-circle-xmark")
+    let checkIcon=document.querySelector("label.image i.fa-circle-check")
+    let notCheckIcon = document.querySelector("label.image i.fa-circle-xmark")
     
     if(!file){
         msg = "El producto debe tener una imagen"
@@ -136,10 +136,10 @@ inputs.avatar.addEventListener("change", function(e){
         checkIcon.style.display= "inline"
         notCheckIcon.style.display= "none"
     }
-    inputs.avatar.addEventListener("blur",function(){
+    inputs.image.addEventListener("blur",function(){
         feed.style.display="none"
     })
-    inputs.avatar.addEventListener("focus",function(){
+    inputs.image.addEventListener("focus",function(){
         feed.style.display="block"
     })
 })
