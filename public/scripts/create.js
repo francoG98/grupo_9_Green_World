@@ -16,11 +16,13 @@ inputs.name.addEventListener("input", function(e){
     }
 
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
+        feed.classList.add("valid")
         feed.innerText = "El campo Nombre es correcto"
         feed.style.color= "#57CC99"  
         checkIcon.style.display= "inline"
@@ -50,11 +52,13 @@ inputs.description.addEventListener("input", function(e){
     }
 
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
+        feed.classList.add("valid")
         feed.innerText = "El campo Descripción es correcto"
         feed.style.color= "#57CC99"  
         checkIcon.style.display= "inline"
@@ -82,11 +86,13 @@ inputs.price.addEventListener("input", function(e){
     }
 
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
+        feed.classList.add("valid")
         feed.innerText = "El campo Precio es correcto"
         feed.style.color= "#57CC99"  
         checkIcon.style.display= "inline"
@@ -101,38 +107,67 @@ inputs.price.addEventListener("input", function(e){
 
 })
 
-inputs.avatar.addEventListener("change", function(e){
+inputs.image.addEventListener("change", function(e){
     let file = e.target.files
     console.log(file)
     let type = file[0].type 
     let validTypes=["image/jpeg","image/png","image/svg+xml"]
     let feed = document.querySelector("p.avatar")
     let msg = null
-    let checkIcon=document.querySelector("label.avatar i.fa-circle-check")
-    let notCheckIcon = document.querySelector("label.avatar i.fa-circle-xmark")
+    let checkIcon=document.querySelector("label.image i.fa-circle-check")
+    let notCheckIcon = document.querySelector("label.image i.fa-circle-xmark")
     
-
-    if(!validTypes.includes(type)){
+    if(!file){
+        msg = "El producto debe tener una imagen"
+    }
+    else if(!validTypes.includes(type)){
         msg = "La imagen no tiene una extensión válida"
-    } else if(!file){
-        msg = null
     }
     if(msg){
+        feed.classList.remove("valid")
         feed.innerText= msg
         feed.style.color = "red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     }else{
+        feed.classList.add("valid")
         feed.innerText= null
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
         notCheckIcon.style.display= "none"
     }
-    inputs.avatar.addEventListener("blur",function(){
+    inputs.image.addEventListener("blur",function(){
         feed.style.display="none"
     })
-    inputs.avatar.addEventListener("focus",function(){
+    inputs.image.addEventListener("focus",function(){
         feed.style.display="block"
     })
 })
 
+form.addEventListener("submit",function(e){
+    e.preventDefault()
+    let isCorrect = false
+
+    if(e.target.querySelectorAll("p.valid").length === 4){
+        isCorrect= true
+    }
+
+    if(isCorrect){
+        Swal.fire({
+            title: 'Felicidades!',
+            text: 'Creaste tu cuenta en Green World!',
+            icon: 'success',
+            confirmButtonText: 'Continuar'
+          }).then(()=>{
+            e.target.submit()
+          })
+        
+    } else{
+        Swal.fire({
+            title: 'Error!',
+            text: 'Tenes campos sin completar o completados erroneamente',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+    }
+})
