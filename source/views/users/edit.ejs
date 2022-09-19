@@ -5,37 +5,40 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-        <form method="post" action="/users/edit/<%=user.id%>?m=PUT" enctype="multipart/form-data">
-            <label for="name">Nombre</label>
+        <form method="post" action="/users/edit/<%=user.id%>?m=PUT" enctype="multipart/form-data" id="userEditForm">
+            <label class="name" for="name">Nombre <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="text"
                 name="name"
                 id="name"
                 value="<%= user.name %>">
                 <% if (locals.errors && errors.name) { %>
                     <p class="msg-error"><%= errors.name.msg %></p>
-                <% } %>  
+                <% } %>
+                <p class="name valid"></p>
             
 
 
-            <label for="lastname">Apellido</label>
+            <label class="lastname" for="lastname">Apellido <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="text"
                 name="lastname"
                 id="lastname"
                 value="<%= locals.oldData ? oldData.lastname : user.lastname %>">
                 <% if (locals.errors && errors.lastname) { %>
                     <p class="msg-error"><%= errors.lastname.msg %></p>
-                <% } %>     
+                <% } %>    
+                <p class="lastname  valid"></p> 
 
 
 
-            <label for="email">Correo Electrónico</label>
+            <label class="email"  for="email">Correo Electrónico <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="email"
                 name="email"
                 id="email"
                 value="<%= locals.oldData ? oldData.email : user.email %>">
                 <% if (locals.errors && errors.email) { %>
                     <p class="msg-error"><%= errors.email.msg %></p>
-                <% } %> 
+                <% } %>
+                <p class="email  valid"></p>
 
                 
             <fieldset class="gp-fieldset">
@@ -44,11 +47,13 @@
                     <img src="/assets/avatars/<%= user.image.path%>">
                 </figure>
                 <fieldset class="dad-fieldset">
-                    <label for="avatar">Actualizar Imagen</label>
+
+                    <label class="avatar"  for="avatar">Actualizar Imagen <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
                     <input type="file" name="avatar" id="avatar" autocomplete="off">
                     <% if (locals.errors && errors.avatar) { %>
                         <p class="msg-error"> <%= errors.avatar.msg %> </p>
                     <% } %>   
+                    <p class="avatar valid"></p>
                 </fieldset>
             </fieldset>
 
@@ -60,7 +65,7 @@
                     <option value="ambas" <%=  user.cultivo == "ambas"? "selected" : null %>>Indoor y Outdoor</option>                    
                 </select>
             
-            <label for="password">Nueva Contraseña</label>
+            <label class="password" for="password">Nueva Contraseña <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="password"
                 name="password"
                 id="password"
@@ -68,9 +73,10 @@
                 <% if (locals.errors && errors.password) { %>
                     <p class="msg-error"><%= errors.password.msg %></p>
                 <% } %>
+                <p class="password valid"></p>
 
 
-            <label for="passConfirm">Confirma tu Nueva Contraseña</label>           
+            <label class="passConfirm" for="passConfirm">Confirma tu Nueva Contraseña <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>           
             <input type="password"
                 name="passConfirm"
                 id="passConfirm"
@@ -78,20 +84,25 @@
                 <% if (locals.errors && errors.passConfirm) { %>
                     <p class="msg-error"><%= errors.passConfirm.msg %></p>
                 <% } %>
+                <p class="passConfirm valid"></p>
             
 
-            <label for="actualPass">Contraseña Actual</label>           
+            <label class="actualPass" for="actualPass">Contraseña Actual <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>           
             <input type="password"
                 name="actualPass"
                 id="actualPass">
                 <% if (locals.errors && errors.actualPass) { %>
                     <p class="msg-error"><%= errors.actualPass.msg %></p>
                 <% } %>
+                <p class="actualPass valid"></p>
         
             <button type="submit" name="actualizar">Actualizar Datos</button>        
         </form>
     </main>
     <%- include("../includes/footer.ejs") %> 
+    <script defer src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="/scripts/editUser.js"></script>
     
 </body>
 </html>        

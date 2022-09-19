@@ -15,6 +15,7 @@
         <nav id="burger-menu">
             <a href="#">Cerrar</a>
             <% if (!user) { %>
+                <a href="/">INICIO</a>
                 <a href="/users/login">INICIAR SESIÓN</a>
                 <a href="/users/register">REGISTRARSE</a>
                 <a href="/products/categorias/accesorios">ACCESORIOS</a>
@@ -23,15 +24,18 @@
                 <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
                 <a href="/products/categorias/sustratos">SUSTRATOS</a>                
             <% } else if (user && !user.admin){ %>
+                <a href="/">INICIO</a>
                 <a href="/products/categorias/accesorios">ACCESORIOS</a>
                 <a href="/products/categorias/aditivos">ADITIVOS</a>
                 <a href="/products/categorias/medicinal">MEDICINAL</a>
                 <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
                 <a href="/products/categorias/sustratos">SUSTRATOS</a>
                 <a href="/chart">CARRITO</a>
+                <a href="/users/profile/<%= user.id%>">PERFIL DE USUARIO</a>
                 <a href="/users/logout">Cerrar Sesión</a>
 
             <% } else { %>
+                <a href="/">INICIO</a>
                 <a href="/products/create">CREAR PRODUCTO</a>
                 <a href="/products/">LISTA DE PRODUCTOS</a>
                 <a href="/products/categorias/accesorios">ACCESORIOS</a>
@@ -39,6 +43,7 @@
                 <a href="/products/categorias/medicinal">MEDICINAL</a>
                 <a href="/products/categorias/parafernalia">PARAFERNALIA</a>
                 <a href="/products/categorias/sustratos">SUSTRATOS</a>
+                <a href="/users/profile/<%= user.id%>">PERFIL DE USUARIO</a>
                 <a href="/users/logout">Cerrar Sesión</a>              
             <% } %>    
           
