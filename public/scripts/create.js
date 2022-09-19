@@ -109,10 +109,9 @@ inputs.price.addEventListener("input", function(e){
 
 inputs.image.addEventListener("change", function(e){
     let file = e.target.files
-    console.log(file)
     let type = file[0].type 
     let validTypes=["image/jpeg","image/png","image/svg+xml"]
-    let feed = document.querySelector("p.avatar")
+    let feed = document.querySelector("p.image")
     let msg = null
     let checkIcon=document.querySelector("label.image i.fa-circle-check")
     let notCheckIcon = document.querySelector("label.image i.fa-circle-xmark")
@@ -136,10 +135,8 @@ inputs.image.addEventListener("change", function(e){
         checkIcon.style.display= "inline"
         notCheckIcon.style.display= "none"
     }
-    inputs.image.addEventListener("blur",function(){
-        feed.style.display="none"
-    })
-    inputs.image.addEventListener("focus",function(){
+    
+    inputs.image.addEventListener("click",function(){
         feed.style.display="block"
     })
 })

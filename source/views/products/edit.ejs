@@ -7,10 +7,10 @@
         <form method="post" action="/products/edit/<%=product.id %>?m=PUT" enctype="multipart/form-data" id="editProductForm">
             <label class="name" for="name">Nombre del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="text" name="name" id="name" value="<%=product.name %>">
-            <p class="name"></p>
+            <p class="name valid"></p>
             <label class="description" for="description">Descripción del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <textarea name="description" id="description" autocomplete="off"><%=product.description %></textarea>
-            <p class="description"></p>
+            <p class="description valid"></p>
             <fieldset class="gp-fieldset">
                 <figure class="dad-figure">
                     <h3>Imagen del Producto</h3>
@@ -19,9 +19,10 @@
                 <fieldset class="dad-fieldset">
                     <label class="image" for="image">Actualizar Imagen <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
                     <input type="file" name="product-image" id="image" autocomplete="off">
+                    <p class="image valid"></p>
                 </fieldset>
             </fieldset>
-            <p class="product-image"></p>
+            
             <label for="category">Categoría del Producto</label>
             <select name="categoria_id" id="category">
                 <option value="1" <%= product.category.name == "accesorios" ? "selected": null %> >ACCESORIOS</option>
@@ -34,7 +35,7 @@
             <input type="text" name="color" id="color" value="<%=product.color %>">
             <label class="price" for="price">Precio del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="number" name="price" id="price" value="<%=product.price %>">
-            <p class="price"></p>
+            <p class="price valid"></p>
             <button type="submit">Actualizar datos del producto</button>
         </form>
         <form action="/products/delete/<%=product.id%>?m=DELETE" method="POST" id="delete">
