@@ -1,16 +1,15 @@
 const {body} = require("express-validator")
 const {extname,resolve} = require('path')
 const {unlinkSync} = require('fs')
-const {compareSync} = require("bcryptjs")
-const {Usuario} = require('../database/models/index')
+
 
 const create = [
     body("name").notEmpty().withMessage("El nombre no puede quedar vacío.").bail().isLength({min:5}).withMessage("El nombre debe contener al menos dos caracteres").bail(),
     body("description").notEmpty().withMessage("").bail().isLength({min:20}).withMessage("La descripción debe contener al menos 20 caracteres").bail(),
-    body("price").notEmpty().withMessage("").bail().withMessage('Price not empty').bail(),
+    body("price").notEmpty().withMessage("El precio no puede quedar vacío").bail(),
     body("image").custom( async (value, {req})=>{ 
         let archivos = req.files
-        let extensiones = [".svg", ".jpg", ".png","jpeg"]
+        let extensiones = [".svg", ".jpg", ".png",".jpeg", ".jfif"]
         if (archivos.length != 0){
             
             let image = archivos[0]
@@ -25,7 +24,7 @@ const create = [
             }
         }
         return true
-    }).bail()   
+    })  
 ]
 
 module.exports = create
