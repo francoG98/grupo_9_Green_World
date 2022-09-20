@@ -6,7 +6,7 @@ const loginMiddleware = require("../middlewares/login")
 const loggedMiddleware = require('../middlewares/logged')
 const reverseLogged = require("../middlewares/reverseLogged")// lo que hace es que si estas logueado, no te deje acceder a determinadas paginas, te lleva al home
 const editMiddleware = require("../middlewares/userEdit")
-const { userExists, correctEdit } = require("../controllers/apis/userApi")
+const { userExists} = require("../controllers/apis/userApi")
 
 
 router.get ("/login",reverseLogged, login)
@@ -20,6 +20,6 @@ router.put("/edit/:id",editMiddleware, edited)
 
 //API
 router.post("/api/userExists/:email", userExists)
-router.post("/api/correctEdit/:email", correctEdit)
+
 
 module.exports = router

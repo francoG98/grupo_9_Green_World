@@ -1,5 +1,11 @@
+
+
 let form = document.forms.userEditForm
 let inputs = form.elements
+
+
+//ACA OCULTAMOS EL EMAIL PARA PODER USAR SU VALUE AL INTERACTUAR CON LA API, PERO SIN QUE EL USUARIO PUEDA MODIFICARLO.
+
 
 inputs.name.addEventListener('input', function(e){
     let value = e.target.value
@@ -14,13 +20,13 @@ inputs.name.addEventListener('input', function(e){
         msg = "El nombre debe contener al menos 2 caracteres"
     }
     if(msg){
-        feed.classList.remove("valid")
+        feed.classList.add("error")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     }else{
-        feed.classList.add("valid")
+        feed.classList.remove("error")
         feed.style.display="none"
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
@@ -47,13 +53,13 @@ inputs.lastname.addEventListener("input", function(e){
         msg = "El apellido debe contener al menos 2 caracteres"
     }
     if(msg){
-        feed.classList.remove("valid")
+        feed.classList.add("error")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
-        feed.classList.add("valid")
+        feed.classList.remove("error")
         feed.innerText = "El campo Apellido es correcto"
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
@@ -79,13 +85,13 @@ inputs.email.addEventListener("input", function(e){
         msg = "El formato de email no es válido"
     }//else if(){} //ACA PONER SI SE ENCUENTRA REGISTRADO
     if(msg){
-        feed.classList.remove("valid")
+        feed.classList.add("error")
         feed.innerText = msg 
         feed.style.color="red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
-        feed.classList.add("valid")
+        feed.classList.remove("error")
         feed.innerText = "El campo Email es correcto"
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
@@ -115,13 +121,13 @@ inputs.avatar.addEventListener("change", function(e){
         msg = null
     }
     if(msg){
-        feed.classList.remove("valid")
+        feed.classList.add("error")
         feed.innerText= msg
         feed.style.color = "red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     }else{
-        feed.classList.add("valid")
+        feed.classList.remove("error")
         feed.innerText= null
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
@@ -156,13 +162,13 @@ inputs.password.addEventListener("input", function(e){
         returnScore: false}
     if (value.length > 0){
         if(value != confPass){
-            conFeed.classList.remove("valid")
+            conFeed.classList.add("error")
             conFeed.innerText="Las contraseñas deben coincidir"
             conFeed.style.color = "red"
             confCheck.style.display="none"
             confXmark.style.display="inline"
         } else{
-            conFeed.classList.add("valid")
+            conFeed.classList.remove("error")
             conFeed.innerText="Las contraseñas coinciden"
             conFeed.style.color = "#57CC99"
             confCheck.style.display="inline"
@@ -174,25 +180,25 @@ inputs.password.addEventListener("input", function(e){
             msg = "La contraseña debe tener al menos 1 minúscula, 1 mayúscula, 1 número y 1 caracter especial"
         }
         if(msg){
-            feed.classList.remove("valid")
+            feed.classList.add("error")
             feed.innerText= msg
             feed.style.color = "red"
             checkIcon.style.display= "none"
             notCheckIcon.style.display= "inline"
         } else{
-            feed.classList.add("valid")
+            feed.classList.remove("error")
             feed.innerText= "La contraseña es Segura"
             feed.style.color= "#57CC99"
             checkIcon.style.display= "inline"
             notCheckIcon.style.display= "none"
         }
     } else{
-        feed.classList.add("valid")
+        feed.classList.remove("error")
         feed.innerText= "No se cambiara la contraseña"
         feed.style.color= "#57CC99"
         checkIcon.style.display= "inline"
         notCheckIcon.style.display= "none"
-        conFeed.classList.add("valid")
+        conFeed.classList.remove("error")
         conFeed.innerText="No se cambiara la contraseña"
         conFeed.style.color = "#57CC99"
         confCheck.style.display="inline"
@@ -217,13 +223,13 @@ inputs.passConfirm.addEventListener("input", function(e){
         msg = "Las contraseñas deben coincidir"
     }
     if(msg){
-        feed.classList.remove("valid")
+        feed.classList.add("error")
         feed.innerText=msg
         feed.style.color = "red"
         checkIcon.style.display= "none"
         notCheckIcon.style.display= "inline"
     } else{
-        feed.classList.add("valid")
+        feed.classList.remove("error")
         feed.innerText="Las contraseñas coinciden"
         feed.style.color = "#57CC99"
         checkIcon.style.display= "inline"
@@ -235,4 +241,67 @@ inputs.passConfirm.addEventListener("input", function(e){
     inputs.passConfirm.addEventListener("focus",function(){
         feed.style.display="block"
     })
+})
+inputs.actualPass.addEventListener("input",function(e){
+    let value = e.target.value
+    let feed = document.querySelector("p.actualPass")
+    let msg = null
+    let checkIcon = document.querySelector("label.actualPass i.fa-circle-check")
+    let notCheckIcon = document.querySelector("label.actualPass i.fa-circle-xmark")
+    feed.style.display="block"
+    if(validator.isEmpty(value)){
+        msg= "Para actualizar tus datos debes ingresar tu contraseña actual"
+    }else if(!validator.islength(value,{min:8})){
+        msg="Tu contraseña actual tiene al menos 8 caracteres"
+    }
+    if(msg){
+        feed.classList.add("error")
+        feed.innerText=msg
+        feed.style.color = "red"
+        checkIcon.style.display= "none"
+        notCheckIcon.style.display= "inline"
+    } else{
+        feed.classList.remove("error")
+        feed.innerText= null
+        feed.style.color = "#57CC99"
+        checkIcon.style.display= "inline"
+        notCheckIcon.style.display= "none"
+    }
+    inputs.passConfirm.addEventListener("blur",function(){
+        feed.style.display="none"
+    })
+    inputs.passConfirm.addEventListener("focus",function(){
+        feed.style.display="block"
+    })
+})
+
+
+
+form.addEventListener("submit", async function (e){
+    e.preventDefault()
+    
+    let isCorrect = false
+
+    if(e.target.querySelectorAll("p.error").length < 1){
+        isCorrect = true
+    }
+    if(isCorrect){
+        Swal.fire({
+            title: 'Felicidades!',
+            text: 'Actualizaste los datos de tu cuenta!',
+            icon: 'success',
+            confirmButtonText: 'Continuar'
+          }).then(()=>{
+            e.target.submit()
+          })
+        
+    } else{
+        Swal.fire({
+            title: 'Error!',
+            text: 'Hubo un problema con los campos, fijate cuales tienen error',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
+    }
+
 })

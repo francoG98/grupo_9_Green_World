@@ -94,7 +94,7 @@
                 <% if (locals.errors && errors.actualPass) { %>
                     <p class="msg-error"><%= errors.actualPass.msg %></p>
                 <% } %>
-                <p class="actualPass valid"></p>
+                <p class="actualPass"></p>
         
             <button type="submit" name="actualizar">Actualizar Datos</button>        
         </form>
@@ -103,6 +103,7 @@
     <script defer src="https://unpkg.com/validator@latest/validator.min.js"></script>
     <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="/scripts/editUser.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
 </body>
 </html>        

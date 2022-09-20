@@ -4,17 +4,19 @@
 <body>
     <%- include("../includes/header.ejs") %> 
     <main>
-        <form method="post" action="/users/login">
-            <input type="email" name="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>" required>
+        <form method="post" action="/users/login" id="loginForm">
+            <input type="email" name="email" id="email" placeholder="Email" value="<%= locals.oldData ? oldData.email : null %>" required>
             <% if (locals.errors && errors.email) { %>
                 <p class="msg-error"><%= errors.email.msg %></p>
             <% } %>
-            <input type='password' name='password' placeholder='Contraseña' value="<%= locals.oldData ? oldData.password : null %>" required>
+            <p class="email"></p>
+            <input type='password' name='password' id="password" placeholder='Contraseña' value="<%= locals.oldData ? oldData.password : null %>" required>
             <% if (locals.errors && errors.password) { %>
                 <p class="msg-error"><%= errors.password.msg %></p>
             <% } %>
+            <p class="password"></p>
             <fieldset>
-                <input class="checkbox" type='checkbox' name='recordame' id="recordame">
+                <input class="checkbox" type='checkbox' name='recordame' id="recordame" >
                 <label for="recordame">Mantener sesión iniciada</label>
             </fieldset>
             <!-- NO LLEGAMOS A REALIZARLO, QUEDA PARA MAS ADELANTE
@@ -25,6 +27,10 @@
         </form>
     </main>
     <%- include("../includes/footer.ejs") %> 
+    <script defer src="https://unpkg.com/validator@latest/validator.min.js"></script>
+    <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="/scripts/loginValidation.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     
 </body>
 </html>

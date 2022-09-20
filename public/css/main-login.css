@@ -67,6 +67,9 @@ input{
     color: #57CC99;
     border-radius: 3px;
 }
+p.msg-error {
+    color: red
+}
 
 /*
 input[type="checkbox"]{

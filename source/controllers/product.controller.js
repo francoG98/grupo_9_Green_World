@@ -91,6 +91,21 @@ module.exports = {
       })
     },
     created: async (req,res) => { //LISTO
+      
+      let validaciones = validationResult(req)
+      let {errors} = validaciones
+      if(errors && errors.length > 0){
+          return res.render ("products/create",{
+              title: "Crear Producto",
+              styles:[
+                  "main-forms",
+                  "header",
+                  "footer"
+              ],
+              oldData: req.body,
+              errors:validaciones.mapped()
+          })
+      }
 
 
       if(!req.files || req.files.length == 0){
@@ -121,6 +136,20 @@ module.exports = {
       })
     },
     edited: async (req, res)=>{ //LISTO
+      let validaciones = validationResult(req)
+      let {errors} = validaciones
+      if(errors && errors.length > 0){
+          return res.render ("products/create",{
+              title: "Editar el Producto",
+              styles:[
+                  "main-forms",
+                  "header",
+                  "footer"
+              ],
+              oldData: req.body,
+              errors:validaciones.mapped()
+          })
+      }
       let product = await producto.findByPk(req.params.id,{include:{all:true}})
       await product.update({
       name :  req.body.name,

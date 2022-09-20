@@ -7,6 +7,11 @@
 let form = document.forms.registerForm
 let inputs = form.elements //para pasarse a array debe ser una coleccion/objeto, algo que sea iterable
 
+let userExists = async function (email) {
+    let exists = await axios.post(`/users/api/userExists/${email}`)
+    
+    return exists
+}
 
 
 inputs.name.addEventListener("input", function(e){ 
@@ -260,18 +265,14 @@ inputs.passConfirm.addEventListener("input", function(e){
 //En esta funcion de abajo vamos a corroborar que el email no se encuentre ya registrado en la base de datos
 
 
-let userExists = async function (email) {
-    let exists = await axios.post(`/api/userExists/${email}`)
-    return exists
-}
+
 
 let emailFound= async function(exists){
-    let input = inputs.email
     let feed = document.querySelector("p.email")
     let msg = null
     let checkIcon = document.querySelector("label.email i.fa-circle-check")
     let notCheckIcon = document.querySelector("label.email i.fa-circle-xmark")
-    if(exists){
+    if(exists.data.exists){
         msg = "Este correo ya se encuentra registrado"
     }
     if(msg){
@@ -295,6 +296,7 @@ form.addEventListener("submit", async function(e){
 
     let email = document.querySelector("input#email").value
     let exists = await userExists(email)
+    console.log(exists)
     emailFound(exists)
     let isCorrect = false
 
