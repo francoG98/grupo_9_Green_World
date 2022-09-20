@@ -6,27 +6,56 @@
     <main>
         <form method="post" action="/products/created" enctype="multipart/form-data" id="createForm">
             <label class="name" for="name">Nombre del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="name" id="name" 
+            value="<%= locals.oldData ? oldData.name: null %>">
+            <% if (locals.errors && errors.name) { %>
+                <p class="msg-error"><%= errors.name.msg %></p>
+            <% } %>    
             <p class="name"></p>
+
+
             <label class="description" for="description">Descripción del Producto  <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
-            <textarea name="description" id="description" required></textarea>
+            <textarea name="description" id="description" >
+                <%= locals.oldData ? oldData.description: null %>
+            </textarea>
+            <% if (locals.errors && errors.description) { %>
+                <p class="msg-error"><%= errors.description.msg %></p>
+            <% } %>    
             <p class="description"></p>
+
+
             <label class="image" for="image">Imagen del Producto  <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
-            <input type="file" name="image_id" id="image" >
+            <input type="file" name="image" id="image" >
+            <% if (locals.errors && errors.image) { %>
+                <p class="msg-error"> <%= errors.image.msg %> </p>
+            <% } %>   
             <p class="image">Debes Subir una imagen para el producto</p>
+
+
             <label for="category">Categoría del Producto</label>
-            <select name="category_id" id="category" required>
-                <option value="1">ACCESORIOS</option>
-                <option value="2">ADITIVOS</option>
-                <option value="3">MEDICINAL</option>
-                <option value="4">PARAFERNALIA</option>
-                <option value="5">SUSTRATOS</option>
+            <select name="category_id" id="category" >
+                <option value="1" <%= (locals.oldData &&  (locals.oldData.category_id == "1"))  ? "selected": null %>>ACCESORIOS</option>
+                <option value="2" <%= (locals.oldData &&  (locals.oldData.category_id == "2"))  ? "selected": null %>>ADITIVOS</option>
+                <option value="3" <%= (locals.oldData &&  (locals.oldData.category_id == "3"))  ? "selected": null %>>MEDICINAL</option>
+                <option value="4" <%= (locals.oldData &&  (locals.oldData.category_id == "4"))  ? "selected": null %>>PARAFERNALIA</option>
+                <option value="5" <%= (locals.oldData &&  (locals.oldData.category_id == "5"))  ? "selected": null %>>SUSTRATOS</option>
             </select>
+
+
             <label for="color">Color del Producto</label>
-            <input type="text" name="color" id="color" required>
+            <input type="text" name="color" id="color" 
+            value="<%= locals.oldData ? oldData.color : null %>">
+
+
             <label class="price" for="price">Precio del Producto  <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
-            <input type="number" name="price" id="price" required>
+            <input type="number" name="price" id="price" 
+            value="<%= locals.oldData ? oldData.price : null %>">
+            <% if (locals.errors && errors.price) { %>
+                <p class="msg-error"><%= errors.price.msg %></p>
+            <% } %>
             <p class="price"></p>
+
+
             <button type="submit">Crear Producto</button>
         </form>
     </main>

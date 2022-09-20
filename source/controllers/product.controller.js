@@ -1,9 +1,9 @@
-const {producto, imagene, categoria} = require("../database/models/index")
+const {producto, imagene} = require("../database/models/index")
+const {validationResult} = require('express-validator')
 const {unlinkSync} = require('fs')
 const sequelize =require("sequelize")
 const {Op} = sequelize
 const {join} = require('path')
-const { indexOf } = require("../middlewares/register")
 module.exports = {
      
     categories: async (req,res)=>{ //LISTO
@@ -136,21 +136,23 @@ module.exports = {
       })
     },
     edited: async (req, res)=>{ //LISTO
+      let product = await producto.findByPk(req.params.id,{include:{all:true}})
       let validaciones = validationResult(req)
       let {errors} = validaciones
       if(errors && errors.length > 0){
-          return res.render ("products/create",{
+          return res.render ("products/edit",{
               title: "Editar el Producto",
               styles:[
                   "main-forms",
                   "header",
                   "footer"
               ],
+              product:product,
               oldData: req.body,
               errors:validaciones.mapped()
           })
       }
-      let product = await producto.findByPk(req.params.id,{include:{all:true}})
+     
       await product.update({
       name :  req.body.name,
       description : req.body.description,

@@ -295,9 +295,13 @@ form.addEventListener("submit", async function(e){
     e.preventDefault()
 
     let email = document.querySelector("input#email").value
-    let exists = await userExists(email)
-    console.log(exists)
-    emailFound(exists)
+    if(email){
+        let exists = await userExists(email)
+        emailFound(exists)
+    }else{
+        document.querySelector("p.email").classList.remove("valid")
+    }
+    
     let isCorrect = false
 
     if(e.target.querySelectorAll("p.valid").length === 6){

@@ -7,10 +7,18 @@
         <form method="post" action="/products/edit/<%=product.id %>?m=PUT" enctype="multipart/form-data" id="editProductForm">
             <label class="name" for="name">Nombre del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
             <input type="text" name="name" id="name" value="<%=product.name %>">
+            <% if (locals.errors && errors.name) { %>
+                <p class="msg-error"><%= errors.name.msg %></p>
+            <% } %>
             <p class="name valid"></p>
+
             <label class="description" for="description">Descripción del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
-            <textarea name="description" id="description" autocomplete="off"><%=product.description %></textarea>
+            <textarea name="description" id="description" autocomplete="off"><%= locals.oldData ? oldData.description : product.description %></textarea>
+            <% if (locals.errors && errors.description) { %>
+                <p class="msg-error"><%= errors.description.msg %></p>
+            <% } %>
             <p class="description valid"></p>
+
             <fieldset class="gp-fieldset">
                 <figure class="dad-figure">
                     <h3>Imagen del Producto</h3>
@@ -18,24 +26,36 @@
                 </figure>
                 <fieldset class="dad-fieldset">
                     <label class="image" for="image">Actualizar Imagen <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
-                    <input type="file" name="product-image" id="image" autocomplete="off">
+                    <input type="file" name="image" id="image" autocomplete="off">
+                    <% if (locals.errors && errors.image) { %>
+                        <p class="msg-error"> <%= errors.image.msg %> </p>
+                    <% } %>   
                     <p class="image valid"></p>
                 </fieldset>
             </fieldset>
             
             <label for="category">Categoría del Producto</label>
             <select name="categoria_id" id="category">
-                <option value="1" <%= product.category.name == "accesorios" ? "selected": null %> >ACCESORIOS</option>
-                <option value="2" <%= product.category.name == "aditivos" ? "selected": null %> >ADITIVOS</option>
-                <option value="3" <%= product.category.name == "medicinal" ? "selected": null %> >MEDICINAL</option>
-                <option value="4" <%= product.category.name == "parafernalia" ? "selected": null %> >PARAFERNALIA</option>
-                <option value="5" <%= product.category.name == "sustratos" ? "selected": null %> >SUSTRATOS</option>
+                <option value="1" <%= (locals.oldData &&  (locals.oldData.category_id == "1"))  ? "selected": product.category.name == "accesorios" ? "selected": null %> >ACCESORIOS</option>
+                <option value="2" <%= (locals.oldData &&  (locals.oldData.category_id == "2"))  ? "selected": product.category.name == "aditivos" ? "selected": null %> >ADITIVOS</option>
+                <option value="3" <%= (locals.oldData &&  (locals.oldData.category_id == "3"))  ? "selected": product.category.name == "medicinal" ? "selected": null %> >MEDICINAL</option>
+                <option value="4" <%= (locals.oldData &&  (locals.oldData.category_id == "4"))  ? "selected": product.category.name == "parafernalia" ? "selected": null %> >PARAFERNALIA</option>
+                <option value="5" <%= (locals.oldData &&  (locals.oldData.category_id == "5"))  ? "selected": product.category.name == "sustratos" ? "selected": null %> >SUSTRATOS</option>
             </select>
+
+
             <label for="color">Color del Producto</label>
-            <input type="text" name="color" id="color" value="<%=product.color %>">
+            <input type="text" name="color" id="color" value="<%= locals.oldData ? oldData.color :product.color %>">
+
+
             <label class="price" for="price">Precio del Producto <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>
-            <input type="number" name="price" id="price" value="<%=product.price %>">
+            <input type="number" name="price" id="price" value="<%= locals.oldData ? oldData.price : product.price %>">
+            <% if (locals.errors && errors.price) { %>
+                <p class="msg-error"><%= errors.price.msg %></p>
+            <% } %>
             <p class="price valid"></p>
+
+
             <button type="submit">Actualizar datos del producto</button>
         </form>
         <form action="/products/delete/<%=product.id%>?m=DELETE" method="POST" id="delete">

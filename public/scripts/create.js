@@ -152,7 +152,7 @@ form.addEventListener("submit",function(e){
     if(isCorrect){
         Swal.fire({
             title: 'Felicidades!',
-            text: 'Creaste tu cuenta en Green World!',
+            text: 'Agregaste el producto',
             icon: 'success',
             confirmButtonText: 'Continuar'
           }).then(()=>{
