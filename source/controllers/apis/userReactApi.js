@@ -1,7 +1,13 @@
 const {usuario} = require("../../database/models/index")
 
 const userReactApi ={
-    users: async (req,res)=>{
+    userCard: async (req,res)=>{
+        try{}
+        catch (error){
+            return res.status(500).json(error)
+        }
+    },
+    userView: async (req,res)=>{
         try{
             let usuarios = await usuario.findAll({include:{all:true}})
             let data = usuarios.map(u=>{
@@ -9,7 +15,9 @@ const userReactApi ={
                     id: u.id,
                     nombre: `${u.name} ${u.lastname}`,
                     email:u.email,
-                    detail:`localhost:4422/users/profile/${u.id}` /*Aca no estoy seguro de si habria que hacerlo con el host de react*/ 
+                    image:`http://localhost:4422/assets/avatars/${user.image.path}`,
+                    cultivo: u.cultivo,
+                    detail:`http://localhost:5173/api/users/profile/${u.id}` /*RECONDUCIR AL DE ABAJOact*/ 
                 }
                 return user
             })
@@ -20,7 +28,7 @@ const userReactApi ={
             return res.status(500).json(error)
         }
     },
-    userUnique: async (req,res) =>{
+    findOne: async (req,res) =>{
         try{
             let user = await usuario.findByPk(req.params.id,
                 {include:{all:true}})
@@ -30,7 +38,7 @@ const userReactApi ={
                 lastname: user.lastname,
                 email: user.email,
                 cultivo: user.cultivo,
-                image:`localhost:4422/assets/avatars/${user.image.path}`
+                image:`http://localhost:4422/assets/avatars/${user.image.path}`
             }
               
             

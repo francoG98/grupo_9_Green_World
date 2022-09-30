@@ -1,28 +1,50 @@
 const {producto}= require("../../database/models/index")
 
 const productApi ={
+    findLastFive: async (req,res)=>{
+        try{
+
+        } catch(error){
+            return res.status(505).json(error)
+        }
+    },
     findAllProducts: async (req, res)=>{
         try{
             let products = await producto.findAll({include:{all:true}})
             let count = products.length
             let countByCategory = Object({
-                parafernalia: 0,
-                aditivos: 0,
-                medicinal: 0,
-                sustratos: 0,
-                accesorios: 0
+                parafernalia: {
+                    name: parafernalia,
+                    count:0
+                },
+                aditivos: {
+                    name: aditivos,
+                    count:0
+                },
+                medicinal: {
+                    name: medicinal,
+                    count:0
+                },
+                sustratos: {
+                    name: sustratos,
+                    count:0
+                },
+                accesorios: {
+                    name: accesorios,
+                    count:0
+                }
             })
             products.forEach(p=>{
                 switch(p.category.name.toLowerCase()){
-                    case 'parafernalia': countByCategory.parafernalia += 1;
+                    case 'parafernalia': countByCategory.parafernalia.count += 1;
                     break;
-                    case 'aditivos': countByCategory.aditivos += 1;
+                    case 'aditivos': countByCategory.aditivos.count += 1;
                     break;
-                    case 'medicinal': countByCategory.medicinal += 1;
+                    case 'medicinal': countByCategory.medicinal.count += 1;
                     break;
-                    case 'sustratos': countByCategory.sustratos += 1;
+                    case 'sustratos': countByCategory.sustratos.count += 1;
                     break;
-                    case 'accesorios': countByCategory.accesorios += 1;
+                    case 'accesorios': countByCategory.accesorios.count += 1;
                     break;
                     default: console.log('Categoría no encontrada')
                 }
@@ -31,8 +53,9 @@ const productApi ={
                 let data = {
                     id: p.id,
                     name: p.name,
-                    description: p.description,
-                    detail: `localhost:4422/products/detail/${p.id}`
+                    price: p.price,
+                    category:p.category.name,
+                    detail: `http://localhost:4422/products/detail/${p.id}`
                 }
                 return data
             })
