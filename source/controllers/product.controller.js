@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 const {producto, imagene} = require("../database/models/index")
 const {validationResult} = require('express-validator')
+=======
+const {validationResult} = require('express-validator')
+const {producto, imagene, categoria} = require("../database/models/index")
+>>>>>>> Stashed changes
 const {unlinkSync} = require('fs')
 const sequelize =require("sequelize")
 const {Op} = sequelize
@@ -185,4 +190,6 @@ module.exports = {
       await imageProd.destroy()
       return res.redirect('/products/');
     }
+
+    
   }
