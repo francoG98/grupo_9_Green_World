@@ -35,6 +35,10 @@ app.use( "/users", require("./routes/user.routes"))
 app.use(require("./routes/chart.routes"))
 app.use("/products",require("./routes/products.routes"))
 
+//ACA VAMOS A PONER LAS RUTAS DE LAS APIS
+app.use(require("./routes/apis/apiProduct.routes"))
+
+app.use(require("./routes/apis/apiUser.routes"))
 
 
 

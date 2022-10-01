@@ -3,8 +3,7 @@ const {usuario} = require("../../database/models/index")
 const userReactApi ={
     findLastFiveUsers: async (req,res)=>{
         try{
-            let usuarios = await usuario.findAll({include:{all:true}})
-            let count = usuarios.length
+            let count = await usuario.count()
             let users = await usuario.findAll({
                 include:{all:true},
                 order:[
@@ -13,7 +12,7 @@ const userReactApi ={
                 limit:5
             })
             //DE ESTOS 5 QUEREMOS EL NOMBRE, EL EMAIL Y SI CULTIVA
-            users.map(u =>{
+            users = users.map(u =>{
                 let data ={
                     id: u.id,
                     name: `${u.name} ${u.lastname}`,
@@ -32,23 +31,19 @@ const userReactApi ={
     },
     findAllUsers: async (req,res)=>{
         try{
-            let usuarios = await usuario.findAll({include:{all:true}})
-            let count = usuarios.length
-
+            let count = await usuario.count()
              //ACA DEFINIMOS CUANTAS PAGINAS VAMOS A TENER EN TOTAL, PARA DARLE DE PARAMETRO A LOS BOTONES DE PREV/NEXT
-             let pages = null
-             if( (count%5) == 0 ){
-                 pages = count/5
-             } else{
-                 pages= (count/5) +1
-             }
+             let pages = Math.ceil(count/4)-1
+           
+             
+            
 
             //ACA DEFINIMOS EL PAGINADO
-            let page = 1
+            let page = 0
             if (req.query && req.query.page){
                 page= parseInt(req.query.page)
             }
-            let offsetValue = (page -1) * 4
+            let offsetValue = page * 4
 
             let users = await usuario.findAll(
                 {
@@ -60,20 +55,22 @@ const userReactApi ={
                     offset:offsetValue
                 }
             )
-            let data = users.map(u=>{
+            
+            users = users.map(u=>{
                 let user ={
                     id: u.id,
                     name: `${u.name} ${u.lastname}`,
                     email:u.email,
-                    image:`http://localhost:4422/assets/avatars/${user.image.path}`,
+                    image:`http://localhost:4422/assets/avatars/${u.image.path}`,
                     cultivo: u.cultivo,
-                    detail:`http://localhost:5173/api/users/profile/${u.id}` /*RECONDUCIR AL DE ABAJOact*/ 
+                    detail:`http://localhost:5173/api/users/${u.id}` /*RECONDUCIR AL DE ABAJOact*/ 
                 }
                 return user
             })
+            
             //DEVOLVEMOS LA CANTIDAD DE USUARIOS, LAS PAGINAS Y LOS USUARIOS
             
-            return res.send({count:count, pages:pages, users:data}).status(200)
+            return res.send({count:count, pages:pages, users:users}).status(200)
         }
         catch(error){
             return res.status(500).json(error)

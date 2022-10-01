@@ -3,10 +3,10 @@ const {producto}= require("../../database/models/index")
 const productApi ={
     findLastFiveProducts: async (req,res)=>{
         try{
-            let productos = await producto.findAll({include:{all:true}}) //este lo trajimos para sacar la cantidad nomas
-            let count = productos.length // sacamos la cantidad de productos
+            let count = await producto.count() //este lo trajimos para sacar la cantidad nomas
+            // sacamos la cantidad de productos
             let products = await producto.findAll({//para mostrar los ultimos 5
-                inclue:{
+                include:{
                     all:true
                 },
                 order:[
@@ -14,8 +14,9 @@ const productApi ={
                 ],
                 limit:5
             })
+            
             //DE ESTOS 5 QUEREMOS EL NOMBRE, LA CATEGORIA Y EL PRECIO
-            products.map(p=>{
+            products = products.map(p=>{
                 let data = {
                     id:p.id,
                     name:p.name,
@@ -24,6 +25,7 @@ const productApi ={
                 }
                 return data
             })
+            
 
             //ENVIAMOS COMO RESPUESTA LA CANTIDAD TOTAL DE PRODUCTOS, Y LOS ULTIMOS 5 AGREGADOS.
             return res.send({count: count, products: products}).status(200)
@@ -36,25 +38,26 @@ const productApi ={
         try{
             let productos = await producto.findAll({include:{all:true}})
             let count = productos.length
+            
             let countByCategory = Object({ // ACA DEFINIMOS CUANTOS HAY POR CATEGORIA
                 parafernalia: {
-                    name: parafernalia,
+                    name: "parafernalia",
                     count:0
                 },
                 aditivos: {
-                    name: aditivos,
+                    name: "aditivos",
                     count:0
                 },
                 medicinal: {
-                    name: medicinal,
+                    name: "medicinal",
                     count:0
                 },
                 sustratos: {
-                    name: sustratos,
+                    name: "sustratos",
                     count:0
                 },
                 accesorios: {
-                    name: accesorios,
+                    name: "accesorios",
                     count:0
                 }
             })
@@ -73,22 +76,19 @@ const productApi ={
                     default: console.log('Categoría no encontrada')
                 }
             })
+            
             //ACA DEFINIMOS CUANTAS PAGINAS VAMOS A TENER EN TOTAL, PARA DARLE DE PARAMETRO A LOS BOTONES DE PREV/NEXT
             
-            let pages = null
-            if( (count%5) == 0 ){
-                pages = count/5
-            } else{
-                pages= (count/5) +1
-            }
+            let pages = Math.ceil(count/4) -1
+            
 
             //ACA DEFINIMOS EL PAGINADO
-            let page = 1
+            let page = 0
 
             if (req.query && req.query.page){
                 page= parseInt(req.query.page)
             }
-            let offsetValue = (page -1) * 4
+            let offsetValue = page * 4
 
 
             //ACA NOS TRAEMOS A 4 PORODUCTOS POR PAGINA ORDENADOS POR ORDEN ALFABETICO
@@ -103,7 +103,7 @@ const productApi ={
                 }
             )
             //DE ESOS PRODUCTOS DEFINIMOS LOS DATOS QUE VAMOS A PRECISAR PARA LA VISTA
-            products.map(p=>{
+            products = products.map(p=>{
                 let data = {
                     id: p.id,
                     name: p.name,
