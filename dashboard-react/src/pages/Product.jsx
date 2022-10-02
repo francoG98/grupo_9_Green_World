@@ -1,4 +1,5 @@
 import {useState, useEffect} from "react"
+import{getAll} from "../services/products"
 
 export default function Product(){
     const [page,setPage]= useState(0)
@@ -6,22 +7,16 @@ export default function Product(){
     const [product,setProduct]= useState([])
     const [count,setCount]= useState(0)
 
-    useEffect(()=>{
-        const productApi = async(page)=>{
-            let request = await fetch(`http://localhost:4422/api/products?page=${page}`)
-            let response = await request.json()   
-            setProduct(response.product) 
-            setPages(response.pages)
-            setCount(response.count)
-        }
-        productApi()
-        console.log(product)
-        console.log(pages)
-        console.log(count)
-    },[page])
+    useEffect(()=> {getAll(page).then((data) => {
+        setProduct(data)
+        console.log(product)    
+    })},[page])
 
-    const next = ()=>  page==pages? setPage(0):setPage(page+1)
-    const prev = ()=>  page==0? setPage(pages):setPage(page-1)
+
+ 
+
+    const next = ()=>  page==3? setPage(0):setPage(page+1)
+    const prev = ()=>  page==0? setPage(3):setPage(page-1)
     return(
         <div>
             <h3> Product name </h3>
