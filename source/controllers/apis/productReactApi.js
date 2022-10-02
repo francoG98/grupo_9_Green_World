@@ -107,12 +107,14 @@ const productApi ={
                     offset: offsetValue
                 }
             )
+            
             //DE ESOS PRODUCTOS DEFINIMOS LOS DATOS QUE VAMOS A PRECISAR PARA LA VISTA
             products = products.map(p=>{
                 let data = {
                     id: p.id,
                     name: p.name,
                     price: p.price,
+                    image:`localhost:4422/assets/products-images/${p.image.path}`,
                     category:p.category.name,
                     detail: `http://localhost:4422/products/detail/${p.id}`
                 }
