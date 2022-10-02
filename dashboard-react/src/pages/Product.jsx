@@ -27,6 +27,7 @@ export default function Product(){
         const pagesApi = async () =>{
             let request = await fetch("http://localhost:4422/api/products")
             let response = await request.json()
+            setPages(response.pages)
             
            
         }
