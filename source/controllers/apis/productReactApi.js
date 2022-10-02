@@ -114,7 +114,7 @@ const productApi ={
                     id: p.id,
                     name: p.name,
                     price: p.price,
-                    image:`localhost:4422/assets/products-images/${p.image.path}`,
+                    image:`http://localhost:4422/assets/products-images/${p.image.path}`,
                     category:p.category.name,
                     detail: `http://localhost:4422/products/detail/${p.id}`
                 }
@@ -139,7 +139,7 @@ const productApi ={
                 id: product.id,
                 name: product.name,
                 description: product.description,
-                image:`localhost:4422/assets/products-images/${product.image.path}`,
+                image:`http://localhost:4422/assets/products-images/${product.image.path}`,
                 category: product.category.name,
                 price: product.price
             }
