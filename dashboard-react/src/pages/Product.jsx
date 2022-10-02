@@ -12,7 +12,27 @@ export default function Product(){
         console.log(product)    
     })},[page])
 
+    useEffect(()=>{
+        const countApi = async () =>{
+            let request = await fetch("http://localhost:4422/api/products")
+            let response = await request.json()
+            
+            setCount(response.count)
+            console.log(count)
+        }
+        countApi()
+    },[])
 
+    useEffect(()=>{
+        const pagesApi = async () =>{
+            let request = await fetch("http://localhost:4422/api/products")
+            let response = await request.json()
+            
+            setPages(response.pages)
+            console.log(pages)
+        }
+        pagesApi()
+    },[])
  
 
     const next = ()=>  page==3? setPage(0):setPage(page+1)
