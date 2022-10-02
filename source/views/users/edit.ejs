@@ -57,12 +57,12 @@
                 </fieldset>
             </fieldset>
 
-            <label for="cultivo">Tipo de cultivo?</label>
+            <label for="cultivo">Preferencia de cultivo?</label>
                 <select name="cultivo" id="cultivo" required>
                     <option value="ninguna" <%=  user.cultivo == "ninguna"? "selected" : null%>>No cultivo</option>
                     <option value="indoor" <%= user.cultivo == "indoor"? "selected" : null %>>Indoor</option>
                     <option value="outdoor" <%=  user.cultivo == "outdoor"? "selected" : null %>>Outdoor</option>
-                    <option value="ambas" <%=  user.cultivo == "ambas"? "selected" : null %>>Indoor y Outdoor</option>                    
+                    <option value="hidro" <%=  user.cultivo == "hidro"? "selected" : null %>>Hidroponia</option>                    
                 </select>
             
             <label class="password" for="password">Nueva Contraseña <i class="fa-solid fa-circle-check"></i><i class="fa-solid fa-circle-xmark"></i></label>

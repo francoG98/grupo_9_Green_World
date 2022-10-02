@@ -1,8 +1,8 @@
 
 const {producto, imagene} = require("../database/models/index")
 const {validationResult} = require('express-validator')
-const {validationResult} = require('express-validator')
-const {producto, imagene, categoria} = require("../database/models/index")
+
+
 
 const {unlinkSync} = require('fs')
 const sequelize =require("sequelize")
