@@ -32,15 +32,16 @@ export default function PriceCalculatorCard(){
             } 
             return data
         })
+        setTotal(parseInt(product.subtotal))
         
         setProducts(products.filter(p=> p.id != idBuscado))
         setProductcalc([...productcalc, product]);
         
-        let totalisimo = productcalc.reduce((obj, data) => {obj += data.subtotal; return obj; }, 0)
+       
        
         
-        setTotal(totalisimo)
-        console.log(totalisimo)
+        
+        console.log(total)
         
         console.log(productcalc)
 
