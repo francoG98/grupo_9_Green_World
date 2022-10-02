@@ -28,8 +28,6 @@ export default function Product(){
             let request = await fetch("http://localhost:4422/api/products")
             let response = await request.json()
             setPages(response.pages)
-            
-           
         }
         pagesApi()
     },[])
@@ -38,12 +36,18 @@ export default function Product(){
     const next = ()=>  page==pages? setPage(0):setPage(page+1)
     const prev = ()=>  page==0? setPage(pages):setPage(page-1)
     return(
-        <div>
-            <h3> Product name </h3>
-            <p> Product price </p>
-            <p> Product category </p>
-            <img src="" alt="Imagen de producto"></img>
-            <button  onClick={prev}>Prev</button><button onClick={next}>Next</button>
-        </div>
+<ul>
+    {product.map((p)=>(
+        <li className="card"  key={p.id}>
+        <a target="_blank" href={`http://localhost:4422/products/detail/${p.id}`}>
+            <p>{p.name}</p>
+            <p>${p.price}.00</p>
+            <img src={p.image}></img>
+            <p>{p.category}</p>
+        </a>
+        </li>
+    ))}
+
+</ul>
     )
 }
