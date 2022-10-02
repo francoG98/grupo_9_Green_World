@@ -147,6 +147,28 @@ const productApi ={
         catch(error){
             return res.status(500).json(error)
         }
+    },
+    priceCalculator: async(req,res)=>{
+        try{
+            let products = await producto.findAll({include:{all:true}})
+            
+            
+            products = products.map(p=>{
+                let data = {
+                    id:p.id,
+                    name:p.name,
+                    price:p.price,
+                    cant:0,
+                    subtotal:0
+                }
+                return data
+            })
+            return res.send(products).status(200)
+
+        }
+        catch(error){
+            return res.status(500).json(error)
+        }
     }
 }
 
