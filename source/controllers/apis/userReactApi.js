@@ -13,11 +13,23 @@ const userReactApi ={
             })
             //DE ESTOS 5 QUEREMOS EL NOMBRE, EL EMAIL Y SI CULTIVA
             users = users.map(u =>{
+                switch(u.cultivo.toLowerCase()){
+                    case "indoor": u.cultivo = "Interior"
+                    break;
+                    case "outdoor": u.cultivo = "Exterior"
+                    break;
+                    case "ninguna": u.cultivo = "No Cultiva"
+                    break;
+                    case "hidro": u.cultivo = "Hidroponia"
+                    break
+                    default: console.log('tuvimos un error')
+                }
                 let data ={
                     id: u.id,
                     name: `${u.name} ${u.lastname}`,
                     email: u.email,
                     cultivo: u.cultivo
+
                 }
                 return data
             })

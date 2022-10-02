@@ -39,39 +39,44 @@ const productApi ={
             let productos = await producto.findAll({include:{all:true}})
             let count = productos.length
             
-            let countByCategory = Object({ // ACA DEFINIMOS CUANTOS HAY POR CATEGORIA
-                parafernalia: {
-                    name: "parafernalia",
+            let countByCategory =[
+                {
+                    name:"parafernalia",
+                    id:4,
                     count:0
                 },
-                aditivos: {
+                {
                     name: "aditivos",
+                    id:2,
                     count:0
                 },
-                medicinal: {
+                {
                     name: "medicinal",
+                    id:3,
                     count:0
                 },
-                sustratos: {
+                {
                     name: "sustratos",
+                    id:5,
                     count:0
                 },
-                accesorios: {
+                {
                     name: "accesorios",
+                    id:1,
                     count:0
-                }
-            })
+                }]
+
             productos.forEach(p=>{ // ACA LLENAMOS CUANTOS HAY POR CATEGORIA
                 switch(p.category.name.toLowerCase()){
-                    case 'parafernalia': countByCategory.parafernalia.count += 1;
+                    case 'parafernalia': countByCategory[0].count += 1;
                     break;
-                    case 'aditivos': countByCategory.aditivos.count += 1;
+                    case 'aditivos': countByCategory[1].count += 1;
                     break;
-                    case 'medicinal': countByCategory.medicinal.count += 1;
+                    case 'medicinal': countByCategory[2].count += 1;
                     break;
-                    case 'sustratos': countByCategory.sustratos.count += 1;
+                    case 'sustratos': countByCategory[3].count += 1;
                     break;
-                    case 'accesorios': countByCategory.accesorios.count += 1;
+                    case 'accesorios': countByCategory[4].count += 1;
                     break;
                     default: console.log('Categoría no encontrada')
                 }

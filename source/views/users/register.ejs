@@ -47,12 +47,12 @@
             <p class="avatar valid"></p>  
 
 
-            <label for="cultivo">Realizas algun tipo de cultivo?</label>
+            <label for="cultivo">Preferencias de cultivo?</label>
                 <select name="cultivo" id="cultivo" required>
                     <option value="ninguna" <%= (locals.oldData &&  (locals.oldData.cultivo == "ninguna"))  ? "selected": null %>>No cultivo</option>
                     <option value="indoor" <%= (locals.oldData &&  (locals.oldData.cultivo == "indoor")) ? "selected": null %>>Indoor</option>
                     <option value="outdoor" <%= (locals.oldData &&  (locals.oldData.cultivo == "outdoor" ))? "selected": null %>>Outdoor</option>
-                    <option value="ambas" <%= (locals.oldData &&  (locals.oldData.cultivo == "ambas" ))? "selected": null %>>Indoor y Outdoor</option>                    
+                    <option value="hidro" <%= (locals.oldData &&  (locals.oldData.cultivo == "hidro" ))? "selected": null %>>Hidroponia</option>                    
                 </select>
 
 

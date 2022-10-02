@@ -7,6 +7,7 @@ const method = require("method-override")
 const session = require("express-session")
 const cookieParser = require("cookie-parser")
 const recordameMiddleware = require("./middlewares/recordameMiddleware")
+const cors = require("cors")
 
 app.listen(port, callback)
 app.set ("views", resolve(__dirname, "views"));
@@ -27,6 +28,7 @@ app.use(session({
 app.use(cookieParser())
 app.use(recordameMiddleware)
 app.use(require("./middlewares/user"))
+app.use(cors())
 
 
 //LO DE ACA ABAJO SON LAS RUTAS
