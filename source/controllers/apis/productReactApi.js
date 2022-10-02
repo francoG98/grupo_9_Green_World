@@ -139,7 +139,7 @@ const productApi ={
                 id: product.id,
                 name: product.name,
                 description: product.description,
-                image:`localhost:4422/assets/products-images/${product.image.path}`,
+                image:`http://localhost:4422/assets/products-images/${product.image.path}`,
                 category: product.category.name,
                 price: product.price
             }

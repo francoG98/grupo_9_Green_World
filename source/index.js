@@ -7,7 +7,7 @@ const method = require("method-override")
 const session = require("express-session")
 const cookieParser = require("cookie-parser")
 const recordameMiddleware = require("./middlewares/recordameMiddleware")
-const cors = require("cors")
+const cors = require("cors") //PARA PODER REALIZAR APIS A PARTIR DE NUESTRA A
 
 app.listen(port, callback)
 app.set ("views", resolve(__dirname, "views"));

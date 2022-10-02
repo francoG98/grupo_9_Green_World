@@ -103,7 +103,7 @@
 .listaCategorias{
     display:flex;
     flex-direction:column;
-    padding: 15px 0;
+    padding: 15px 0 25px 0;
     list-style: none;
     border-radius:20px;
     background-color: var(--Card-Color);

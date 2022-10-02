@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 
 export default function PriceCalculatorCard(){
     const [products, setProducts] = useState([])
-    const [total, setTotal] = useState(0)
+    let [total, setTotal] = useState(0)
     const [productcalc,setProductcalc]= useState([])
     //FALTA TERMINAR
 
@@ -32,10 +32,11 @@ export default function PriceCalculatorCard(){
             } 
             return data
         })
-        setTotal(parseInt(product.subtotal))
+        setTotal(total+= product[0].subtotal)
         
         setProducts(products.filter(p=> p.id != idBuscado))
-        setProductcalc([...productcalc, product]);
+        let joined = productcalc.concat(Object.assign({},product))
+        setProductcalc(joined);
         
        
        
@@ -53,8 +54,8 @@ export default function PriceCalculatorCard(){
             <h1>GREEN BUY SIMULATOR</h1>
             <form onSubmit={priceCalc}>
                 <div>
-                    <label for="id">Producto</label>
-                    <label for="qty">Cantidad</label>
+                    <label htmlFor="id">Producto</label>
+                    <label htmlFor="qty">Cantidad</label>
                 </div>
                 <select id="id" name="id">
                     {products.map((p, index) => (
@@ -63,10 +64,22 @@ export default function PriceCalculatorCard(){
                         </option>
                     ))}
                 </select>
-                <input type="number" min="0" id="qty" name="qty"></input>
+                <input type="number" min="1" id="qty" name="qty"></input>
                 <button type="submit">Agregar</button>
             </form>
-            <ul></ul>
+
+            <ul>
+            {productcalc.map((item, index) => (
+                <li className={`catLi-${index%2} lista-categorias`} key={item[0].id}>
+                
+                    <p>{item[0].name}</p>
+                    <p>${item[0].subtotal}.00</p>
+                    
+                
+                </li>
+            ))}
+
+            </ul>
 
         </section>
     )
