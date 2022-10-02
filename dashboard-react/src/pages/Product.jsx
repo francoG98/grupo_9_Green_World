@@ -9,7 +9,7 @@ export default function Product(){
 
     useEffect(()=> {getAll(page).then((data) => {
         setProduct(data)
-        console.log(product)    
+           
     })},[page])
 
     useEffect(()=>{
@@ -18,7 +18,7 @@ export default function Product(){
             let response = await request.json()
             
             setCount(response.count)
-            console.log(count)
+            
         }
         countApi()
     },[])
@@ -28,15 +28,14 @@ export default function Product(){
             let request = await fetch("http://localhost:4422/api/products")
             let response = await request.json()
             
-            setPages(response.pages)
-            console.log(pages)
+           
         }
         pagesApi()
     },[])
  
 
-    const next = ()=>  page==3? setPage(0):setPage(page+1)
-    const prev = ()=>  page==0? setPage(3):setPage(page-1)
+    const next = ()=>  page==pages? setPage(0):setPage(page+1)
+    const prev = ()=>  page==0? setPage(pages):setPage(page-1)
     return(
         <div>
             <h3> Product name </h3>
