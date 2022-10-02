@@ -1,5 +1,9 @@
+
 const {producto, imagene} = require("../database/models/index")
 const {validationResult} = require('express-validator')
+
+
+
 const {unlinkSync} = require('fs')
 const sequelize =require("sequelize")
 const {Op} = sequelize
@@ -185,4 +189,6 @@ module.exports = {
       await imageProd.destroy()
       return res.redirect('/products/');
     }
+
+    
   }

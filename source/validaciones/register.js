@@ -25,7 +25,7 @@ const register = [
     }).bail(),
     body("avatar").custom( async (value, {req})=>{
         let archivos = req.files
-        let extensiones = [".svg", ".jpg", ".png",".jpeg", ".gif", ".jfif"]
+        let extensiones = [".svg", ".jpg", ".png",".jpeg", ".gif", ".jfif", ".PNG"]
         if (archivos.length != 0){
             
             let avatar = archivos[0]
