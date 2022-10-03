@@ -36,17 +36,19 @@ export default function Users(){
     const next = ()=>  page == pages? setPage(0):setPage(page+1)
     const prev = ()=>  page==0? setPage(pages):setPage(page-1)
     return(
-        <ul>
-            <button  onClick={prev}>Prev</button><button onClick={next}>Next</button>
-            {users.map((u)=>(
-                <li className="card"  key={u.id}>
-                    <p>{u.name}</p>
-                    <p>{u.email}</p>
-                    <img className="cardImage" src={u.image}></img>
-                    <p>{u.cultivo}</p>
-                </li>
+<>
+    {users.map((u)=>(
+        <ul className="card">
+            <li className="green-title">{u.name}</li>
+            <li className="listaCategorias" key={u.id}>
+                <img className="cardImage" src={u.image}></img>
+                <p className="categoria">{u.email}</p>
+                <p className="precio">Cultivo: {u.cultivo.toUpperCase()}</p>
+            </li>
+        </ul>
             ))}
 
-        </ul>
+    <button  onClick={prev}>Prev</button><button onClick={next}>Next</button>
+</>
             )
         }
