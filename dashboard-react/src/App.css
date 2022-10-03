@@ -13,7 +13,7 @@
     --Card-Lighter:#8245EB;
     --Dark-Violet:#421869;
     --Dark-Violet2:#491a74;
-    --Dark-Violet3: #190950;    
+    --Dark-Green: #3a5743;    
     --Gworld-Green:#57CC99;
 }
 .mainPage{
@@ -139,4 +139,152 @@ li.catLi-0{
 }
 
 
+/*PRICE CALCULATOR*/
+.txt-pcalc{
+    color:white;
+    font-weight: 300;
+    text-align:center;
+    width:100%
+}
+.calcForm{
+    display:flex;
+    padding: 10px 15px;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap:10px
+}
+
+select{
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    -ms-appearance:none;
+    appearance: none;
+    outline: 0;
+    box-shadow:none;
+    border:0!important;
+    background:var(--Gworld-Green);
+    background-image:none;
+    width:100%;
+    flex:1;
+    padding: 0 .5em;
+    color:white;
+    cursor:pointer;
+    font-size: 1.1rem;
+    font-family: "Abel"
+}
+
+select::ms-expand{
+    display:none
+}
+#qty{
+    width:35px;
+    text-align: center;
+    border-radius:.25em;
+    outline: 0;
+    box-shadow:none;
+    
+    transition:all .2s ease
+
+}
+#qty:focus{
+    border: 2px solid var(--Gworld-Green)
+}
+.select{
+    width:77%;
+    position:relative;
+    display: flex;
+    height:2em;
+    line-height: 2;
+    background: var(--Card-Lighter);
+    overflow: hidden;
+    border-radius:.25em;
+    color:white
+}
+
+
+.select::after {
+    content: '\25BC';
+    position:absolute;
+    top:0;
+    right:0;
+    padding:0 0.6em;
+    background: var(--Gworld-Green);
+    cursor:pointer;
+    pointer-events:none;
+   
+    transition:.25s all ease
+}
+.select:hover::after{
+    
+    background: var(--Card-Lighter);
+    color: var(--Card-Color)
+    
+}
+
+option {
+    font-family: "Abel";
+  }
+  
+  option:checked {
+    background-color: var(--Card-Lighter);
+  }
+
+
+.calcLi{
+    display:flex;
+    justify-content: space-between;
+    gap:10px;
+    color:white;
+    font-weight: 300;
+}
+
+.calcLi p{
+    opacity: .8 ;
+    transition: all .3s ease
+}
+.calcLi p:hover{
+    opacity:1
+}
+.btnCalc{
+    color:white;
+    background-color: var(--Gworld-Green);
+    border:none;
+    cursor:pointer;
+    padding: .3em;
+    border-radius: .2em;
+    font-size:.9em;
+    font-weight: 300;
+    opacity:1;
+    transition: all .2s ease
+}
+.btnCalc:hover{
+    background-color: var(--Card-Lighter);
+}
+
+.totalCalc{
+    padding: 15px 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px
+}
+.totalCalc p{
+    color:white;
+    font-weight:300;
+    font-size:1.1em
+}
+.totalCalc h3{
+    color:white;
+    font-weight: 400;
+    font-family: "Rubik";
+    padding: .2em;
+    background-color: var(--Gworld-Green);
+    border-radius: .2em;
+    margin-top:2.3px
+}
 /*PRODUCTOS*/
+.cardImage{
+    width:60vw;
+    height:60vw;
+    object-fit: cover;
+}

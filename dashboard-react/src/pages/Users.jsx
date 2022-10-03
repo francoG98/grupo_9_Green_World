@@ -28,12 +28,12 @@ export default function Users(){
         const pagesApi = async () =>{
             let request = await fetch("http://localhost:4422/api/users")
             let response = await request.json()
-    
+            setPages(response.pages)
         }
         pagesApi()
     },[])
  
-    const next = ()=>  page==pages? setPage(0):setPage(page+1)
+    const next = ()=>  page == pages? setPage(0):setPage(page+1)
     const prev = ()=>  page==0? setPage(pages):setPage(page-1)
     return(
         <ul>
@@ -42,7 +42,7 @@ export default function Users(){
                 <li className="card"  key={u.id}>
                     <p>{u.name}</p>
                     <p>{u.email}</p>
-                    <img src={u.image}></img>
+                    <img className="cardImage" src={u.image}></img>
                     <p>{u.cultivo}</p>
                 </li>
             ))}

@@ -43,7 +43,7 @@ export default function Product(){
         <a target="_blank" href={`http://localhost:4422/products/detail/${p.id}`}>
             <p>{p.name}</p>
             <p>${p.price}.00</p>
-            <img src={p.image}></img>
+            <img className="cardImage" src={p.image}></img>
             <p>{p.category}</p>
         </a>
         </li>
