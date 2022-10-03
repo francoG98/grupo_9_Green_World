@@ -37,6 +37,7 @@ export default function Product(){
     const prev = ()=>  page==0? setPage(pages):setPage(page-1)
     return(
 <ul>
+    <button  onClick={prev}>Prev</button><button onClick={next}>Next</button>
     {product.map((p)=>(
         <li className="card"  key={p.id}>
         <a target="_blank" href={`http://localhost:4422/products/detail/${p.id}`}>

@@ -37,6 +37,7 @@ export default function Users(){
     const prev = ()=>  page==0? setPage(pages):setPage(page-1)
     return(
         <ul>
+            <button  onClick={prev}>Prev</button><button onClick={next}>Next</button>
             {users.map((u)=>(
                 <li className="card"  key={u.id}>
                     <p>{u.name}</p>
