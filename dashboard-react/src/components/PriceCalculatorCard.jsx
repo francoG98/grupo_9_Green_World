@@ -55,7 +55,7 @@ export default function PriceCalculatorCard(){
             <form onSubmit={priceCalc}>
                 <div>
                     <label htmlFor="id">Producto</label>
-                    <label htmlFor="qty">Cantidad</label>
+                    <label htmlFor="qty">Cantidad</label> 
                 </div>
                 <select id="id" name="id">
                     {products.map((p, index) => (
