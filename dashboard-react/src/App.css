@@ -282,34 +282,32 @@ option {
     border-radius: .2em;
     margin-top:2.3px
 }
-/*PRODUCTOS*/
+/*PRODUCTOS Y USUARIOS*/
 .cardImage{
-    width:60vw;
-    height:60vw;
+    width:100%;
+    height:100%;
+    padding: 25px 25px 10px 25px;
     object-fit: cover;
 }
+
 .green-title{
     padding: 5px 0;
     font-size: 1.5em;
     font-family: "Abel";
-    color: white;
     font-weight: 500;
-}
-.listaUserProd{
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0 25px 0;
     list-style: none;
-    border-radius:20px;
-    background-color: var(--Card-Color);
-    width:100%;
+    text-align: center;
+    color: white;
 }
-.listaUserProd a{
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-    text-decoration:none
+
+.categoria{
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.precio{
+    text-align: center;
+    color: #57CC99
+
 }
