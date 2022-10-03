@@ -288,3 +288,28 @@ option {
     height:60vw;
     object-fit: cover;
 }
+.green-title{
+    padding: 5px 0;
+    font-size: 1.5em;
+    font-family: "Abel";
+    color: white;
+    font-weight: 500;
+}
+.listaUserProd{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0 25px 0;
+    list-style: none;
+    border-radius:20px;
+    background-color: var(--Card-Color);
+    width:100%;
+}
+.listaUserProd a{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    text-decoration:none
+}
