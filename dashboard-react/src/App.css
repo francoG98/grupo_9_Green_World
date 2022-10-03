@@ -308,5 +308,10 @@ option {
 
 .precio{
     text-align: center;
-    color: #57CC99
+    color: #57CC99;
+    font-size: larger;
+}
+
+li.listaCategorias{
+    padding-top: 0px
 }
