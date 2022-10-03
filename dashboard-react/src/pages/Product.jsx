@@ -35,6 +35,7 @@ export default function Product(){
 
     const next = ()=>  page==pages? setPage(0):setPage(page+1)
     const prev = ()=>  page==0? setPage(pages):setPage(page-1)
+
     return(
 <>
     {product.map((p)=>(
@@ -51,5 +52,6 @@ export default function Product(){
     ))}
     <button  onClick={prev}>Prev</button><button onClick={next}>Next</button>
 </>
+
     )
 }
