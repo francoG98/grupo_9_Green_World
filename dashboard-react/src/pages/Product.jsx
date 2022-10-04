@@ -39,18 +39,24 @@ export default function Product(){
     return(
 <>
     {product.map((p)=>(
-    <ul className="card">
-        <li className="green-title">{p.name}</li>
-        <li className="listaCategorias" key={p.id}>
+    <ul key={p.id} className="card">
+        <li className="green-title">
             <a target="_blank" href={`http://localhost:4422/products/detail/${p.id}`}>
-                <img className="cardImage" src={p.image}></img>
+             {p.name}
             </a>
+        </li>
+        <li className="listaUserProds" key={p.id}>
+            
+            <img className="cardImage" src={p.image}></img>
+            
             <p className="categoria">Categoría: {p.category.toUpperCase()}</p>
             <p className="precio">${p.price}.00</p>
         </li>
     </ul>
     ))}
-    <button  onClick={prev}>Prev</button><button onClick={next}>Next</button>
+    <div className="buttons">
+        <button className="btnCalc"  onClick={prev}><i class="fa-solid fa-caret-left"></i> Anteriores</button><button className="btnCalc" onClick={next}>Siguientes <i class="fa-solid fa-caret-right"></i></button>
+    </div>   
 </>
 
     )

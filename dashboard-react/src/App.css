@@ -16,6 +16,7 @@
     --Dark-Green: #3a5743;    
     --Gworld-Green:#57CC99;
 }
+
 .mainPage{
     background-color: var(--Fondo-total);
     padding: 50px 20px;
@@ -131,6 +132,19 @@ li.lista-categorias a{
     transition:all 300ms
 }
 li.lista-categorias a:hover{
+    opacity:1;
+}
+li.lista-categorias div{
+    color:white;
+    display:flex;
+    justify-content: space-between;
+    font-size:1.2em;
+    font-weight:300;
+    opacity:0.7;
+    width:100%;
+    transition:all 300ms
+}
+li.lista-categorias div:hover{
     opacity:1;
 }
 
@@ -283,35 +297,169 @@ option {
     margin-top:2.3px
 }
 /*PRODUCTOS Y USUARIOS*/
-.cardImage{
+
+
+.listaUserProds{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 0 25px 0;
+    list-style: none;
+    border-radius:20px;
+    background-color: var(--Card-Color);
     width:100%;
-    height:100%;
-    padding: 25px 25px 10px 25px;
+    gap: 5px
+}
+
+.cardImage{
+    width:60vw;
+    height:50vw;
     object-fit: cover;
+    border: white solid 1px;
+    background-color: white;
+    overflow:hidden;
+    border-radius: .8em
 }
 
 .green-title{
     padding: 5px 0;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-family: "Abel";
     font-weight: 500;
     list-style: none;
     text-align: center;
     color: white;
 }
+.green-title a{
+    font-size: 1.5rem;
+    font-family: "Abel";
+    font-weight: 500;
+    list-style: none;
+    text-align: center;
+    color: white;
+    text-decoration:none;
+    transition: all .2s ease
+}
+.green-title a:hover{
+    font-size: 1.6rem
+}
 
 .categoria{
     text-align: center;
     color: white;
-    margin-bottom: 10px;
 }
 
 .precio{
     text-align: center;
-    color: #57CC99;
-    font-size: larger;
-}
+    color: #57CC99
 
-li.listaCategorias{
-    padding-top: 0px
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+    gap:20px
+}
+@media (min-width:1024px){
+    #root{
+        display: flex;
+        justify-content:center;
+        align-items: flex-start;
+        background-color: var(--Fondo-total);
+        
+        min-height:100vh;
+        max-height:150vh;
+        padding-top: 30px
+        
+    
+    }
+    .mainPage{
+        flex-direction:column;
+        
+        max-width:1060px;
+        gap:30px;
+        flex-wrap:wrap;
+        justify-content:flex-start;
+        align-items: center;
+        padding:0;
+        min-height:900px;
+        max-height:1100px;
+        align-content: center;
+        position:relative;
+
+    }
+    .navSection{
+        height: 730px;
+        width:250px;
+        max-width:350px
+       
+        
+    }
+    .info-bar{
+        flex-direction:column;
+        width:auto;
+        height:450px
+        
+    }
+    .figure-image{
+        width:auto;
+        height:auto
+        
+    }
+    .figure-image img{
+        
+        height:200px;
+        width:200px;
+        max-width:250px;
+        max-height:250px;
+    }
+    .info-bar div{
+        display:flex;
+        flex-direction:column;
+        width:100%;
+        
+    }
+    .figure-image div p{
+        margin:none
+
+    }
+    .logo-img{
+        width:200px
+    }
+    .navBar{
+        flex-direction:column;
+        justify-content: center;
+        gap: 40px;
+        height: 250px
+    }
+    
+    .card{
+        width:350px;
+        height:350px
+    }
+    .cardCalc{
+        height:auto
+    }
+    .listaCategorias{
+        height:100%;
+        justify-content: space-between;
+        ;
+    }
+    .listaUserProds{
+        height:100%;
+        justify-content: space-evenly;
+    }
+
+    .cardImage{
+        width:250px;
+        height:200px;
+
+    }
+    .buttons{
+        position:absolute;
+        top: 760px;
+    }
+    .navBar a{
+        font-size: 1.3em;
+    }
 }

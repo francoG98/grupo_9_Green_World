@@ -38,17 +38,20 @@ export default function Users(){
     return(
 <>
     {users.map((u)=>(
-        <ul className="card">
+        <ul key={u.id} className="card">
             <li className="green-title">{u.name}</li>
-            <li className="listaCategorias" key={u.id}>
+            <li className="listaUserProds" key={u.id}>
                 <img className="cardImage" src={u.image}></img>
                 <p className="categoria">{u.email}</p>
                 <p className="precio">Cultivo: {u.cultivo.toUpperCase()}</p>
             </li>
         </ul>
             ))}
+        <div className="buttons">
+            <button className="btnCalc"  onClick={prev}><i class="fa-solid fa-caret-left"></i> Anteriores</button><button className="btnCalc" onClick={next}>Siguientes <i class="fa-solid fa-caret-right"></i></button>
+        </div>     
 
-    <button  onClick={prev}>Prev</button><button onClick={next}>Next</button>
+    
 </>
             )
         }

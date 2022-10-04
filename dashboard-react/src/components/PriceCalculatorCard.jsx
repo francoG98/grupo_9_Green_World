@@ -54,10 +54,10 @@ export default function PriceCalculatorCard(){
 
     
     return(
-        <section className="card">
+        <section className="card cardCalc">
             <h1>GREEN COST CALCULATOR</h1>
         
-            <div className="listaCategorias">
+            <div className="listaCategorias listaCalc">
                 <p className="txt-pcalc">Seleccionar producto y cantidad</p>
                 
             <form className="calcForm" onSubmit={priceCalc}>
@@ -71,9 +71,9 @@ export default function PriceCalculatorCard(){
                     ))}
                 </select>
                 </div>
-                <input type="number" min="1" id="qty" name="qty"></input>
-                <button className="btnCalc" type="submit">Agregar</button>
-                <button className="btnCalc" onClick={resetCalc} type="reset">Reiniciar Cálculo</button>
+                <input type="number" min="1" id="qty" defaultValue="1" name="qty"></input>
+                <button className="btnCalc" type="submit">Calcular Costo de Compra</button>
+                <button className="btnCalc" onClick={resetCalc} type="reset">Reiniciar</button>
             </form>
 
             <ul>

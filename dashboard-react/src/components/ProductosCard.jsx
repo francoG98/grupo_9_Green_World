@@ -28,12 +28,12 @@ export default function ProductosCard(){
        
         <ul className="listaCategorias">
             <li className="titles-categorias">
-            <p>Últimos Registros</p>
+            <p>Últimos Agregados</p>
             <p>Precio</p>
             </li>
             {prods.map((item, index) => (
                 <li className={`catLi-${index%2} lista-categorias`} key={item.id}>
-                <a href={`http://localhost:4422/products/detail/${item.id}`}>
+                <a target="_blank" href={`http://localhost:4422/products/detail/${item.id}`}>
                     <p>{item.name}</p>
                     <p>${item.price}.00</p>
                     </a>

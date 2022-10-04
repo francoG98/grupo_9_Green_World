@@ -40,10 +40,10 @@ export default function UsuariosCard(){
                 </li>
                 {users.map((item, index) => (
                     <li className={`catLi-${index%2} lista-categorias`} key={item.id}>
-                    <Link to={`/users/${item.id}`}>
+                    <div >
                         <p>{item.name}</p>
                         <p>{item.cultivo}</p>
-                        </Link>
+                        </div>
                     
                     </li>
                 ))}
